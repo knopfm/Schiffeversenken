@@ -106,7 +106,7 @@ Partial Class Hauptmenü
         'TableLayoutPanel2
         '
         Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 386.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.Button4, 0, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.Button3, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.Button1, 0, 1)

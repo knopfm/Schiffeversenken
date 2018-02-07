@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class Hauptmenü
     Dim WithEvents NetzwerkClient As Krypter.KrypterInterface
 
 
