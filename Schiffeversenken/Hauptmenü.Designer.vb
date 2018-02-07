@@ -22,58 +22,58 @@ Partial Class Hauptmenü
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ProfileBT = New System.Windows.Forms.Button()
+        Me.ShopBT = New System.Windows.Forms.Button()
+        Me.SettingsBT = New System.Windows.Forms.Button()
+        Me.PlayBT = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LogoPB = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoPB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button2
+        'ProfileBT
         '
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button2.Location = New System.Drawing.Point(3, 165)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(380, 75)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Profile"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ProfileBT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ProfileBT.Location = New System.Drawing.Point(3, 165)
+        Me.ProfileBT.Name = "ProfileBT"
+        Me.ProfileBT.Size = New System.Drawing.Size(380, 75)
+        Me.ProfileBT.TabIndex = 1
+        Me.ProfileBT.Text = "Profile"
+        Me.ProfileBT.UseVisualStyleBackColor = True
         '
-        'Button3
+        'ShopBT
         '
-        Me.Button3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button3.Location = New System.Drawing.Point(3, 246)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(380, 75)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Shop"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.ShopBT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ShopBT.Location = New System.Drawing.Point(3, 246)
+        Me.ShopBT.Name = "ShopBT"
+        Me.ShopBT.Size = New System.Drawing.Size(380, 75)
+        Me.ShopBT.TabIndex = 2
+        Me.ShopBT.Text = "Shop"
+        Me.ShopBT.UseVisualStyleBackColor = True
         '
-        'Button4
+        'SettingsBT
         '
-        Me.Button4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button4.Location = New System.Drawing.Point(3, 327)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(380, 75)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Settings"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.SettingsBT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SettingsBT.Location = New System.Drawing.Point(3, 327)
+        Me.SettingsBT.Name = "SettingsBT"
+        Me.SettingsBT.Size = New System.Drawing.Size(380, 75)
+        Me.SettingsBT.TabIndex = 3
+        Me.SettingsBT.Text = "Settings"
+        Me.SettingsBT.UseVisualStyleBackColor = True
         '
-        'Button1
+        'PlayBT
         '
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button1.Location = New System.Drawing.Point(3, 84)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(380, 75)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Play"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.PlayBT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PlayBT.Location = New System.Drawing.Point(3, 84)
+        Me.PlayBT.Name = "PlayBT"
+        Me.PlayBT.Size = New System.Drawing.Size(380, 75)
+        Me.PlayBT.TabIndex = 0
+        Me.PlayBT.Text = "Play"
+        Me.PlayBT.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -93,7 +93,7 @@ Partial Class Hauptmenü
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox1, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.LogoPB, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
@@ -107,10 +107,10 @@ Partial Class Hauptmenü
         '
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 386.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Button4, 0, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.Button3, 0, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.Button1, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Button2, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.SettingsBT, 0, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.ShopBT, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.PlayBT, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.ProfileBT, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
@@ -124,15 +124,15 @@ Partial Class Hauptmenü
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(386, 405)
         Me.TableLayoutPanel2.TabIndex = 0
         '
-        'PictureBox1
+        'LogoPB
         '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Location = New System.Drawing.Point(395, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(386, 405)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.LogoPB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LogoPB.Location = New System.Drawing.Point(395, 3)
+        Me.LogoPB.Name = "LogoPB"
+        Me.LogoPB.Size = New System.Drawing.Size(386, 405)
+        Me.LogoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.LogoPB.TabIndex = 1
+        Me.LogoPB.TabStop = False
         '
         'Hauptmenü
         '
@@ -141,21 +141,23 @@ Partial Class Hauptmenü
         Me.BackColor = System.Drawing.SystemColors.Menu
         Me.ClientSize = New System.Drawing.Size(784, 411)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "Hauptmenü"
         Me.Text = "Hauptmenü"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoPB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ProfileBT As Button
+    Friend WithEvents ShopBT As Button
+    Friend WithEvents SettingsBT As Button
+    Friend WithEvents PlayBT As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents LogoPB As PictureBox
 End Class
