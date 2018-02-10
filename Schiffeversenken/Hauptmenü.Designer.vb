@@ -42,7 +42,7 @@ Partial Class Hauptmenü
         Me.ProfileBT.Name = "ProfileBT"
         Me.ProfileBT.Size = New System.Drawing.Size(380, 75)
         Me.ProfileBT.TabIndex = 1
-        Me.ProfileBT.Text = "Profile"
+        Me.ProfileBT.Text = "Profil"
         Me.ProfileBT.UseVisualStyleBackColor = True
         '
         'ShopBT
@@ -52,7 +52,7 @@ Partial Class Hauptmenü
         Me.ShopBT.Name = "ShopBT"
         Me.ShopBT.Size = New System.Drawing.Size(380, 75)
         Me.ShopBT.TabIndex = 2
-        Me.ShopBT.Text = "Shop"
+        Me.ShopBT.Text = "Shop auf deutsch? (Laden hört sich behindert an)"
         Me.ShopBT.UseVisualStyleBackColor = True
         '
         'SettingsBT
@@ -72,7 +72,7 @@ Partial Class Hauptmenü
         Me.PlayBT.Name = "PlayBT"
         Me.PlayBT.Size = New System.Drawing.Size(380, 75)
         Me.PlayBT.TabIndex = 0
-        Me.PlayBT.Text = "Play"
+        Me.PlayBT.Text = "Spielen"
         Me.PlayBT.UseVisualStyleBackColor = True
         '
         'Label1
@@ -127,10 +127,10 @@ Partial Class Hauptmenü
         'LogoPB
         '
         Me.LogoPB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LogoPB.Image = Global.Schiffeversenken.My.Resources.Resources.meer2
         Me.LogoPB.Location = New System.Drawing.Point(395, 3)
         Me.LogoPB.Name = "LogoPB"
         Me.LogoPB.Size = New System.Drawing.Size(386, 405)
-        Me.LogoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.LogoPB.TabIndex = 1
         Me.LogoPB.TabStop = False
         '
