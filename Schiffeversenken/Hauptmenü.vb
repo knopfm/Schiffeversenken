@@ -34,6 +34,10 @@
         EinstellungForm = New Einstellungen
         EinstellungForm.ShowDialog()
     End Sub
+
+    Private Sub LogoPB_Click(sender As Object, e As EventArgs) Handles LogoPB.Click
+
+    End Sub
 End Class
 'TODO: Schiffeversenken Programmieren
 'hallo

@@ -127,7 +127,6 @@ Partial Class Hauptmenü
         'LogoPB
         '
         Me.LogoPB.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LogoPB.Image = Global.Schiffeversenken.My.Resources.Resources.meer2
         Me.LogoPB.Location = New System.Drawing.Point(395, 3)
         Me.LogoPB.Name = "LogoPB"
         Me.LogoPB.Size = New System.Drawing.Size(386, 405)
