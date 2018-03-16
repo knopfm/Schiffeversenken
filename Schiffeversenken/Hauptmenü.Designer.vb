@@ -38,9 +38,9 @@ Partial Class Hauptmenü
         'ProfileBT
         '
         Me.ProfileBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ProfileBT.Location = New System.Drawing.Point(3, 165)
+        Me.ProfileBT.Location = New System.Drawing.Point(3, 155)
         Me.ProfileBT.Name = "ProfileBT"
-        Me.ProfileBT.Size = New System.Drawing.Size(380, 75)
+        Me.ProfileBT.Size = New System.Drawing.Size(380, 70)
         Me.ProfileBT.TabIndex = 1
         Me.ProfileBT.Text = "Profil"
         Me.ProfileBT.UseVisualStyleBackColor = True
@@ -48,9 +48,9 @@ Partial Class Hauptmenü
         'ShopBT
         '
         Me.ShopBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ShopBT.Location = New System.Drawing.Point(3, 246)
+        Me.ShopBT.Location = New System.Drawing.Point(3, 231)
         Me.ShopBT.Name = "ShopBT"
-        Me.ShopBT.Size = New System.Drawing.Size(380, 75)
+        Me.ShopBT.Size = New System.Drawing.Size(380, 70)
         Me.ShopBT.TabIndex = 2
         Me.ShopBT.Text = "Shop auf deutsch? (Laden hört sich behindert an)"
         Me.ShopBT.UseVisualStyleBackColor = True
@@ -58,9 +58,9 @@ Partial Class Hauptmenü
         'SettingsBT
         '
         Me.SettingsBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SettingsBT.Location = New System.Drawing.Point(3, 327)
+        Me.SettingsBT.Location = New System.Drawing.Point(3, 307)
         Me.SettingsBT.Name = "SettingsBT"
-        Me.SettingsBT.Size = New System.Drawing.Size(380, 75)
+        Me.SettingsBT.Size = New System.Drawing.Size(380, 70)
         Me.SettingsBT.TabIndex = 3
         Me.SettingsBT.Text = "Settings"
         Me.SettingsBT.UseVisualStyleBackColor = True
@@ -68,9 +68,9 @@ Partial Class Hauptmenü
         'PlayBT
         '
         Me.PlayBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PlayBT.Location = New System.Drawing.Point(3, 84)
+        Me.PlayBT.Location = New System.Drawing.Point(3, 79)
         Me.PlayBT.Name = "PlayBT"
-        Me.PlayBT.Size = New System.Drawing.Size(380, 75)
+        Me.PlayBT.Size = New System.Drawing.Size(380, 70)
         Me.PlayBT.TabIndex = 0
         Me.PlayBT.Text = "Spielen"
         Me.PlayBT.UseVisualStyleBackColor = True
@@ -82,7 +82,7 @@ Partial Class Hauptmenü
         Me.Label1.Font = New System.Drawing.Font("Courier New", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(3, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(380, 81)
+        Me.Label1.Size = New System.Drawing.Size(380, 76)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "SCHIFFE VERSENKEN"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -100,7 +100,7 @@ Partial Class Hauptmenü
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(784, 411)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(784, 386)
         Me.TableLayoutPanel1.TabIndex = 5
         '
         'TableLayoutPanel2
@@ -121,15 +121,16 @@ Partial Class Hauptmenü
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(386, 405)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(386, 380)
         Me.TableLayoutPanel2.TabIndex = 0
         '
         'LogoPB
         '
         Me.LogoPB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LogoPB.Image = Global.Schiffeversenken.My.Resources.Resources.meer2
         Me.LogoPB.Location = New System.Drawing.Point(395, 3)
         Me.LogoPB.Name = "LogoPB"
-        Me.LogoPB.Size = New System.Drawing.Size(386, 405)
+        Me.LogoPB.Size = New System.Drawing.Size(386, 380)
         Me.LogoPB.TabIndex = 1
         Me.LogoPB.TabStop = False
         '
@@ -138,7 +139,7 @@ Partial Class Hauptmenü
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Menu
-        Me.ClientSize = New System.Drawing.Size(784, 411)
+        Me.ClientSize = New System.Drawing.Size(784, 386)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False

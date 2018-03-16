@@ -88,6 +88,12 @@
     <Compile Include="Feld.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GameChoose.Designer.vb">
+      <DependentUpon>GameChoose.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GameChoose.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Hauptmenü.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,11 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -122,6 +133,9 @@
     <EmbeddedResource Include="Einstellungen.resx">
       <DependentUpon>Einstellungen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GameChoose.resx">
+      <DependentUpon>GameChoose.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hauptmenü.resx">
       <DependentUpon>Hauptmenü.vb</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +143,7 @@
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Profil.resx">
       <DependentUpon>Profil.vb</DependentUpon>
