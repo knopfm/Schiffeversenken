@@ -41,7 +41,7 @@
     End Sub
 
     Private Sub SettingsBT_Click(sender As Object, e As EventArgs) Handles SettingsBT.Click
-        EinstellungForm = New EinstellungenDialog
+        EinstellungForm = New EinstellungenDialog(Me)
         EinstellungForm.ShowDialog()
     End Sub
 
