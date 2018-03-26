@@ -1,48 +1,14 @@
 ﻿Public Class HauptmenüDialog
-    Dim WithEvents NetzwerkClient As Krypter.KrypterInterface
     Dim EinstellungForm As EinstellungenDialog
     Dim ShopForm As ShopDialog
     Dim ProfilForm As ProfilDialog
 
-    Public Property GameChoose As GameChoose
-        Get
-            Return Nothing
-        End Get
-        Set(value As GameChoose)
-        End Set
-    End Property
-
-    Public Property EinstellungenDialog As EinstellungenDialog
-        Get
-            Return Nothing
-        End Get
-        Set(value As EinstellungenDialog)
-        End Set
-    End Property
-
-    Public Property ProfilDialog As ProfilDialog
-        Get
-            Return Nothing
-        End Get
-        Set(value As ProfilDialog)
-        End Set
-    End Property
-
-    Public Property ShopDialog As ShopDialog
-        Get
-            Return Nothing
-        End Get
-        Set(value As ShopDialog)
-        End Set
-    End Property
-
     Private Sub Hauptmenü_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        NetzwerkClient = New Krypter.Krypter
-        NetzwerkClient.Load()
+
     End Sub
 
     Private Sub Hauptmenü_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        NetzwerkClient.Close()
+
     End Sub
 
     Private Sub PlayBT_Click(sender As Object, e As EventArgs) Handles PlayBT.Click
@@ -71,5 +37,5 @@
 
     End Sub
 End Class
+
 'TODO: Schiffeversenken Programmieren
-'hallo

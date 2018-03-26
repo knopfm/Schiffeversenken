@@ -1,14 +1,6 @@
 ﻿Public Class GameChoose
     Dim FL As New List(Of FeldDialog)
 
-    Public Property x As FeldDialog
-        Get
-            Return Nothing
-        End Get
-        Set(value As FeldDialog)
-        End Set
-    End Property
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim x As New FeldDialog
         x.Show()

@@ -29,22 +29,6 @@
         setFeld(pFeld)
     End Sub
 
-    Public Property Schiff As Schiff
-        Get
-            Return Nothing
-        End Get
-        Set(value As Schiff)
-        End Set
-    End Property
-
-    Public Property FeldSetting As FeldSetting
-        Get
-            Return Nothing
-        End Get
-        Set(value As FeldSetting)
-        End Set
-    End Property
-
     Public Function getName() As String
         Return Name
     End Function
