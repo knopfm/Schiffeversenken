@@ -1,8 +1,40 @@
-﻿Public Class Hauptmenü
+﻿Public Class HauptmenüDialog
     Dim WithEvents NetzwerkClient As Krypter.KrypterInterface
-    Dim EinstellungForm As Einstellungen
-    Dim ShopForm As Shop
-    Dim ProfilForm As Profil
+    Dim EinstellungForm As EinstellungenDialog
+    Dim ShopForm As ShopDialog
+    Dim ProfilForm As ProfilDialog
+
+    Public Property GameChoose As GameChoose
+        Get
+            Return Nothing
+        End Get
+        Set(value As GameChoose)
+        End Set
+    End Property
+
+    Public Property EinstellungenDialog As EinstellungenDialog
+        Get
+            Return Nothing
+        End Get
+        Set(value As EinstellungenDialog)
+        End Set
+    End Property
+
+    Public Property ProfilDialog As ProfilDialog
+        Get
+            Return Nothing
+        End Get
+        Set(value As ProfilDialog)
+        End Set
+    End Property
+
+    Public Property ShopDialog As ShopDialog
+        Get
+            Return Nothing
+        End Get
+        Set(value As ShopDialog)
+        End Set
+    End Property
 
     Private Sub Hauptmenü_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NetzwerkClient = New Krypter.Krypter
@@ -21,17 +53,17 @@
     End Sub
 
     Private Sub ProfileBT_Click(sender As Object, e As EventArgs) Handles ProfileBT.Click
-        ProfilForm = New Profil
+        ProfilForm = New ProfilDialog
         ProfilForm.ShowDialog()
     End Sub
 
     Private Sub ShopBT_Click(sender As Object, e As EventArgs) Handles ShopBT.Click
-        ShopForm = New Shop
+        ShopForm = New ShopDialog
         ShopForm.ShowDialog()
     End Sub
 
     Private Sub SettingsBT_Click(sender As Object, e As EventArgs) Handles SettingsBT.Click
-        EinstellungForm = New Einstellungen
+        EinstellungForm = New EinstellungenDialog
         EinstellungForm.ShowDialog()
     End Sub
 
