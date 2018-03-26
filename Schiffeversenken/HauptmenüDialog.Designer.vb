@@ -22,6 +22,7 @@ Partial Class HauptmenüDialog
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HauptmenüDialog))
         Me.ProfileBT = New System.Windows.Forms.Button()
         Me.ShopBT = New System.Windows.Forms.Button()
         Me.SettingsBT = New System.Windows.Forms.Button()
@@ -134,7 +135,7 @@ Partial Class HauptmenüDialog
         Me.LogoPB.TabIndex = 1
         Me.LogoPB.TabStop = False
         '
-        'Hauptmenü
+        'HauptmenüDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -142,8 +143,9 @@ Partial Class HauptmenüDialog
         Me.ClientSize = New System.Drawing.Size(784, 386)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.Name = "Hauptmenü"
+        Me.Name = "HauptmenüDialog"
         Me.Text = "Hauptmenü"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
