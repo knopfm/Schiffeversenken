@@ -1,4 +1,6 @@
 ﻿Public Class Schiff
+    Inherits MultiplayerPaket
+
     Private laenge As Integer
     Private typ As Integer
     Private anzahlWaffen As Integer
@@ -33,7 +35,7 @@
         Return typ
     End Function
 
-    Public Function getAnzahlWaffe() As Integer
+    Public Function getAnzahlWaffen() As Integer
         Return anzahlWaffen
     End Function
 
@@ -80,4 +82,34 @@
         ret = ret & " (" & laenge & "er)"
         Return ret
     End Function
+
+    Public Overrides Function serialize() As String
+        Return serialize(Me)
+    End Function
+
+    Public Overrides Function serialize(pClass As MultiplayerPaket) As String
+        Dim innerClass As Schiff = CType(pClass, Schiff)
+        Return "{Laenge=" & innerClass.getLaenge().ToString & ";Typ=" & innerClass.getTyp().ToString & ";AnzahlWaffen=" & innerClass.getAnzahlWaffen().ToString & ";Bild=" & innerClass.getBild().ToString & "}"
+    End Function
+
+    Public Overrides Sub unserialize(pValue As String)
+        unserialize(pValue, Me)
+    End Sub
+
+    Public Overrides Sub unserialize(pValue As String, pClass As MultiplayerPaket)
+        Dim innerClass As Schiff = CType(pClass, Schiff)
+        Dim work As List(Of String) = unserializeBlock(pValue)
+        For Each obj As String In work
+            Select Case obj.Substring(0, obj.IndexOf("="))
+                Case "Laenge"
+                    innerClass.setLaenge(CInt(obj.Substring(obj.IndexOf("=") + 1)))
+                Case "Typ"
+                    innerClass.setTyp(CInt(obj.Substring(obj.IndexOf("=") + 1)))
+                Case "AnzahlWaffen"
+                    innerClass.setAnzahlWaffen(CInt(obj.Substring(obj.IndexOf("=") + 1)))
+                Case "Bild"
+                    innerClass.setBild(CInt(obj.Substring(obj.IndexOf("=") + 1)))
+            End Select
+        Next
+    End Sub
 End Class

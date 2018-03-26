@@ -64,7 +64,7 @@ Partial Class ProfilDialog
         Me.Chart1.TabIndex = 0
         Me.Chart1.Text = "Statistiken"
         '
-        'Profil
+        'ProfilDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -73,7 +73,7 @@ Partial Class ProfilDialog
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "Profil"
+        Me.Name = "ProfilDialog"
         Me.Text = "Profil"
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
