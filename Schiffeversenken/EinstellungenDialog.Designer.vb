@@ -77,9 +77,9 @@ Partial Class EinstellungenDialog
         '
         Me.EditBT.Location = New System.Drawing.Point(299, 10)
         Me.EditBT.Name = "EditBT"
-        Me.EditBT.Size = New System.Drawing.Size(56, 23)
+        Me.EditBT.Size = New System.Drawing.Size(82, 23)
         Me.EditBT.TabIndex = 3
-        Me.EditBT.Text = "Edit"
+        Me.EditBT.Text = "bearbeiten"
         Me.EditBT.UseVisualStyleBackColor = True
         '
         'EinstellungenDialog

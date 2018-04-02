@@ -22,22 +22,18 @@ Partial Class ProfilDialog
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.NameL = New System.Windows.Forms.Label()
         Me.NicknameL = New System.Windows.Forms.Label()
         Me.GlobaleIDL = New System.Windows.Forms.Label()
-        Me.FeldHL = New System.Windows.Forms.Label()
         Me.NicknameTB = New System.Windows.Forms.TextBox()
         Me.GlobaleIDTB = New System.Windows.Forms.TextBox()
-        Me.FeldWTB = New System.Windows.Forms.TextBox()
-        Me.FeldHTB = New System.Windows.Forms.TextBox()
         Me.NameTB = New System.Windows.Forms.TextBox()
-        Me.FeldWL = New System.Windows.Forms.Label()
         Me.SchiffeBT = New System.Windows.Forms.Button()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.SaveBT = New System.Windows.Forms.Button()
@@ -68,18 +64,18 @@ Partial Class ProfilDialog
         '
         'Chart1
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
+        ChartArea3.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea3)
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        Legend3.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend3)
         Me.Chart1.Location = New System.Drawing.Point(395, 3)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart1.Series.Add(Series1)
+        Series3.ChartArea = "ChartArea1"
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.Chart1.Series.Add(Series3)
         Me.Chart1.Size = New System.Drawing.Size(386, 344)
         Me.Chart1.TabIndex = 0
         Me.Chart1.TabStop = False
@@ -93,24 +89,20 @@ Partial Class ProfilDialog
         Me.TableLayoutPanel2.Controls.Add(Me.NameL, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.NicknameL, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.GlobaleIDL, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.FeldHL, 0, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.NicknameTB, 1, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.GlobaleIDTB, 1, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.FeldWTB, 1, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.FeldHTB, 1, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.NameTB, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.FeldWL, 0, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.SchiffeBT, 0, 5)
+        Me.TableLayoutPanel2.Controls.Add(Me.SchiffeBT, 0, 3)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 6
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.RowCount = 4
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(386, 171)
         Me.TableLayoutPanel2.TabIndex = 1
         '
@@ -120,7 +112,7 @@ Partial Class ProfilDialog
         Me.NameL.Dock = System.Windows.Forms.DockStyle.Fill
         Me.NameL.Location = New System.Drawing.Point(3, 0)
         Me.NameL.Name = "NameL"
-        Me.NameL.Size = New System.Drawing.Size(187, 24)
+        Me.NameL.Size = New System.Drawing.Size(187, 40)
         Me.NameL.TabIndex = 5
         Me.NameL.Text = "Name"
         Me.NameL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -129,9 +121,9 @@ Partial Class ProfilDialog
         '
         Me.NicknameL.AutoSize = True
         Me.NicknameL.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NicknameL.Location = New System.Drawing.Point(3, 24)
+        Me.NicknameL.Location = New System.Drawing.Point(3, 40)
         Me.NicknameL.Name = "NicknameL"
-        Me.NicknameL.Size = New System.Drawing.Size(187, 24)
+        Me.NicknameL.Size = New System.Drawing.Size(187, 40)
         Me.NicknameL.TabIndex = 6
         Me.NicknameL.Text = "Nickname"
         Me.NicknameL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -140,75 +132,37 @@ Partial Class ProfilDialog
         '
         Me.GlobaleIDL.AutoSize = True
         Me.GlobaleIDL.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GlobaleIDL.Location = New System.Drawing.Point(3, 48)
+        Me.GlobaleIDL.Location = New System.Drawing.Point(3, 80)
         Me.GlobaleIDL.Name = "GlobaleIDL"
-        Me.GlobaleIDL.Size = New System.Drawing.Size(187, 24)
+        Me.GlobaleIDL.Size = New System.Drawing.Size(187, 40)
         Me.GlobaleIDL.TabIndex = 7
         Me.GlobaleIDL.Text = "Globale ID"
         Me.GlobaleIDL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'FeldHL
-        '
-        Me.FeldHL.AutoSize = True
-        Me.FeldHL.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FeldHL.Location = New System.Drawing.Point(3, 96)
-        Me.FeldHL.Name = "FeldHL"
-        Me.FeldHL.Size = New System.Drawing.Size(187, 24)
-        Me.FeldHL.TabIndex = 9
-        Me.FeldHL.Text = "Feld Höhe"
-        Me.FeldHL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'NicknameTB
         '
-        Me.NicknameTB.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NicknameTB.Location = New System.Drawing.Point(196, 27)
+        Me.NicknameTB.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.NicknameTB.Location = New System.Drawing.Point(196, 50)
         Me.NicknameTB.Name = "NicknameTB"
         Me.NicknameTB.Size = New System.Drawing.Size(187, 20)
         Me.NicknameTB.TabIndex = 1
         '
         'GlobaleIDTB
         '
-        Me.GlobaleIDTB.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GlobaleIDTB.Location = New System.Drawing.Point(196, 51)
+        Me.GlobaleIDTB.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.GlobaleIDTB.Location = New System.Drawing.Point(196, 90)
         Me.GlobaleIDTB.Name = "GlobaleIDTB"
         Me.GlobaleIDTB.ReadOnly = True
         Me.GlobaleIDTB.Size = New System.Drawing.Size(187, 20)
         Me.GlobaleIDTB.TabIndex = 2
         '
-        'FeldWTB
-        '
-        Me.FeldWTB.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FeldWTB.Location = New System.Drawing.Point(196, 75)
-        Me.FeldWTB.Name = "FeldWTB"
-        Me.FeldWTB.Size = New System.Drawing.Size(187, 20)
-        Me.FeldWTB.TabIndex = 3
-        '
-        'FeldHTB
-        '
-        Me.FeldHTB.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FeldHTB.Location = New System.Drawing.Point(196, 99)
-        Me.FeldHTB.Name = "FeldHTB"
-        Me.FeldHTB.Size = New System.Drawing.Size(187, 20)
-        Me.FeldHTB.TabIndex = 4
-        '
         'NameTB
         '
-        Me.NameTB.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NameTB.Location = New System.Drawing.Point(196, 3)
+        Me.NameTB.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.NameTB.Location = New System.Drawing.Point(196, 10)
         Me.NameTB.Name = "NameTB"
         Me.NameTB.Size = New System.Drawing.Size(187, 20)
         Me.NameTB.TabIndex = 0
-        '
-        'FeldWL
-        '
-        Me.FeldWL.AutoSize = True
-        Me.FeldWL.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FeldWL.Location = New System.Drawing.Point(3, 72)
-        Me.FeldWL.Name = "FeldWL"
-        Me.FeldWL.Size = New System.Drawing.Size(187, 24)
-        Me.FeldWL.TabIndex = 8
-        Me.FeldWL.Text = "Feld Breite"
-        Me.FeldWL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'SchiffeBT
         '
@@ -242,7 +196,7 @@ Partial Class ProfilDialog
         Me.SaveBT.Name = "SaveBT"
         Me.SaveBT.Size = New System.Drawing.Size(187, 49)
         Me.SaveBT.TabIndex = 0
-        Me.SaveBT.Text = "Save"
+        Me.SaveBT.Text = "Speichern"
         Me.SaveBT.UseVisualStyleBackColor = True
         '
         'CancelBT
@@ -253,7 +207,7 @@ Partial Class ProfilDialog
         Me.CancelBT.Name = "CancelBT"
         Me.CancelBT.Size = New System.Drawing.Size(187, 49)
         Me.CancelBT.TabIndex = 1
-        Me.CancelBT.Text = "Cancel"
+        Me.CancelBT.Text = "Abbrechen"
         Me.CancelBT.UseVisualStyleBackColor = True
         '
         'ProfilDialog
@@ -284,12 +238,8 @@ Partial Class ProfilDialog
     Friend WithEvents NameL As Label
     Friend WithEvents NicknameL As Label
     Friend WithEvents GlobaleIDL As Label
-    Friend WithEvents FeldWL As Label
-    Friend WithEvents FeldHL As Label
     Friend WithEvents NicknameTB As TextBox
     Friend WithEvents GlobaleIDTB As TextBox
-    Friend WithEvents FeldWTB As TextBox
-    Friend WithEvents FeldHTB As TextBox
     Friend WithEvents NameTB As TextBox
     Friend WithEvents SchiffeBT As Button
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
