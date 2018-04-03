@@ -53,7 +53,7 @@ Partial Class HauptmenüDialog
         Me.ShopBT.Name = "ShopBT"
         Me.ShopBT.Size = New System.Drawing.Size(380, 70)
         Me.ShopBT.TabIndex = 2
-        Me.ShopBT.Text = "Shop"
+        Me.ShopBT.Text = "Laden"
         Me.ShopBT.UseVisualStyleBackColor = True
         '
         'SettingsBT
@@ -63,7 +63,7 @@ Partial Class HauptmenüDialog
         Me.SettingsBT.Name = "SettingsBT"
         Me.SettingsBT.Size = New System.Drawing.Size(380, 70)
         Me.SettingsBT.TabIndex = 3
-        Me.SettingsBT.Text = "Settings"
+        Me.SettingsBT.Text = "Einstellungen"
         Me.SettingsBT.UseVisualStyleBackColor = True
         '
         'PlayBT
