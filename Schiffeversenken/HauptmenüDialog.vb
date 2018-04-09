@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub PlayBT_Click(sender As Object, e As EventArgs) Handles PlayBT.Click
-        Dim x As New GameChoose
+        Dim x As New GameChoose(Me)
         Me.Hide()
         x.ShowDialog()
         Me.Show()
