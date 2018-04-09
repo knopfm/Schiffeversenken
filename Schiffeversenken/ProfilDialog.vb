@@ -11,8 +11,12 @@
         setText(NameTB, player.getName)
         setText(NicknameTB, player.getNickname)
         setText(GlobaleIDTB, player.getGlobaleID)
-        setText(FeldWTB, player.getFeld.getBreite.ToString)
-        setText(FeldHTB, player.getFeld.getHoehe.ToString)
+        If player.getFeld.getHoehe() = 8 Then
+            Feld8RB.Checked = True
+        End If
+        If player.getFeld.getHoehe() = 10 Then
+            Feld10RB.Checked = True
+        End If
     End Sub
 
     Private Sub setText(pTB As TextBox, pText As String)
@@ -25,29 +29,15 @@
 
     Private Function getFeld() As FeldSetting
         Dim hoehe As Integer
-        Try
-            hoehe = CInt(getText(FeldHTB))
-            If hoehe > FeldSetting.MAX_HOEHE Then
-                hoehe = FeldSetting.MAX_HOEHE
-            End If
-            If hoehe <= 0 Then
-                hoehe = FeldSetting.MAX_HOEHE
-            End If
-        Catch ex As Exception
-            hoehe = FeldSetting.MAX_HOEHE
-        End Try
         Dim breite As Integer
-        Try
-            breite = CInt(getText(FeldWTB))
-            If breite > FeldSetting.MAX_BREITE Then
-                breite = FeldSetting.MAX_BREITE
-            End If
-            If breite <= 0 Then
-                breite = FeldSetting.MAX_BREITE
-            End If
-        Catch ex As Exception
-            breite = FeldSetting.MAX_BREITE
-        End Try
+        If Feld8RB.Checked Then
+            hoehe = 8
+            breite = 8
+        ElseIf Feld10RB.Checked Then
+            hoehe = 10
+            breite = 10
+        End If
+
         Return New FeldSetting(breite, hoehe)
     End Function
 
@@ -60,11 +50,15 @@
     End Sub
 
     Private Sub SaveBT_Click(sender As Object, e As EventArgs) Handles SaveBT.Click
-        player.setFeld(getFeld())
-        player.setName(getText(NameTB))
-        player.setNickname(getText(NicknameTB))
-        HauptmenüForm.setPlayer(HauptmenüForm.getAktullerPlayer, player)
-        Me.Close()
+        If Feld10RB.Checked Or Feld8RB.Checked Then
+            player.setFeld(getFeld())
+            player.setName(getText(NameTB))
+            player.setNickname(getText(NicknameTB))
+            HauptmenüForm.setPlayer(HauptmenüForm.getAktullerPlayer, player)
+            Me.Close()
+        Else
+            MessageBox.Show("Es muss eine Feldgröße ausgewählt werden!", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
     End Sub
 
     Private Sub CancelBT_Click(sender As Object, e As EventArgs) Handles CancelBT.Click

@@ -22,9 +22,9 @@ Partial Class ProfilDialog
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
@@ -38,10 +38,15 @@ Partial Class ProfilDialog
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.SaveBT = New System.Windows.Forms.Button()
         Me.CancelBT = New System.Windows.Forms.Button()
+        Me.BevorzugteGroesseL = New System.Windows.Forms.Label()
+        Me.FeldTP = New System.Windows.Forms.TableLayoutPanel()
+        Me.Feld8RB = New System.Windows.Forms.RadioButton()
+        Me.Feld10RB = New System.Windows.Forms.RadioButton()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        Me.FeldTP.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -64,18 +69,18 @@ Partial Class ProfilDialog
         '
         'Chart1
         '
-        ChartArea3.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea3)
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend3.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend3)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
         Me.Chart1.Location = New System.Drawing.Point(395, 3)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.Chart1.Series.Add(Series3)
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.Chart1.Series.Add(Series2)
         Me.Chart1.Size = New System.Drawing.Size(386, 344)
         Me.Chart1.TabIndex = 0
         Me.Chart1.TabStop = False
@@ -86,24 +91,26 @@ Partial Class ProfilDialog
         Me.TableLayoutPanel2.ColumnCount = 2
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.BevorzugteGroesseL, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.NameL, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.NicknameL, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.GlobaleIDL, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.GlobaleIDL, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.NicknameTB, 1, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.GlobaleIDTB, 1, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.NameTB, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.SchiffeBT, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.SchiffeBT, 0, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.GlobaleIDTB, 1, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.FeldTP, 1, 2)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 4
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel2.RowCount = 5
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(386, 171)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(392, 171)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'NameL
@@ -112,7 +119,7 @@ Partial Class ProfilDialog
         Me.NameL.Dock = System.Windows.Forms.DockStyle.Fill
         Me.NameL.Location = New System.Drawing.Point(3, 0)
         Me.NameL.Name = "NameL"
-        Me.NameL.Size = New System.Drawing.Size(187, 40)
+        Me.NameL.Size = New System.Drawing.Size(190, 30)
         Me.NameL.TabIndex = 5
         Me.NameL.Text = "Name"
         Me.NameL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -121,9 +128,9 @@ Partial Class ProfilDialog
         '
         Me.NicknameL.AutoSize = True
         Me.NicknameL.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NicknameL.Location = New System.Drawing.Point(3, 40)
+        Me.NicknameL.Location = New System.Drawing.Point(3, 30)
         Me.NicknameL.Name = "NicknameL"
-        Me.NicknameL.Size = New System.Drawing.Size(187, 40)
+        Me.NicknameL.Size = New System.Drawing.Size(190, 30)
         Me.NicknameL.TabIndex = 6
         Me.NicknameL.Text = "Nickname"
         Me.NicknameL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -132,9 +139,9 @@ Partial Class ProfilDialog
         '
         Me.GlobaleIDL.AutoSize = True
         Me.GlobaleIDL.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GlobaleIDL.Location = New System.Drawing.Point(3, 80)
+        Me.GlobaleIDL.Location = New System.Drawing.Point(3, 90)
         Me.GlobaleIDL.Name = "GlobaleIDL"
-        Me.GlobaleIDL.Size = New System.Drawing.Size(187, 40)
+        Me.GlobaleIDL.Size = New System.Drawing.Size(190, 30)
         Me.GlobaleIDL.TabIndex = 7
         Me.GlobaleIDL.Text = "Globale ID"
         Me.GlobaleIDL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -142,7 +149,7 @@ Partial Class ProfilDialog
         'NicknameTB
         '
         Me.NicknameTB.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.NicknameTB.Location = New System.Drawing.Point(196, 50)
+        Me.NicknameTB.Location = New System.Drawing.Point(199, 35)
         Me.NicknameTB.Name = "NicknameTB"
         Me.NicknameTB.Size = New System.Drawing.Size(187, 20)
         Me.NicknameTB.TabIndex = 1
@@ -150,7 +157,7 @@ Partial Class ProfilDialog
         'GlobaleIDTB
         '
         Me.GlobaleIDTB.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.GlobaleIDTB.Location = New System.Drawing.Point(196, 90)
+        Me.GlobaleIDTB.Location = New System.Drawing.Point(199, 95)
         Me.GlobaleIDTB.Name = "GlobaleIDTB"
         Me.GlobaleIDTB.ReadOnly = True
         Me.GlobaleIDTB.Size = New System.Drawing.Size(187, 20)
@@ -159,7 +166,7 @@ Partial Class ProfilDialog
         'NameTB
         '
         Me.NameTB.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.NameTB.Location = New System.Drawing.Point(196, 10)
+        Me.NameTB.Location = New System.Drawing.Point(199, 5)
         Me.NameTB.Name = "NameTB"
         Me.NameTB.Size = New System.Drawing.Size(187, 20)
         Me.NameTB.TabIndex = 0
@@ -167,9 +174,10 @@ Partial Class ProfilDialog
         'SchiffeBT
         '
         Me.SchiffeBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SchiffeBT.Location = New System.Drawing.Point(3, 123)
+        Me.SchiffeBT.Location = New System.Drawing.Point(5, 125)
+        Me.SchiffeBT.Margin = New System.Windows.Forms.Padding(5)
         Me.SchiffeBT.Name = "SchiffeBT"
-        Me.SchiffeBT.Size = New System.Drawing.Size(187, 45)
+        Me.SchiffeBT.Size = New System.Drawing.Size(186, 41)
         Me.SchiffeBT.TabIndex = 10
         Me.SchiffeBT.Text = "Zeige Schiffe"
         Me.SchiffeBT.UseVisualStyleBackColor = True
@@ -210,6 +218,55 @@ Partial Class ProfilDialog
         Me.CancelBT.Text = "Abbrechen"
         Me.CancelBT.UseVisualStyleBackColor = True
         '
+        'BevorzugteGroesseL
+        '
+        Me.BevorzugteGroesseL.AutoSize = True
+        Me.BevorzugteGroesseL.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.BevorzugteGroesseL.Location = New System.Drawing.Point(3, 60)
+        Me.BevorzugteGroesseL.Name = "BevorzugteGroesseL"
+        Me.BevorzugteGroesseL.Size = New System.Drawing.Size(190, 30)
+        Me.BevorzugteGroesseL.TabIndex = 11
+        Me.BevorzugteGroesseL.Text = "bevorzugte Größe"
+        Me.BevorzugteGroesseL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'FeldTP
+        '
+        Me.FeldTP.ColumnCount = 2
+        Me.FeldTP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.FeldTP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.FeldTP.Controls.Add(Me.Feld8RB, 0, 0)
+        Me.FeldTP.Controls.Add(Me.Feld10RB, 1, 0)
+        Me.FeldTP.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FeldTP.Location = New System.Drawing.Point(196, 60)
+        Me.FeldTP.Margin = New System.Windows.Forms.Padding(0)
+        Me.FeldTP.Name = "FeldTP"
+        Me.FeldTP.RowCount = 1
+        Me.FeldTP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.FeldTP.Size = New System.Drawing.Size(196, 30)
+        Me.FeldTP.TabIndex = 12
+        '
+        'Feld8RB
+        '
+        Me.Feld8RB.AutoSize = True
+        Me.Feld8RB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Feld8RB.Location = New System.Drawing.Point(3, 3)
+        Me.Feld8RB.Name = "Feld8RB"
+        Me.Feld8RB.Size = New System.Drawing.Size(92, 24)
+        Me.Feld8RB.TabIndex = 0
+        Me.Feld8RB.Text = "8x8"
+        Me.Feld8RB.UseVisualStyleBackColor = True
+        '
+        'Feld10RB
+        '
+        Me.Feld10RB.AutoSize = True
+        Me.Feld10RB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Feld10RB.Location = New System.Drawing.Point(101, 3)
+        Me.Feld10RB.Name = "Feld10RB"
+        Me.Feld10RB.Size = New System.Drawing.Size(92, 24)
+        Me.Feld10RB.TabIndex = 1
+        Me.Feld10RB.Text = "10x10"
+        Me.Feld10RB.UseVisualStyleBackColor = True
+        '
         'ProfilDialog
         '
         Me.AcceptButton = Me.SaveBT
@@ -228,6 +285,8 @@ Partial Class ProfilDialog
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.FeldTP.ResumeLayout(False)
+        Me.FeldTP.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -245,4 +304,8 @@ Partial Class ProfilDialog
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents SaveBT As Button
     Friend WithEvents CancelBT As Button
+    Friend WithEvents BevorzugteGroesseL As Label
+    Friend WithEvents FeldTP As TableLayoutPanel
+    Friend WithEvents Feld8RB As RadioButton
+    Friend WithEvents Feld10RB As RadioButton
 End Class

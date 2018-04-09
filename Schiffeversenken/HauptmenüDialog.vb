@@ -8,8 +8,8 @@
     Private Sub Hauptmenü_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim x As New Schiff(3, 3, 30, 3)
         PlayerListe.Add(New Profil(10, "Spieler", "Nickname", New FeldSetting(5, 5)))
-        PlayerListe.Add(New Profil(10, "Julius", "juli", New FeldSetting(10, 10)))
-        PlayerListe.Add(New Profil(10, "Maxmilian", "Max", New FeldSetting(8, 8)))
+        PlayerListe.Add(New Profil(11, "Julius", "juli", New FeldSetting(10, 10)))
+        PlayerListe.Add(New Profil(12, "Maxmilian", "Max", New FeldSetting(8, 8)))
         getPlayer(0).addSchiff(x)
         getPlayer(1).addSchiff(x)
         getPlayer(2).addSchiff(x)
