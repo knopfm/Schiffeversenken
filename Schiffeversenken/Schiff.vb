@@ -1,4 +1,4 @@
-﻿Public Class Schiff
+Public Class Schiff
     Inherits MultiplayerPaket
 
     Private laenge As Integer
@@ -7,6 +7,11 @@
     Private bild As Integer
     Public Const MAX_SCHIFF_LAENGE As Integer = 5
     Public Const MAX_SCHIFF_ANZAHL_WAFFEN As Integer = 1000
+    Public min_X As Integer
+    Public min_Y As Integer
+    Public max_X As Integer
+    Public max_Y As Integer
+    
 
     Public Sub New()
         Me.New(MAX_SCHIFF_LAENGE, 0)
@@ -83,6 +88,14 @@
         Return ret
     End Function
 
+    Public Function getroffen(pX As Integer, pY As Integer) As Boolean
+        If (pX >= min_X And pX <= max_X And pY >= min_X And pY <= max_Y) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+    
     Public Overrides Function serialize() As String
         Return serialize(Me)
     End Function
