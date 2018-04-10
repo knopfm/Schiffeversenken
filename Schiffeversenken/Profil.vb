@@ -7,7 +7,6 @@ Public Class Profil
     Private Nickname As String
     Private GlobaleID As ULong
 
-    Private Schiffe As New List(Of Schiff)
     Private Feld_Config As FeldSetting
 
     Public Sub New()
@@ -64,43 +63,14 @@ Public Class Profil
         Feld_Config = pValue
     End Sub
 
-
-    Public Function getSchiffe_maxIndex() As Integer
-        Return Schiffe.Count
-    End Function
-
-    Public Function getSchiff(index As Integer) As Schiff
-        If index < getSchiffe_maxIndex() And index >= 0 Then
-            Return Schiffe(index)
-        Else
-            Return Nothing
-        End If
-    End Function
-
-    Public Sub addSchiff(pValue As Schiff)
-        Schiffe.Add(pValue)
-    End Sub
-
-    Public Sub delSchiff(pValue As Integer)
-        Schiffe.RemoveAt(pValue)
-    End Sub
-
-    Public Sub clearSchiffe()
-        Schiffe.Clear()
-    End Sub
-
     Public Overrides Function serialize() As String
         Return serialize(Me)
     End Function
 
     Public Overrides Function serialize(pClass As MultiplayerPaket) As String
         Dim innerClass As Profil = CType(pClass, Profil)
-        Dim ret As String = "{Name=" & innerClass.getName() & ";Nickname=" & innerClass.getNickname() & ";GID=" & innerClass.getGlobaleID().ToString & ";Feld=" & Feld_Config.serialize() & ";Schiffe={Schiff="
-        For Each _Schiff As Schiff In Schiffe
-            ret = ret & _Schiff.serialize() & ";Schiff="
-        Next
-        ret = ret.Substring(0, ret.Length - 8)
-        Return ret & "}}"
+        Dim ret As String = "{Name=" & innerClass.getName() & ";Nickname=" & innerClass.getNickname() & ";GID=" & innerClass.getGlobaleID().ToString & ";Feld=" & Feld_Config.serialize() & "}"
+        Return ret
     End Function
 
     Public Overrides Sub unserialize(pValue As String)
@@ -122,16 +92,7 @@ Public Class Profil
                     Dim Feld As New FeldSetting
                     Feld.unserialize(obj.Substring(obj.IndexOf("=") + 1))
                     innerClass.setFeld(Feld)
-                Case "Schiffe"
-                    Dim sf As New Schiff
-                    innerClass.clearSchiffe()
-                    Dim arbeit As List(Of String) = unserializeBlock(obj.Substring(obj.IndexOf("=") + 1))
-                    For Each schf As String In arbeit
-                        sf.unserialize(schf.Substring(schf.IndexOf("=") + 1))
-                        innerClass.addSchiff(sf)
-                        sf = New Schiff
-                    Next
-            End Select
+                End Select
         Next
     End Sub
 End Class
