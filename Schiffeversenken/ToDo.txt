@@ -1,0 +1,16 @@
+Online Einloggen
+Profil von Server Laden
+10x10 auf 20x20 ändern > nur zwei Modis
+8x8 auf 10x10 ändern   >
+Spielfeld (Abstract klasse für Kommuntiaktion)
+SpielStatistik?? (Schiffe Abgeschossen, Schiffe versenkt, besiegt, verloren, spielzeit)
+multiplayer alle gegen alle begernzte spielzeit -> automatisch weiter (veruch abgeschlossen)
+mutliplayer auf einem feld bis einer übrig bleibt
+multiplayer berenzte schiffe
+
+
+klassen: Profil, Schiff, Feld
+
+Grafiken
+
+(Sprachpacket)
