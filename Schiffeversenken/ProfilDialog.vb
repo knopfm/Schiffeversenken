@@ -13,11 +13,13 @@
         setText(GlobaleIDTB, player.getGlobaleID)
         If player.getFeld.getHoehe() = 10 Then
             Feld10RB.Checked = True
+            Feld20RB.Checked = False
         Else
             Feld10RB.Checked = False
         End If
         If player.getFeld.getHoehe() = 20 Then
             Feld20RB.Checked = True
+            Feld10RB.Checked = False
         Else
             Feld20RB.Checked = False
         End If
@@ -39,7 +41,7 @@
             breite = 10
         ElseIf Feld20RB.Checked Then
             hoehe = 20
-            breite = 210
+            breite = 20
         End If
 
         Return New FeldSetting(breite, hoehe)

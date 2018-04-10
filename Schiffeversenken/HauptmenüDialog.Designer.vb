@@ -63,7 +63,7 @@ Partial Class HauptmenüDialog
         Me.SettingsBT.Name = "SettingsBT"
         Me.SettingsBT.Size = New System.Drawing.Size(380, 70)
         Me.SettingsBT.TabIndex = 3
-        Me.SettingsBT.Text = "Einstellungen"
+        Me.SettingsBT.Text = "Ende"
         Me.SettingsBT.UseVisualStyleBackColor = True
         '
         'PlayBT

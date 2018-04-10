@@ -1,4 +1,5 @@
 ﻿Public Class Login_Dialog
+    Private MPC As MultiplayerClient
 
     ' TODO: Code zum Durchführen der benutzerdefinierten Authentifizierung mithilfe des angegebenen Benutzernamens und des Kennworts hinzufügen 
     ' (Siehe http://go.microsoft.com/fwlink/?LinkId=35339).  
@@ -18,6 +19,14 @@
         Me.Close()
     End Sub
 
+    Public Sub New(pMPCleint As MultiplayerClient)
+        InitializeComponent()
+        MPC = pMPCleint
+    End Sub
+
+    Private Sub Login_Dialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MPC.connect()
+    End Sub
 End Class
 
 'TODO: Spieler hier eintrage

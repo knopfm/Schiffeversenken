@@ -113,6 +113,7 @@
     <Compile Include="Login_Neu_Dialog.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MultiplayerClient.vb" />
     <Compile Include="MultiplayerPaket.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

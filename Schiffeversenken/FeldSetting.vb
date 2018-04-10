@@ -4,8 +4,8 @@
     Private breite As Integer
     Private hoehe As Integer
 
-    Public Const MAX_BREITE As Integer = 10
-    Public Const MAX_HOEHE As Integer = 10
+    Public Const MAX_BREITE As Integer = 100
+    Public Const MAX_HOEHE As Integer = 100
 
     Public Sub New()
         Me.New(MAX_BREITE, MAX_HOEHE)
