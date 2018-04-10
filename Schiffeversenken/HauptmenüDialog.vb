@@ -6,6 +6,10 @@
     Private aktuellerPlayer As Integer
 
     Private Sub Hauptmenü_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim Anmeldung As New Login_Dialog
+        If Anmeldung.ShowDialog() <> DialogResult.OK Then
+            Me.Close()
+        End If
         PlayerListe.Add(New Profil(10, "Spieler", "Nickname", New FeldSetting(5, 5)))
         PlayerListe.Add(New Profil(11, "Julius", "Juli", New FeldSetting(10, 10)))
         PlayerListe.Add(New Profil(12, "Maxmilian", "Max", New FeldSetting(8, 8)))
