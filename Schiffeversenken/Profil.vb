@@ -5,7 +5,7 @@ Public Class Profil
 
     Private Name As String
     Private Nickname As String
-    Private GlobaleID As ULong
+    Private GlobaleID As Integer
 
     Private Feld_Config As FeldSetting
 
@@ -13,11 +13,11 @@ Public Class Profil
         Me.New(0)
     End Sub
 
-    Public Sub New(pGID As ULong)
+    Public Sub New(pGID As Integer)
         Me.New(pGID, "", "")
     End Sub
 
-    Public Sub New(pGID As ULong, pName As String, pNickname As String)
+    Public Sub New(pGID As Integer, pName As String, pNickname As String)
         Me.New(pGID, pName, pNickname, Nothing)
     End Sub
 
@@ -25,7 +25,7 @@ Public Class Profil
         Me.New(0, "", "", pFeld)
     End Sub
 
-    Public Sub New(pGID As ULong, pName As String, pNickname As String, pFeld As FeldSetting)
+    Public Sub New(pGID As Integer, pName As String, pNickname As String, pFeld As FeldSetting)
         setGlobaleID(pGID)
         setName(pName)
         setNickname(pNickname)
@@ -40,7 +40,7 @@ Public Class Profil
         Return Nickname
     End Function
 
-    Public Function getGlobaleID() As ULong
+    Public Function getGlobaleID() As Integer
         Return GlobaleID
     End Function
     Public Function getFeld() As FeldSetting
@@ -55,7 +55,7 @@ Public Class Profil
         Nickname = pValue
     End Sub
 
-    Public Sub setGlobaleID(pValue As ULong)
+    Public Sub setGlobaleID(pValue As Integer)
         GlobaleID = pValue
     End Sub
 
@@ -87,7 +87,7 @@ Public Class Profil
                 Case "Nickname"
                     innerClass.setNickname(obj.Substring(obj.IndexOf("=") + 1))
                 Case "GID"
-                    innerClass.setGlobaleID(CULng(obj.Substring(obj.IndexOf("=") + 1)))
+                    innerClass.setGlobaleID(CInt(obj.Substring(obj.IndexOf("=") + 1)))
                 Case "Feld"
                     Dim Feld As New FeldSetting
                     Feld.unserialize(obj.Substring(obj.IndexOf("=") + 1))

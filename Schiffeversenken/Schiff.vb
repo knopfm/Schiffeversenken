@@ -2,7 +2,7 @@ Public Class Schiff
     Inherits MultiplayerPaket
 
     Private laenge As Integer
-    Private typ As Integer
+    Private inhaber As Integer
     Private anzahlWaffen As Integer
     Private bild As Integer
     Public Const MAX_SCHIFF_LAENGE As Integer = 5
@@ -17,17 +17,17 @@ Public Class Schiff
         Me.New(MAX_SCHIFF_LAENGE, 0)
     End Sub
 
-    Public Sub New(pLaenge As Integer, pTyp As Integer)
-        Me.New(pLaenge, pTyp, MAX_SCHIFF_ANZAHL_WAFFEN / 10)
+    Public Sub New(pLaenge As Integer, pInhaber As Integer)
+        Me.New(pLaenge, pInhaber, MAX_SCHIFF_ANZAHL_WAFFEN / 10)
     End Sub
 
-    Public Sub New(pLaenge As Integer, pTyp As Integer, pAnzahlWaffen As Integer)
-        Me.New(pLaenge, pTyp, pAnzahlWaffen, 1)
+    Public Sub New(pLaenge As Integer, pInhaber As Integer, pAnzahlWaffen As Integer)
+        Me.New(pLaenge, pInhaber, pAnzahlWaffen, 1)
     End Sub
 
-    Public Sub New(pLaenge As Integer, pTyp As Integer, pAnzahlWaffen As Integer, pBild As Integer)
+    Public Sub New(pLaenge As Integer, pInhaber As Integer, pAnzahlWaffen As Integer, pBild As Integer)
         setLaenge(pLaenge)
-        setTyp(pTyp)
+        setInhaber(pInhaber)
         setAnzahlWaffen(pAnzahlWaffen)
         setBild(pBild)
     End Sub
@@ -36,8 +36,8 @@ Public Class Schiff
         Return laenge
     End Function
 
-    Public Function getTyp() As Integer
-        Return typ
+    Public Function getInhaber() As Integer
+        Return inhaber
     End Function
 
     Public Function getAnzahlWaffen() As Integer
@@ -56,8 +56,8 @@ Public Class Schiff
         End If
     End Sub
 
-    Public Sub setTyp(pValue As Integer)
-        typ = pValue
+    Public Sub setInhaber(pValue As Integer)
+        inhaber = pValue
     End Sub
 
     Public Sub setAnzahlWaffen(pValue)
@@ -102,7 +102,7 @@ Public Class Schiff
 
     Public Overrides Function serialize(pClass As MultiplayerPaket) As String
         Dim innerClass As Schiff = CType(pClass, Schiff)
-        Return "{Laenge=" & innerClass.getLaenge().ToString & ";Typ=" & innerClass.getTyp().ToString & ";AnzahlWaffen=" & innerClass.getAnzahlWaffen().ToString & ";Bild=" & innerClass.getBild().ToString & "}"
+        Return "{Laenge=" & innerClass.getLaenge().ToString & ";Inhaber=" & innerClass.getInhaber().ToString & ";AnzahlWaffen=" & innerClass.getAnzahlWaffen().ToString & ";Bild=" & innerClass.getBild().ToString & ";min_X=" & innerClass.min_X.ToString() & ";min_Y=" & innerClass.min_Y.ToString() & ";max_X=" & innerClass.max_X.ToString() & ";max_Y=" & innerClass.max_Y.ToString() & "}"
     End Function
 
     Public Overrides Sub unserialize(pValue As String)
@@ -116,12 +116,20 @@ Public Class Schiff
             Select Case obj.Substring(0, obj.IndexOf("="))
                 Case "Laenge"
                     innerClass.setLaenge(CInt(obj.Substring(obj.IndexOf("=") + 1)))
-                Case "Typ"
-                    innerClass.setTyp(CInt(obj.Substring(obj.IndexOf("=") + 1)))
+                Case "Inhaber"
+                    innerClass.setInhaber(CInt(obj.Substring(obj.IndexOf("=") + 1)))
                 Case "AnzahlWaffen"
                     innerClass.setAnzahlWaffen(CInt(obj.Substring(obj.IndexOf("=") + 1)))
                 Case "Bild"
                     innerClass.setBild(CInt(obj.Substring(obj.IndexOf("=") + 1)))
+                Case "min_x"
+                    innerClass.min_X = CInt(obj.Substring(obj.IndexOf("=") + 1))
+                Case "min_Y"
+                    innerClass.min_Y = CInt(obj.Substring(obj.IndexOf("=") + 1))
+                Case "max_X"
+                    innerClass.max_X = CInt(obj.Substring(obj.IndexOf("=") + 1))
+                Case "max_Y"
+                    innerClass.max_Y = CInt(obj.Substring(obj.IndexOf("=") + 1))
             End Select
         Next
     End Sub

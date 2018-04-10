@@ -43,10 +43,7 @@
 
     Private Sub SchiffeBT_Click(sender As Object, e As EventArgs) Handles SchiffeBT.Click
         Dim ret As String = ""
-        For i As Integer = 0 To player.getSchiffe_maxIndex - 1
-            ret &= player.getSchiff(i).serialize() & vbCrLf
-        Next
-        MsgBox(ret.Trim(vbCrLf))
+        MsgBox(ret)
     End Sub
 
     Private Sub SaveBT_Click(sender As Object, e As EventArgs) Handles SaveBT.Click
