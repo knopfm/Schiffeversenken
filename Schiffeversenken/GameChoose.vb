@@ -20,17 +20,21 @@
     End Sub
 
     Private Sub GameChoose_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        player = HauptmenüForm.getPlayer(HauptmenüForm.getAktullerPlayer())
-        If player.getFeld.getHoehe() = 8 Then
-            Feld8RB.Checked = True
-        End If
+        setText(NameTB, player.getNickname)
         If player.getFeld.getHoehe() = 10 Then
             Feld10RB.Checked = True
+        Else
+            Feld10RB.Checked = False
         End If
-        setText(NameTB, player.getNickname)
+        If player.getFeld.getHoehe() = 20 Then
+            Feld20RB.Checked = True
+        Else
+            Feld20RB.Checked = False
+        End If
     End Sub
 
-    Public Sub New(HauptmenüForm As HauptmenüDialog)
+    Public Sub New(HauptmenüForm As HauptmenüDialog, pPlayer As Profil)
+        Me.player = pPlayer
         Me.HauptmenüForm = HauptmenüForm
         InitializeComponent()
     End Sub

@@ -1,6 +1,7 @@
 ﻿Public Class EinstellungenDialog
     Private HauptmenüForm As HauptmenüDialog
     Private ProfilForm As ProfilDialog
+    Private player As Profil
 
     Public Sub New(pHauptmenüForm As HauptmenüDialog)
         HauptmenüForm = pHauptmenüForm
@@ -24,11 +25,12 @@
     End Sub
 
     Private Sub EditBT_Click(sender As Object, e As EventArgs) Handles EditBT.Click
-        Dim localselectedPlayer As Integer = HauptmenüForm.getAktullerPlayer
-        HauptmenüForm.setAktuellerPlayer(SpielerCB.SelectedIndex)
-        ProfilForm = New ProfilDialog(HauptmenüForm)
+        Dim locSI = SpielerCB.SelectedIndex
+        player = HauptmenüForm.getPlayer(locSI)
+        ProfilForm = New ProfilDialog(HauptmenüForm, player)
         ProfilForm.ShowDialog()
+        HauptmenüForm.setPlayer(player)
         EinstellungenDialog_Load(Me, Nothing)
-        HauptmenüForm.setAktuellerPlayer(localselectedPlayer)
+        SpielerCB.SelectedIndex = locSI
     End Sub
 End Class

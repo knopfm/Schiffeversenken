@@ -27,11 +27,11 @@ Partial Class GameChoose
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.EinstellungenL = New System.Windows.Forms.Label()
+        Me.Feld10RB = New System.Windows.Forms.RadioButton()
+        Me.Feld20RB = New System.Windows.Forms.RadioButton()
+        Me.NameTB = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DialogControlTP = New System.Windows.Forms.TableLayoutPanel()
-        Me.Feld8RB = New System.Windows.Forms.RadioButton()
-        Me.Feld10RB = New System.Windows.Forms.RadioButton()
-        Me.NameTB = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.DialogControlTP.SuspendLayout()
@@ -61,8 +61,8 @@ Partial Class GameChoose
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.28374!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.71627!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.86509!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.13491!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -79,11 +79,11 @@ Partial Class GameChoose
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.EinstellungenL, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Feld8RB, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Feld10RB, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.Feld10RB, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Feld20RB, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.NameTB, 0, 4)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(301, 0)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(309, 0)
         Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 6
@@ -93,7 +93,7 @@ Partial Class GameChoose
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(183, 211)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(175, 211)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'EinstellungenL
@@ -103,16 +103,49 @@ Partial Class GameChoose
         Me.EinstellungenL.Location = New System.Drawing.Point(0, 0)
         Me.EinstellungenL.Margin = New System.Windows.Forms.Padding(0)
         Me.EinstellungenL.Name = "EinstellungenL"
-        Me.EinstellungenL.Size = New System.Drawing.Size(183, 50)
+        Me.EinstellungenL.Size = New System.Drawing.Size(175, 50)
         Me.EinstellungenL.TabIndex = 1
         Me.EinstellungenL.Text = "Einstellungen"
         Me.EinstellungenL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Feld10RB
+        '
+        Me.Feld10RB.AutoSize = True
+        Me.Feld10RB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Feld10RB.Location = New System.Drawing.Point(3, 53)
+        Me.Feld10RB.Name = "Feld10RB"
+        Me.Feld10RB.Size = New System.Drawing.Size(169, 19)
+        Me.Feld10RB.TabIndex = 2
+        Me.Feld10RB.TabStop = True
+        Me.Feld10RB.Text = "10x10"
+        Me.Feld10RB.UseVisualStyleBackColor = True
+        '
+        'Feld20RB
+        '
+        Me.Feld20RB.AutoSize = True
+        Me.Feld20RB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Feld20RB.Location = New System.Drawing.Point(3, 78)
+        Me.Feld20RB.Name = "Feld20RB"
+        Me.Feld20RB.Size = New System.Drawing.Size(169, 19)
+        Me.Feld20RB.TabIndex = 3
+        Me.Feld20RB.TabStop = True
+        Me.Feld20RB.Text = "20x20"
+        Me.Feld20RB.UseVisualStyleBackColor = True
+        '
+        'NameTB
+        '
+        Me.NameTB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.NameTB.Location = New System.Drawing.Point(3, 128)
+        Me.NameTB.Name = "NameTB"
+        Me.NameTB.ReadOnly = True
+        Me.NameTB.Size = New System.Drawing.Size(169, 20)
+        Me.NameTB.TabIndex = 4
         '
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(103, 99)
+        Me.Label2.Location = New System.Drawing.Point(107, 99)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(94, 13)
         Me.Label2.TabIndex = 2
@@ -132,39 +165,6 @@ Partial Class GameChoose
         Me.DialogControlTP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.DialogControlTP.Size = New System.Drawing.Size(162, 26)
         Me.DialogControlTP.TabIndex = 3
-        '
-        'Feld8RB
-        '
-        Me.Feld8RB.AutoSize = True
-        Me.Feld8RB.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Feld8RB.Location = New System.Drawing.Point(3, 53)
-        Me.Feld8RB.Name = "Feld8RB"
-        Me.Feld8RB.Size = New System.Drawing.Size(177, 19)
-        Me.Feld8RB.TabIndex = 2
-        Me.Feld8RB.TabStop = True
-        Me.Feld8RB.Text = "8x8"
-        Me.Feld8RB.UseVisualStyleBackColor = True
-        '
-        'Feld10RB
-        '
-        Me.Feld10RB.AutoSize = True
-        Me.Feld10RB.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Feld10RB.Location = New System.Drawing.Point(3, 78)
-        Me.Feld10RB.Name = "Feld10RB"
-        Me.Feld10RB.Size = New System.Drawing.Size(177, 19)
-        Me.Feld10RB.TabIndex = 3
-        Me.Feld10RB.TabStop = True
-        Me.Feld10RB.Text = "10x10"
-        Me.Feld10RB.UseVisualStyleBackColor = True
-        '
-        'NameTB
-        '
-        Me.NameTB.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NameTB.Location = New System.Drawing.Point(3, 128)
-        Me.NameTB.Name = "NameTB"
-        Me.NameTB.ReadOnly = True
-        Me.NameTB.Size = New System.Drawing.Size(177, 20)
-        Me.NameTB.TabIndex = 4
         '
         'GameChoose
         '
@@ -194,7 +194,7 @@ Partial Class GameChoose
     Friend WithEvents EinstellungenL As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents DialogControlTP As TableLayoutPanel
-    Friend WithEvents Feld8RB As RadioButton
     Friend WithEvents Feld10RB As RadioButton
+    Friend WithEvents Feld20RB As RadioButton
     Friend WithEvents NameTB As TextBox
 End Class

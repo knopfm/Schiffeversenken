@@ -2,20 +2,24 @@
     Private HauptmenüForm As HauptmenüDialog
     Private player As Profil
 
-    Public Sub New(pHauptmenüForm As HauptmenüDialog)
+    Public Sub New(pHauptmenüForm As HauptmenüDialog, pPlayer As Profil)
         HauptmenüForm = pHauptmenüForm
+        Me.player = pPlayer
         InitializeComponent()
     End Sub
     Private Sub ProfilDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        player = HauptmenüForm.getPlayer(HauptmenüForm.getAktullerPlayer)
         setText(NameTB, player.getName)
         setText(NicknameTB, player.getNickname)
         setText(GlobaleIDTB, player.getGlobaleID)
-        If player.getFeld.getHoehe() = 8 Then
-            Feld8RB.Checked = True
-        End If
         If player.getFeld.getHoehe() = 10 Then
             Feld10RB.Checked = True
+        Else
+            Feld10RB.Checked = False
+        End If
+        If player.getFeld.getHoehe() = 20 Then
+            Feld20RB.Checked = True
+        Else
+            Feld20RB.Checked = False
         End If
     End Sub
 
@@ -30,12 +34,12 @@
     Private Function getFeld() As FeldSetting
         Dim hoehe As Integer
         Dim breite As Integer
-        If Feld8RB.Checked Then
-            hoehe = 8
-            breite = 8
-        ElseIf Feld10RB.Checked Then
+        If Feld10RB.Checked Then
             hoehe = 10
             breite = 10
+        ElseIf Feld20RB.Checked Then
+            hoehe = 20
+            breite = 210
         End If
 
         Return New FeldSetting(breite, hoehe)
@@ -47,11 +51,11 @@
     End Sub
 
     Private Sub SaveBT_Click(sender As Object, e As EventArgs) Handles SaveBT.Click
-        If Feld10RB.Checked Or Feld8RB.Checked Then
+        If Feld20RB.Checked Or Feld10RB.Checked Then
             player.setFeld(getFeld())
             player.setName(getText(NameTB))
             player.setNickname(getText(NicknameTB))
-            HauptmenüForm.setPlayer(HauptmenüForm.getAktullerPlayer, player)
+            HauptmenüForm.setPlayer(player)
             Me.Close()
         Else
             MessageBox.Show("Es muss eine Feldgröße ausgewählt werden!", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning)

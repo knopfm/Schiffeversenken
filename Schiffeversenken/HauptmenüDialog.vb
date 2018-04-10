@@ -17,14 +17,14 @@
     End Sub
 
     Private Sub PlayBT_Click(sender As Object, e As EventArgs) Handles PlayBT.Click
-        Dim x As New GameChoose(Me)
+        Dim x As New GameChoose(Me, getPlayer(getAktullerPlayer))
         Me.Hide()
         x.ShowDialog()
         Me.Show()
     End Sub
 
     Private Sub ProfileBT_Click(sender As Object, e As EventArgs) Handles ProfileBT.Click
-        ProfilForm = New ProfilDialog(Me)
+        ProfilForm = New ProfilDialog(Me, getPlayer(getAktullerPlayer))
         ProfilForm.ShowDialog()
     End Sub
 
@@ -54,6 +54,14 @@
         If pIndex < getPlayerCount() And pIndex >= 0 Then
             PlayerListe(pIndex) = pPlayer
         End If
+    End Sub
+
+    Public Sub setPlayer(pPlayer As Profil)
+        For Each p As Profil In PlayerListe
+            If p.getGlobaleID = pPlayer.getGlobaleID Then
+                p = pPlayer
+            End If
+        Next
     End Sub
 
     Public Function getAktullerPlayer() As Integer
