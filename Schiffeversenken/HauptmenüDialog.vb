@@ -6,15 +6,35 @@
     Private MPClient As New MultiplayerClient(New Net.IPEndPoint(New Net.IPAddress({127, 0, 0, 1}), 8130))
 
     Private Sub Hauptmenü_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim Anmeldung As New Login_Dialog(MPClient)
-        If Anmeldung.ShowDialog() <> DialogResult.OK Then
-            Me.Close()
+        Dim fs As New IO.FileStream("config.txt", IO.FileMode.OpenOrCreate)
+        Dim sr As New IO.StreamReader(fs)
+        Dim players As New List(Of String)
+        Do Until sr.Peek() = -1
+            players.add(sr.ReadLine())
+        Loop
+        sr.Close()
+        If players.Count = 0 Then
+            player = New Profil(10, "Spieler", "Nickname", New FeldSetting(10, 10))
+            Dim Anmeldung As New Login_Neu_Dialog(MPClient)
+            If Anmeldung.ShowDialog() <> DialogResult.OK Then
+                Me.Close()
+            End If
+        Else
+            Dim Anmeldung As New Login_Dialog(Me, MPClient, players.ToArray)
+            If Anmeldung.ShowDialog() <> DialogResult.OK Then
+                Me.Close()
+            End If
         End If
-        player = New Profil(10, "Spieler", "Nickname", New FeldSetting(5, 5))
+
     End Sub
 
     Private Sub Hauptmenü_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         MPClient.disconnect()
+        Dim fs As New IO.FileStream("config.txt", IO.FileMode.Open)
+        Dim sw As New IO.StreamWriter(fs)
+        ' sw.WriteLine(player.serialize)
+        sw.Flush()
+        sw.Close()
     End Sub
 
     Private Sub PlayBT_Click(sender As Object, e As EventArgs) Handles PlayBT.Click

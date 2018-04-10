@@ -35,7 +35,7 @@ Partial Class Login_Dialog
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.NameComboBox = New System.Windows.Forms.ComboBox()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -91,14 +91,14 @@ Partial Class Login_Dialog
         Me.Cancel.TabIndex = 5
         Me.Cancel.Text = "&Abbrechen"
         '
-        'ComboBox1
+        'NameComboBox
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(174, 50)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(220, 21)
-        Me.ComboBox1.TabIndex = 6
+        Me.NameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.NameComboBox.FormattingEnabled = True
+        Me.NameComboBox.Location = New System.Drawing.Point(174, 50)
+        Me.NameComboBox.Name = "NameComboBox"
+        Me.NameComboBox.Size = New System.Drawing.Size(220, 21)
+        Me.NameComboBox.TabIndex = 6
         '
         'Login_Dialog
         '
@@ -107,7 +107,7 @@ Partial Class Login_Dialog
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(401, 192)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.NameComboBox)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
         Me.Controls.Add(Me.PasswordTextBox)
@@ -127,5 +127,5 @@ Partial Class Login_Dialog
 
     End Sub
 
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents NameComboBox As ComboBox
 End Class

@@ -11,6 +11,10 @@
         Dim restIndex As Integer = 0
         Dim anfangIndex As Integer = 0
 
+        If pValue = "" Then
+            Return Nothing
+        End If
+
         If pValue.Substring(0, 1) = "{" Then
             Return unserializeBlock(pValue.Substring(1, pValue.Length - 2))
         End If

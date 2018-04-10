@@ -1,5 +1,7 @@
 ﻿Public Class Login_Dialog
+    Private HauptmenüForm As HauptmenüDialog
     Private MPC As MultiplayerClient
+    Private players() As Profil
 
     ' TODO: Code zum Durchführen der benutzerdefinierten Authentifizierung mithilfe des angegebenen Benutzernamens und des Kennworts hinzufügen 
     ' (Siehe http://go.microsoft.com/fwlink/?LinkId=35339).  
@@ -10,8 +12,13 @@
     ' z. B. den Benutzernamen, den Anzeigenamen usw.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        Me.DialogResult = DialogResult.OK
-        Me.Close()
+        If PasswordTextBox.Text = players(NameComboBox.SelectedIndex).getNickname() Then
+            HauptmenüForm.setPlayer(players(NameComboBox.SelectedIndex))
+            Me.DialogResult = DialogResult.OK
+            Me.Close()
+        Else
+            MessageBox.Show("Passwort falsch", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
@@ -19,14 +26,24 @@
         Me.Close()
     End Sub
 
-    Public Sub New(pMPCleint As MultiplayerClient)
+    Public Sub New(HauptmenüForm As HauptmenüDialog, pMPCleint As MultiplayerClient, pPlayers() As String)
+        Me.HauptmenüForm = HauptmenüForm
         InitializeComponent()
         MPC = pMPCleint
+        Dim X(pPlayers.Length - 1) As Profil
+        For i As Integer = 0 To pPlayers.Length - 1
+            X(i) = New Profil
+            X(i).unserialize(pPlayers(i))
+            NameComboBox.Items.Add(X(i).getName())
+        Next
+        players = X
+        NameComboBox.SelectedIndex = 0
     End Sub
 
     Private Sub Login_Dialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MPC.connect()
     End Sub
+
 End Class
 
 'TODO: Spieler hier eintrage
