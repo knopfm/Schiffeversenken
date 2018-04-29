@@ -30,16 +30,21 @@ Partial Class GameChoose
         Me.Feld10RB = New System.Windows.Forms.RadioButton()
         Me.Feld20RB = New System.Windows.Forms.RadioButton()
         Me.NameTB = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.One = New System.Windows.Forms.Button()
+        Me.Two = New System.Windows.Forms.Button()
+        Me.Three = New System.Windows.Forms.Button()
         Me.DialogControlTP = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
         Me.DialogControlTP.SuspendLayout()
         Me.SuspendLayout()
         '
         'ConnectBT
         '
         Me.ConnectBT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ConnectBT.Enabled = False
         Me.ConnectBT.Location = New System.Drawing.Point(3, 3)
         Me.ConnectBT.Name = "ConnectBT"
         Me.ConnectBT.Size = New System.Drawing.Size(75, 20)
@@ -55,7 +60,7 @@ Partial Class GameChoose
         Me.AbortBT.Name = "AbortBT"
         Me.AbortBT.Size = New System.Drawing.Size(75, 20)
         Me.AbortBT.TabIndex = 1
-        Me.AbortBT.Text = "Abbrechen"
+        Me.AbortBT.Text = "Zurück"
         Me.AbortBT.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel1
@@ -64,7 +69,7 @@ Partial Class GameChoose
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.86509!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.13491!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
@@ -141,15 +146,51 @@ Partial Class GameChoose
         Me.NameTB.Size = New System.Drawing.Size(169, 20)
         Me.NameTB.TabIndex = 4
         '
-        'Label2
+        'TableLayoutPanel3
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(107, 99)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(94, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "[PH_Serversuche]"
+        Me.TableLayoutPanel3.ColumnCount = 1
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.One, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Two, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Three, 0, 2)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 3
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(303, 205)
+        Me.TableLayoutPanel3.TabIndex = 2
+        '
+        'One
+        '
+        Me.One.Location = New System.Drawing.Point(3, 3)
+        Me.One.Name = "One"
+        Me.One.Size = New System.Drawing.Size(75, 23)
+        Me.One.TabIndex = 0
+        Me.One.Text = "1 Spieler"
+        Me.One.UseVisualStyleBackColor = True
+        '
+        'Two
+        '
+        Me.Two.Location = New System.Drawing.Point(3, 71)
+        Me.Two.Name = "Two"
+        Me.Two.Size = New System.Drawing.Size(75, 23)
+        Me.Two.TabIndex = 1
+        Me.Two.Text = "2 Spieler"
+        Me.Two.UseVisualStyleBackColor = True
+        '
+        'Three
+        '
+        Me.Three.Enabled = False
+        Me.Three.Location = New System.Drawing.Point(3, 139)
+        Me.Three.Name = "Three"
+        Me.Three.Size = New System.Drawing.Size(75, 23)
+        Me.Three.TabIndex = 2
+        Me.Three.Text = "Online"
+        Me.Three.UseVisualStyleBackColor = True
         '
         'DialogControlTP
         '
@@ -179,9 +220,9 @@ Partial Class GameChoose
         Me.Name = "GameChoose"
         Me.Text = "GameChoose"
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
+        Me.TableLayoutPanel3.ResumeLayout(False)
         Me.DialogControlTP.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -192,9 +233,12 @@ Partial Class GameChoose
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents EinstellungenL As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents DialogControlTP As TableLayoutPanel
     Friend WithEvents Feld10RB As RadioButton
     Friend WithEvents Feld20RB As RadioButton
     Friend WithEvents NameTB As TextBox
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents One As Button
+    Friend WithEvents Two As Button
+    Friend WithEvents Three As Button
 End Class

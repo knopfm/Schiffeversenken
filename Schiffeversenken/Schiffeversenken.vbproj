@@ -81,10 +81,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Feld.vb" />
-    <Compile Include="FeldDialog.Designer.vb">
-      <DependentUpon>FeldDialog.vb</DependentUpon>
+    <Compile Include="FeldDialog10.Designer.vb">
+      <DependentUpon>FeldDialog10.vb</DependentUpon>
     </Compile>
-    <Compile Include="FeldDialog.vb">
+    <Compile Include="FeldDialog10.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FeldSetting.vb" />
@@ -148,6 +148,9 @@
   <ItemGroup>
     <EmbeddedResource Include="EinstellungenDialog.resx">
       <DependentUpon>EinstellungenDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeldDialog10.resx">
+      <DependentUpon>FeldDialog10.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameChoose.resx">
       <DependentUpon>GameChoose.vb</DependentUpon>
