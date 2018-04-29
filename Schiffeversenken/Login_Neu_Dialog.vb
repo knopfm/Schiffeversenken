@@ -10,7 +10,7 @@
     ' z. B. den Benutzernamen, den Anzeigenamen usw.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        Me.DialogResult = DialogResult.OK
+        Me.DialogResult = DialogResult.Yes
         Me.Close()
     End Sub
 

@@ -37,6 +37,7 @@
             NameComboBox.Items.Add(X(i).getName())
         Next
         players = X
+        NameComboBox.Items.Add("Neuer Spieler")
         NameComboBox.SelectedIndex = 0
     End Sub
 
@@ -44,6 +45,15 @@
         MPC.connect()
     End Sub
 
+    Private Sub NameComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles NameComboBox.SelectedIndexChanged
+        If NameComboBox.SelectedIndex = NameComboBox.Items.Count - 1 Then
+            Dim neuerSpielerForm As New Login_Neu_Dialog(MPC)
+            Me.Hide()
+            Me.DialogResult = neuerSpielerForm.ShowDialog()
+            HauptmenüForm.setPlayer(New Profil(2, neuerSpielerForm.UsernameTextBox.Text, neuerSpielerForm.PasswordTextBox.Text, New FeldSetting(10, 10)))
+            Me.Close()
+        End If
+    End Sub
 End Class
 
 'TODO: Spieler hier eintrage

@@ -10,19 +10,33 @@
         Dim sr As New IO.StreamReader(fs)
         Dim players As New List(Of String)
         Do Until sr.Peek() = -1
-            players.add(sr.ReadLine())
+            players.Add(sr.ReadLine())
         Loop
         sr.Close()
+        players.Remove("")
         If players.Count = 0 Then
             player = New Profil(10, "Spieler", "Nickname", New FeldSetting(10, 10))
             Dim Anmeldung As New Login_Neu_Dialog(MPClient)
-            If Anmeldung.ShowDialog() <> DialogResult.OK Then
+            If Anmeldung.ShowDialog() <> DialogResult.Yes Then
                 Me.Close()
+            Else
+                Dim fs1 As New IO.FileStream("config.txt", IO.FileMode.Append)
+                Dim sw1 As New IO.StreamWriter(fs1)
+                sw1.WriteLine(player.serialize & vbCrLf)
+                sw1.Flush()
+                sw1.Close()
             End If
         Else
             Dim Anmeldung As New Login_Dialog(Me, MPClient, players.ToArray)
-            If Anmeldung.ShowDialog() <> DialogResult.OK Then
+            Dim DR As DialogResult = Anmeldung.ShowDialog()
+            If DR = DialogResult.Abort Then
                 Me.Close()
+            ElseIf DR = DialogResult.Yes Then
+                Dim fs2 As New IO.FileStream("config.txt", IO.FileMode.Append)
+                Dim sw2 As New IO.StreamWriter(fs2)
+                sw2.WriteLine(player.serialize & vbCrLf)
+                sw2.Flush()
+                sw2.Close()
             End If
         End If
 
