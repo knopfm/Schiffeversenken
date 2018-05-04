@@ -52,6 +52,8 @@
             Me.DialogResult = neuerSpielerForm.ShowDialog()
             HauptmenüForm.setPlayer(New Profil(2, neuerSpielerForm.UsernameTextBox.Text, neuerSpielerForm.PasswordTextBox.Text, New FeldSetting(10, 10)))
             Me.Close()
+        Else
+            PasswordTextBox.Focus()
         End If
     End Sub
 End Class
