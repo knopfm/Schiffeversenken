@@ -22,6 +22,7 @@ Partial Class FeldPlatzierenDialog
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FeldPlatzierenDialog))
         Me.SchiffTypeGB = New System.Windows.Forms.GroupBox()
         Me.Schiff5RB = New System.Windows.Forms.RadioButton()
         Me.Schiff4RB = New System.Windows.Forms.RadioButton()
@@ -39,6 +40,7 @@ Partial Class FeldPlatzierenDialog
         '
         'SchiffTypeGB
         '
+        Me.SchiffTypeGB.BackColor = System.Drawing.Color.LightSeaGreen
         Me.SchiffTypeGB.Controls.Add(Me.Schiff5RB)
         Me.SchiffTypeGB.Controls.Add(Me.Schiff4RB)
         Me.SchiffTypeGB.Controls.Add(Me.Schiff3RB)
@@ -84,6 +86,7 @@ Partial Class FeldPlatzierenDialog
         '
         'RichtungGB
         '
+        Me.RichtungGB.BackColor = System.Drawing.Color.LightSeaGreen
         Me.RichtungGB.Controls.Add(Me.SudenRB)
         Me.RichtungGB.Controls.Add(Me.OstenRB)
         Me.RichtungGB.Controls.Add(Me.WestenRB)
@@ -142,6 +145,7 @@ Partial Class FeldPlatzierenDialog
         '
         'OkBT
         '
+        Me.OkBT.BackgroundImage = CType(resources.GetObject("OkBT.BackgroundImage"), System.Drawing.Image)
         Me.OkBT.Enabled = False
         Me.OkBT.Location = New System.Drawing.Point(107, 109)
         Me.OkBT.Name = "OkBT"
@@ -152,6 +156,7 @@ Partial Class FeldPlatzierenDialog
         '
         'AbortBT
         '
+        Me.AbortBT.BackgroundImage = CType(resources.GetObject("AbortBT.BackgroundImage"), System.Drawing.Image)
         Me.AbortBT.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.AbortBT.Location = New System.Drawing.Point(193, 109)
         Me.AbortBT.Name = "AbortBT"
@@ -165,6 +170,7 @@ Partial Class FeldPlatzierenDialog
         Me.AcceptButton = Me.OkBT
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.CancelButton = Me.AbortBT
         Me.ClientSize = New System.Drawing.Size(280, 144)
         Me.Controls.Add(Me.AbortBT)

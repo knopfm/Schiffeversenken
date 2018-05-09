@@ -22,17 +22,54 @@ Partial Class FeldDialog10
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FeldDialog10))
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.AktionTSSL = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.StartBT = New System.Windows.Forms.Button()
+        Me.CloseBT = New System.Windows.Forms.Button()
         Me.BackgroundTLP = New System.Windows.Forms.TableLayoutPanel()
         Me.RightTLP = New System.Windows.Forms.TableLayoutPanel()
         Me.TimeLeftL = New System.Windows.Forms.Label()
         Me.FeldBackground1 = New Schiffeversenken.FeldBackground()
-        Me.CloseBT = New System.Windows.Forms.Button()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.AktionTSSL = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.StartBT = New System.Windows.Forms.Button()
         Me.BackgroundTLP.SuspendLayout()
         Me.RightTLP.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 460)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(630, 22)
+        Me.StatusStrip1.TabIndex = 2
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'AktionTSSL
+        '
+        Me.AktionTSSL.Name = "AktionTSSL"
+        Me.AktionTSSL.Size = New System.Drawing.Size(133, 17)
+        Me.AktionTSSL.Text = "Fehler: Beende das Spiel"
+        '
+        'StartBT
+        '
+        Me.StartBT.BackgroundImage = CType(resources.GetObject("StartBT.BackgroundImage"), System.Drawing.Image)
+        Me.StartBT.Enabled = False
+        Me.StartBT.Location = New System.Drawing.Point(543, 405)
+        Me.StartBT.Name = "StartBT"
+        Me.StartBT.Size = New System.Drawing.Size(75, 23)
+        Me.StartBT.TabIndex = 3
+        Me.StartBT.Text = "Start"
+        Me.StartBT.UseVisualStyleBackColor = True
+        '
+        'CloseBT
+        '
+        Me.CloseBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CloseBT.BackgroundImage = CType(resources.GetObject("CloseBT.BackgroundImage"), System.Drawing.Image)
+        Me.CloseBT.Location = New System.Drawing.Point(543, 434)
+        Me.CloseBT.Name = "CloseBT"
+        Me.CloseBT.Size = New System.Drawing.Size(75, 23)
+        Me.CloseBT.TabIndex = 1
+        Me.CloseBT.Text = "Beenden"
+        Me.CloseBT.UseVisualStyleBackColor = True
         '
         'BackgroundTLP
         '
@@ -80,46 +117,13 @@ Partial Class FeldDialog10
         'FeldBackground1
         '
         Me.FeldBackground1.BackColor = System.Drawing.Color.Gray
+        Me.FeldBackground1.Cursor = System.Windows.Forms.Cursors.Cross
         Me.FeldBackground1.Location = New System.Drawing.Point(19, 19)
         Me.FeldBackground1.Margin = New System.Windows.Forms.Padding(19)
         Me.FeldBackground1.Name = "FeldBackground1"
         Me.FeldBackground1.Padding = New System.Windows.Forms.Padding(19)
         Me.FeldBackground1.Size = New System.Drawing.Size(422, 422)
         Me.FeldBackground1.TabIndex = 2
-        '
-        'CloseBT
-        '
-        Me.CloseBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CloseBT.Location = New System.Drawing.Point(543, 434)
-        Me.CloseBT.Name = "CloseBT"
-        Me.CloseBT.Size = New System.Drawing.Size(75, 23)
-        Me.CloseBT.TabIndex = 1
-        Me.CloseBT.Text = "Beenden"
-        Me.CloseBT.UseVisualStyleBackColor = True
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 460)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(630, 22)
-        Me.StatusStrip1.TabIndex = 2
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'AktionTSSL
-        '
-        Me.AktionTSSL.Name = "AktionTSSL"
-        Me.AktionTSSL.Size = New System.Drawing.Size(133, 17)
-        Me.AktionTSSL.Text = "Fehler: Beende das Spiel"
-        '
-        'StartBT
-        '
-        Me.StartBT.Enabled = False
-        Me.StartBT.Location = New System.Drawing.Point(543, 405)
-        Me.StartBT.Name = "StartBT"
-        Me.StartBT.Size = New System.Drawing.Size(75, 23)
-        Me.StartBT.TabIndex = 3
-        Me.StartBT.Text = "Start"
-        Me.StartBT.UseVisualStyleBackColor = True
         '
         'FeldDialog10
         '

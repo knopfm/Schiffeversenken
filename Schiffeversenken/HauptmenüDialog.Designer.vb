@@ -38,6 +38,7 @@ Partial Class HauptmenüDialog
         '
         'StatistikBT
         '
+        Me.StatistikBT.BackgroundImage = CType(resources.GetObject("StatistikBT.BackgroundImage"), System.Drawing.Image)
         Me.StatistikBT.Dock = System.Windows.Forms.DockStyle.Fill
         Me.StatistikBT.Enabled = False
         Me.StatistikBT.Location = New System.Drawing.Point(3, 155)
@@ -49,6 +50,7 @@ Partial Class HauptmenüDialog
         '
         'ShopBT
         '
+        Me.ShopBT.BackgroundImage = CType(resources.GetObject("ShopBT.BackgroundImage"), System.Drawing.Image)
         Me.ShopBT.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ShopBT.Enabled = False
         Me.ShopBT.Location = New System.Drawing.Point(3, 231)
@@ -60,6 +62,7 @@ Partial Class HauptmenüDialog
         '
         'CloseBT
         '
+        Me.CloseBT.BackgroundImage = CType(resources.GetObject("CloseBT.BackgroundImage"), System.Drawing.Image)
         Me.CloseBT.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.CloseBT.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CloseBT.Location = New System.Drawing.Point(3, 307)
@@ -71,6 +74,7 @@ Partial Class HauptmenüDialog
         '
         'PlayBT
         '
+        Me.PlayBT.BackgroundImage = CType(resources.GetObject("PlayBT.BackgroundImage"), System.Drawing.Image)
         Me.PlayBT.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PlayBT.Location = New System.Drawing.Point(3, 79)
         Me.PlayBT.Name = "PlayBT"
@@ -82,6 +86,7 @@ Partial Class HauptmenüDialog
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.LightSeaGreen
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label1.Font = New System.Drawing.Font("Courier New", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(3, 0)
@@ -131,7 +136,6 @@ Partial Class HauptmenüDialog
         'LogoPB
         '
         Me.LogoPB.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LogoPB.Image = Global.Schiffeversenken.My.Resources.Resources.meer2
         Me.LogoPB.Location = New System.Drawing.Point(395, 3)
         Me.LogoPB.Name = "LogoPB"
         Me.LogoPB.Size = New System.Drawing.Size(386, 380)
@@ -142,7 +146,7 @@ Partial Class HauptmenüDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Menu
+        Me.BackColor = System.Drawing.Color.White
         Me.CancelButton = Me.CloseBT
         Me.ClientSize = New System.Drawing.Size(784, 386)
         Me.Controls.Add(Me.TableLayoutPanel1)

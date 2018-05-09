@@ -211,6 +211,8 @@
     <None Include="Resources\schiff_5_3_g.png" />
     <None Include="Resources\schiff_5_4.png" />
     <None Include="Resources\schiff_5_4_g.png" />
+    <None Include="Resources\scratched_steel_texture_by_aarondesign1.jpg" />
+    <None Include="Resources\csm_Metall_64fe9ea47b.jpg" />
     <Content Include="ToDo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

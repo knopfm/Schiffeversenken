@@ -63,6 +63,46 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property csm_Metall_64fe9ea47b() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("csm_Metall_64fe9ea47b", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property csm_Metall_64fe9ea47b1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("csm_Metall_64fe9ea47b1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property I22802_130_001tem_metall_gold_6060_01() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("I22802_130-001tem-metall-gold-6060_01", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property I22802_130_001tem_metall_gold_6060_011() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("I22802_130-001tem-metall-gold-6060_011", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Kreuz() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Kreuz", resourceCulture)
@@ -316,6 +356,16 @@ Namespace My.Resources
         Friend ReadOnly Property schiff_5_4_g() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("schiff_5_4_g", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property scratched_steel_texture_by_aarondesign() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("scratched_steel_texture_by_aarondesign", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

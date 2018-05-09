@@ -121,62 +121,47 @@
   <data name="Kreuz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kreuz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="meer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\meer2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="schiff_5_0_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_5_0_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="schiff_3_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_3_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="schiff_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_5_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="schiff_3_0_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_3_0_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schiff_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_3_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schiff_3_2_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_3_1_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schiff_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_3_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="schiff_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_5_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="schiff_3_1_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schiff_3_2_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Wasser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wasser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schiff_4_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_4_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schiff_4_0_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_4_0_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schiff_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_4_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schiff_4_1_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_4_1_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schiff_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_4_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="schiff_4_2_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_4_2_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="schiff_3_0_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_3_0_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="schiff_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schiff_4_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="schiff_4_3_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_4_3_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="schiff_4_2_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_4_2_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="schiff_5_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_5_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="schiff_5_2_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_5_2_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="schiff_5_0_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_5_0_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Wasser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wasser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="schiff_5_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_5_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="schiff_3_2_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_3_1_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="schiff_4_0_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_4_0_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="schiff_5_4_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_5_4_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="csm_Metall_64fe9ea47b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\csm_Metall_64fe9ea47b.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="schiff_4_1_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_4_1_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="schiff_5_1_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schiff_5_1_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,19 +169,49 @@
   <data name="schiff_5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schiff_5_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="schiff_5_2_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_5_2_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="schiff_4_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_4_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="schiff_4_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_4_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="schiff_4_3_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_4_3_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="schiff_5_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schiff_5_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="schiff_3_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_3_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="schiff_5_3_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schiff_5_3_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="schiff_5_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_5_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="schiff_3_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_3_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="schiff_5_4_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\schiff_5_4_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="schiff_4_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_4_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="schiff_5_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_5_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="schiff_3_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schiff_3_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="I22802_130-001tem-metall-gold-6060_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I22802_130-001tem-metall-gold-6060_01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="meer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\meer2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scratched_steel_texture_by_aarondesign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scratched_steel_texture_by_aarondesign1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="I22802_130-001tem-metall-gold-6060_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I22802_130-001tem-metall-gold-6060_01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="csm_Metall_64fe9ea47b1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\csm_Metall_64fe9ea47b1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -22,6 +22,7 @@ Partial Class SpielerSucheDialog
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SpielerSucheDialog))
         Me.AbortBT = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ConnectBT = New System.Windows.Forms.Button()
@@ -31,13 +32,15 @@ Partial Class SpielerSucheDialog
         'AbortBT
         '
         Me.AbortBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.AbortBT.BackColor = System.Drawing.SystemColors.Control
         Me.AbortBT.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.AbortBT.ForeColor = System.Drawing.Color.Black
         Me.AbortBT.Location = New System.Drawing.Point(497, 179)
         Me.AbortBT.Name = "AbortBT"
         Me.AbortBT.Size = New System.Drawing.Size(75, 20)
         Me.AbortBT.TabIndex = 2
         Me.AbortBT.Text = "Zurück"
-        Me.AbortBT.UseVisualStyleBackColor = True
+        Me.AbortBT.UseVisualStyleBackColor = False
         '
         'ListBox1
         '
@@ -51,7 +54,9 @@ Partial Class SpielerSucheDialog
         'ConnectBT
         '
         Me.ConnectBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ConnectBT.BackgroundImage = CType(resources.GetObject("ConnectBT.BackgroundImage"), System.Drawing.Image)
         Me.ConnectBT.Enabled = False
+        Me.ConnectBT.ForeColor = System.Drawing.Color.Black
         Me.ConnectBT.Location = New System.Drawing.Point(497, 153)
         Me.ConnectBT.Name = "ConnectBT"
         Me.ConnectBT.Size = New System.Drawing.Size(75, 20)
@@ -62,6 +67,8 @@ Partial Class SpielerSucheDialog
         'ServerBT
         '
         Me.ServerBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ServerBT.BackgroundImage = CType(resources.GetObject("ServerBT.BackgroundImage"), System.Drawing.Image)
+        Me.ServerBT.ForeColor = System.Drawing.Color.Black
         Me.ServerBT.Location = New System.Drawing.Point(497, 12)
         Me.ServerBT.Name = "ServerBT"
         Me.ServerBT.Size = New System.Drawing.Size(75, 23)
