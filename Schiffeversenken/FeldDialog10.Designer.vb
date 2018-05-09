@@ -74,6 +74,7 @@ Partial Class FeldDialog10
         '
         'BackgroundTLP
         '
+        Me.BackgroundTLP.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Wasser
         Me.BackgroundTLP.ColumnCount = 2
         Me.BackgroundTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.09711!))
         Me.BackgroundTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.90289!))
@@ -90,6 +91,7 @@ Partial Class FeldDialog10
         '
         'RightTLP
         '
+        Me.RightTLP.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
         Me.RightTLP.ColumnCount = 1
         Me.RightTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.RightTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
