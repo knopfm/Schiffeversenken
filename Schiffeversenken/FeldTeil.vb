@@ -53,22 +53,24 @@
     Private Function getSchiffInnerPos(schiff As Schiff, x As Integer, y As Integer) As Integer
         Dim pos As Integer = -1
         If (schiff.direction = SchiffRichtung.LR Or schiff.direction = SchiffRichtung.RL) And schiff.startPoint.Y = y Then
-            If x = schiff.startPoint.X Then
-                pos = schiff.getLaenge() - 1
-            ElseIf x = schiff.endPoint.X Then
-                pos = 0
-            Else
-                pos = 1
-            End If
+            pos = Math.Abs(schiff.endPoint.X - x)
+            'If x = schiff.startPoint.X Then
+            '    pos = schiff.getLaenge() - 1
+            'ElseIf x = schiff.endPoint.X Then
+            '    pos = 0
+            'Else
+            '    pos = 1
+            'End If
         End If
         If (schiff.direction = SchiffRichtung.OU Or schiff.direction = SchiffRichtung.UO) And schiff.startPoint.X = x Then
-            If y = schiff.startPoint.Y Then
-                pos = schiff.getLaenge() - 1
-            ElseIf y = schiff.endPoint.Y Then
-                pos = 0
-            Else
-                pos = 1
-            End If
+            pos = Math.Abs(schiff.endPoint.Y - y)
+            'If y = schiff.startPoint.Y Then
+            '    pos = schiff.getLaenge() - 1
+            'ElseIf y = schiff.endPoint.Y Then
+            '    pos = 0
+            'Else
+            '    pos = 1
+            'End If
         End If
         Return pos
     End Function

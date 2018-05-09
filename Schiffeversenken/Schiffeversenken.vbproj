@@ -92,6 +92,11 @@
     <Compile Include="FeldTeil.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Schiff.vb" />
     <Compile Include="SpielController.vb" />
     <Compile Include="SpielerSucheDialog.Designer.vb">
@@ -112,11 +117,6 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -191,6 +191,26 @@
     <None Include="Resources\schiff_3_0_g.png" />
     <None Include="Resources\schiff_3_1_g.png" />
     <None Include="Resources\schiff_3_2_g.png" />
+    <None Include="Resources\schiff_4_0.png" />
+    <None Include="Resources\schiff_4_0_g.png" />
+    <None Include="Resources\schiff_4_1.png" />
+    <None Include="Resources\schiff_4_1_g.png" />
+    <None Include="Resources\schiff_4_2.png" />
+    <None Include="Resources\schiff_4_3.png" />
+    <None Include="Resources\schiff_4_3_g.png" />
+    <None Include="Resources\schiff_4_2_g.png" />
+    <None Include="Resources\schiff_5_5.png" />
+    <None Include="Resources\schiff_5_5_g.png" />
+    <None Include="Resources\schiff_5_0.png" />
+    <None Include="Resources\schiff_5_0_g.png" />
+    <None Include="Resources\schiff_5_1.png" />
+    <None Include="Resources\schiff_5_1_g.png" />
+    <None Include="Resources\schiff_5_2.png" />
+    <None Include="Resources\schiff_5_2_g.png" />
+    <None Include="Resources\schiff_5_3.png" />
+    <None Include="Resources\schiff_5_3_g.png" />
+    <None Include="Resources\schiff_5_4.png" />
+    <None Include="Resources\schiff_5_4_g.png" />
     <Content Include="ToDo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
