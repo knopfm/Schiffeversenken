@@ -74,24 +74,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EinstellungenDialog.Designer.vb">
-      <DependentUpon>EinstellungenDialog.vb</DependentUpon>
+    <Compile Include="FeldBackground.vb">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="EinstellungenDialog.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Feld.vb" />
     <Compile Include="FeldDialog10.Designer.vb">
       <DependentUpon>FeldDialog10.vb</DependentUpon>
     </Compile>
     <Compile Include="FeldDialog10.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FeldSetting.vb" />
-    <Compile Include="GameChoose.Designer.vb">
-      <DependentUpon>GameChoose.vb</DependentUpon>
+    <Compile Include="FeldPlatzierenDialog.Designer.vb">
+      <DependentUpon>FeldPlatzierenDialog.vb</DependentUpon>
     </Compile>
-    <Compile Include="GameChoose.vb">
+    <Compile Include="FeldPlatzierenDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeldTeil.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Schiff.vb" />
+    <Compile Include="SpielController.vb" />
+    <Compile Include="SpielerSucheDialog.Designer.vb">
+      <DependentUpon>SpielerSucheDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SpielerSucheDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HauptmenüDialog.vb">
@@ -101,20 +107,7 @@
       <DependentUpon>HauptmenüDialog.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login_Dialog.Designer.vb">
-      <DependentUpon>Login_Dialog.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Login_Dialog.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login_Neu_Dialog.Designer.vb">
-      <DependentUpon>Login_Neu_Dialog.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Login_Neu_Dialog.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="MultiplayerClient.vb" />
-    <Compile Include="MultiplayerPaket.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -130,14 +123,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Profil.vb" />
-    <Compile Include="ProfilDialog.Designer.vb">
-      <DependentUpon>ProfilDialog.vb</DependentUpon>
+    <Compile Include="StatistikDialog.Designer.vb">
+      <DependentUpon>StatistikDialog.vb</DependentUpon>
     </Compile>
-    <Compile Include="ProfilDialog.vb">
+    <Compile Include="StatistikDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Schiff.vb" />
     <Compile Include="ShopDialog.Designer.vb">
       <DependentUpon>ShopDialog.vb</DependentUpon>
     </Compile>
@@ -146,23 +137,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EinstellungenDialog.resx">
-      <DependentUpon>EinstellungenDialog.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FeldDialog10.resx">
       <DependentUpon>FeldDialog10.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameChoose.resx">
-      <DependentUpon>GameChoose.vb</DependentUpon>
+    <EmbeddedResource Include="FeldPlatzierenDialog.resx">
+      <DependentUpon>FeldPlatzierenDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpielerSucheDialog.resx">
+      <DependentUpon>SpielerSucheDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HauptmenüDialog.resx">
       <DependentUpon>HauptmenüDialog.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login_Dialog.resx">
-      <DependentUpon>Login_Dialog.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login_Neu_Dialog.resx">
-      <DependentUpon>Login_Neu_Dialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -170,8 +155,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfilDialog.resx">
-      <DependentUpon>ProfilDialog.vb</DependentUpon>
+    <EmbeddedResource Include="StatistikDialog.resx">
+      <DependentUpon>StatistikDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShopDialog.resx">
       <DependentUpon>ShopDialog.vb</DependentUpon>
@@ -196,6 +181,16 @@
     <None Include="Resources\meer2.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\WasserTest.png" />
+    <None Include="Resources\KreuzTest.png" />
+    <None Include="Resources\schiff_3_0.png" />
+    <None Include="Resources\schiff_3_1.png" />
+    <None Include="Resources\schiff_3_2.png" />
+    <None Include="Resources\Kreuz.png" />
+    <None Include="Resources\Wasser.png" />
+    <None Include="Resources\schiff_3_0_g.png" />
+    <None Include="Resources\schiff_3_1_g.png" />
+    <None Include="Resources\schiff_3_2_g.png" />
     <Content Include="ToDo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

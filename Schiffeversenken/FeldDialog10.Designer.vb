@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FeldDialog10
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,16 @@ Partial Class FeldDialog10
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.BackgroundTLP = New System.Windows.Forms.TableLayoutPanel()
-        Me.FeldTLP = New System.Windows.Forms.TableLayoutPanel()
         Me.RightTLP = New System.Windows.Forms.TableLayoutPanel()
         Me.TimeLeftL = New System.Windows.Forms.Label()
+        Me.FeldBackground1 = New Schiffeversenken.FeldBackground()
+        Me.CloseBT = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.AktionTSSL = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.StartBT = New System.Windows.Forms.Button()
         Me.BackgroundTLP.SuspendLayout()
         Me.RightTLP.SuspendLayout()
         Me.SuspendLayout()
@@ -35,48 +39,16 @@ Partial Class FeldDialog10
         Me.BackgroundTLP.ColumnCount = 2
         Me.BackgroundTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.09711!))
         Me.BackgroundTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.90289!))
-        Me.BackgroundTLP.Controls.Add(Me.FeldTLP, 0, 0)
         Me.BackgroundTLP.Controls.Add(Me.RightTLP, 1, 0)
+        Me.BackgroundTLP.Controls.Add(Me.FeldBackground1, 0, 0)
         Me.BackgroundTLP.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BackgroundTLP.Location = New System.Drawing.Point(0, 0)
         Me.BackgroundTLP.Margin = New System.Windows.Forms.Padding(0)
         Me.BackgroundTLP.Name = "BackgroundTLP"
         Me.BackgroundTLP.RowCount = 1
         Me.BackgroundTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.BackgroundTLP.Size = New System.Drawing.Size(762, 422)
+        Me.BackgroundTLP.Size = New System.Drawing.Size(630, 482)
         Me.BackgroundTLP.TabIndex = 0
-        '
-        'FeldTLP
-        '
-        Me.FeldTLP.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
-        Me.FeldTLP.ColumnCount = 10
-        Me.FeldTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FeldTLP.Location = New System.Drawing.Point(20, 20)
-        Me.FeldTLP.Margin = New System.Windows.Forms.Padding(20)
-        Me.FeldTLP.Name = "FeldTLP"
-        Me.FeldTLP.RowCount = 10
-        Me.FeldTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.FeldTLP.Size = New System.Drawing.Size(516, 382)
-        Me.FeldTLP.TabIndex = 0
         '
         'RightTLP
         '
@@ -85,7 +57,7 @@ Partial Class FeldDialog10
         Me.RightTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.RightTLP.Controls.Add(Me.TimeLeftL, 0, 0)
         Me.RightTLP.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RightTLP.Location = New System.Drawing.Point(559, 3)
+        Me.RightTLP.Location = New System.Drawing.Point(463, 3)
         Me.RightTLP.Name = "RightTLP"
         Me.RightTLP.RowCount = 5
         Me.RightTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
@@ -93,7 +65,7 @@ Partial Class FeldDialog10
         Me.RightTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.RightTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.RightTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.RightTLP.Size = New System.Drawing.Size(200, 416)
+        Me.RightTLP.Size = New System.Drawing.Size(164, 476)
         Me.RightTLP.TabIndex = 1
         '
         'TimeLeftL
@@ -105,23 +77,76 @@ Partial Class FeldDialog10
         Me.TimeLeftL.TabIndex = 0
         Me.TimeLeftL.Text = "Label1"
         '
+        'FeldBackground1
+        '
+        Me.FeldBackground1.BackColor = System.Drawing.Color.Gray
+        Me.FeldBackground1.Location = New System.Drawing.Point(19, 19)
+        Me.FeldBackground1.Margin = New System.Windows.Forms.Padding(19)
+        Me.FeldBackground1.Name = "FeldBackground1"
+        Me.FeldBackground1.Padding = New System.Windows.Forms.Padding(19)
+        Me.FeldBackground1.Size = New System.Drawing.Size(422, 422)
+        Me.FeldBackground1.TabIndex = 2
+        '
+        'CloseBT
+        '
+        Me.CloseBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CloseBT.Location = New System.Drawing.Point(543, 434)
+        Me.CloseBT.Name = "CloseBT"
+        Me.CloseBT.Size = New System.Drawing.Size(75, 23)
+        Me.CloseBT.TabIndex = 1
+        Me.CloseBT.Text = "Beenden"
+        Me.CloseBT.UseVisualStyleBackColor = True
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 460)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(630, 22)
+        Me.StatusStrip1.TabIndex = 2
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'AktionTSSL
+        '
+        Me.AktionTSSL.Name = "AktionTSSL"
+        Me.AktionTSSL.Size = New System.Drawing.Size(133, 17)
+        Me.AktionTSSL.Text = "Fehler: Beende das Spiel"
+        '
+        'StartBT
+        '
+        Me.StartBT.Enabled = False
+        Me.StartBT.Location = New System.Drawing.Point(543, 405)
+        Me.StartBT.Name = "StartBT"
+        Me.StartBT.Size = New System.Drawing.Size(75, 23)
+        Me.StartBT.TabIndex = 3
+        Me.StartBT.Text = "Start"
+        Me.StartBT.UseVisualStyleBackColor = True
+        '
         'FeldDialog10
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(762, 422)
+        Me.ClientSize = New System.Drawing.Size(630, 482)
+        Me.Controls.Add(Me.StartBT)
+        Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.CloseBT)
         Me.Controls.Add(Me.BackgroundTLP)
+        Me.MaximizeBox = False
         Me.Name = "FeldDialog10"
         Me.Text = "Feld"
         Me.BackgroundTLP.ResumeLayout(False)
         Me.RightTLP.ResumeLayout(False)
         Me.RightTLP.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents BackgroundTLP As TableLayoutPanel
-    Friend WithEvents FeldTLP As TableLayoutPanel
     Friend WithEvents RightTLP As TableLayoutPanel
     Friend WithEvents TimeLeftL As Label
+    Friend WithEvents CloseBT As Button
+    Friend WithEvents FeldBackground1 As FeldBackground
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents AktionTSSL As ToolStripStatusLabel
+    Friend WithEvents StartBT As Button
 End Class

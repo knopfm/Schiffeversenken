@@ -9,16 +9,22 @@ Public Class MultiplayerClient
     Private client As New TcpClient
     Private IPEndPunkt As IPEndPoint
     Private listener As Threading.Thread
-    Private mID As Integer
-    Private inited As Boolean
+    Private id As Integer = 0
     Public Event NeueNachricht(msg As String)
+    Public Event ConnectionLost()
+    Public Const NOTCONNECTED As Integer = 0
 
-    Public Sub New(pIPEndPunkt As IPEndPoint)
-        IPEndPunkt = pIPEndPunkt
-    End Sub
+    Public Property ServerIP As IPEndPoint
+        Get
+            Return IPEndPunkt
+        End Get
+        Set(value As IPEndPoint)
+            IPEndPunkt = value
+        End Set
+    End Property
 
     Public Function send(msg As String) As Boolean
-        If client.Connected And inited Then
+        If client.Connected And id <> NOTCONNECTED Then
             Try
                 streamw.WriteLine(msg)
                 streamw.Flush()
@@ -31,19 +37,30 @@ Public Class MultiplayerClient
     End Function
 
     Private Sub receive()
-        While client.Connected And inited
+        While client.Connected And id <> NOTCONNECTED
             Try
                 Dim msg As String
                 msg = streamr.ReadLine()
-                RaiseEvent NeueNachricht(msg)
+                Select Case msg
+                    Case "ServerStop"
+                        RaiseEvent ConnectionLost()
+                    Case Else
+                        RaiseEvent NeueNachricht(msg)
+                End Select
+            Catch ex As Threading.ThreadAbortException
+                Exit Sub
             Catch ex As Exception
-                'MsgBox(ex.ToString)
+                Console.WriteLine("Error on receive Message")
+                RaiseEvent ConnectionLost()
             End Try
         End While
     End Sub
 
-    Public Function connect() As Boolean
+    Public Function connect() As Integer
         Try
+            If IPEndPunkt Is Nothing Then
+                Exit Try
+            End If
             client = New TcpClient
             client.Connect(IPEndPunkt)
             If client.Connected Then
@@ -52,24 +69,27 @@ Public Class MultiplayerClient
                 streamr = New StreamReader(stream)
                 streamw.WriteLine("")
                 streamw.Flush()
+                id = streamr.ReadLine()
                 listener = New Threading.Thread(AddressOf receive)
                 listener.Start()
-                inited = True
-                Return inited
+                Return id
             End If
         Catch ex As Exception
-            Console.WriteLine("Error on connect to Server")
+            Console.WriteLine("Error on connect Server")
             'MsgBox(ex.ToString)
             disconnect()
         End Try
-        inited = False
-        Return inited
+        id = NOTCONNECTED
+        Return id
     End Function
 
     Public Function disconnect() As Boolean
         Try
+            id = NOTCONNECTED
             If client.Connected Then
-                inited = False
+                streamr.Close()
+                streamw.Close()
+                stream.Close()
                 client.Close()
                 listener.Abort()
             End If
