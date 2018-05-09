@@ -33,6 +33,7 @@ Partial Class SpielerSucheDialog
         '
         Me.AbortBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AbortBT.BackColor = System.Drawing.SystemColors.Control
+        Me.AbortBT.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte
         Me.AbortBT.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.AbortBT.ForeColor = System.Drawing.Color.Black
         Me.AbortBT.Location = New System.Drawing.Point(497, 179)
@@ -80,6 +81,7 @@ Partial Class SpielerSucheDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
         Me.CancelButton = Me.AbortBT
         Me.ClientSize = New System.Drawing.Size(584, 211)
         Me.Controls.Add(Me.ServerBT)

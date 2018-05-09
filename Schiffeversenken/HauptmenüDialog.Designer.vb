@@ -74,6 +74,7 @@ Partial Class HauptmenüDialog
         '
         'PlayBT
         '
+        Me.PlayBT.BackColor = System.Drawing.Color.White
         Me.PlayBT.BackgroundImage = CType(resources.GetObject("PlayBT.BackgroundImage"), System.Drawing.Image)
         Me.PlayBT.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PlayBT.Location = New System.Drawing.Point(3, 79)
@@ -81,7 +82,7 @@ Partial Class HauptmenüDialog
         Me.PlayBT.Size = New System.Drawing.Size(380, 70)
         Me.PlayBT.TabIndex = 0
         Me.PlayBT.Text = "Spielen"
-        Me.PlayBT.UseVisualStyleBackColor = True
+        Me.PlayBT.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -98,6 +99,7 @@ Partial Class HauptmenüDialog
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -114,6 +116,7 @@ Partial Class HauptmenüDialog
         '
         'TableLayoutPanel2
         '
+        Me.TableLayoutPanel2.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 386.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.CloseBT, 0, 4)
