@@ -24,6 +24,7 @@ Partial Class FeldPlatzierenDialog
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FeldPlatzierenDialog))
         Me.SchiffTypeGB = New System.Windows.Forms.GroupBox()
+        Me.Schiff2RB = New System.Windows.Forms.RadioButton()
         Me.Schiff5RB = New System.Windows.Forms.RadioButton()
         Me.Schiff4RB = New System.Windows.Forms.RadioButton()
         Me.Schiff3RB = New System.Windows.Forms.RadioButton()
@@ -41,23 +42,35 @@ Partial Class FeldPlatzierenDialog
         'SchiffTypeGB
         '
         Me.SchiffTypeGB.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.SchiffTypeGB.Controls.Add(Me.Schiff2RB)
         Me.SchiffTypeGB.Controls.Add(Me.Schiff5RB)
         Me.SchiffTypeGB.Controls.Add(Me.Schiff4RB)
         Me.SchiffTypeGB.Controls.Add(Me.Schiff3RB)
         Me.SchiffTypeGB.Location = New System.Drawing.Point(12, 12)
         Me.SchiffTypeGB.Name = "SchiffTypeGB"
-        Me.SchiffTypeGB.Size = New System.Drawing.Size(89, 91)
+        Me.SchiffTypeGB.Size = New System.Drawing.Size(89, 114)
         Me.SchiffTypeGB.TabIndex = 0
         Me.SchiffTypeGB.TabStop = False
         Me.SchiffTypeGB.Text = "Schiff Typ"
         '
+        'Schiff2RB
+        '
+        Me.Schiff2RB.AutoSize = True
+        Me.Schiff2RB.Location = New System.Drawing.Point(6, 19)
+        Me.Schiff2RB.Name = "Schiff2RB"
+        Me.Schiff2RB.Size = New System.Drawing.Size(73, 17)
+        Me.Schiff2RB.TabIndex = 0
+        Me.Schiff2RB.TabStop = True
+        Me.Schiff2RB.Text = "3-er Schiff"
+        Me.Schiff2RB.UseVisualStyleBackColor = True
+        '
         'Schiff5RB
         '
         Me.Schiff5RB.AutoSize = True
-        Me.Schiff5RB.Location = New System.Drawing.Point(6, 65)
+        Me.Schiff5RB.Location = New System.Drawing.Point(6, 88)
         Me.Schiff5RB.Name = "Schiff5RB"
         Me.Schiff5RB.Size = New System.Drawing.Size(73, 17)
-        Me.Schiff5RB.TabIndex = 2
+        Me.Schiff5RB.TabIndex = 3
         Me.Schiff5RB.TabStop = True
         Me.Schiff5RB.Text = "5-er Schiff"
         Me.Schiff5RB.UseVisualStyleBackColor = True
@@ -65,10 +78,10 @@ Partial Class FeldPlatzierenDialog
         'Schiff4RB
         '
         Me.Schiff4RB.AutoSize = True
-        Me.Schiff4RB.Location = New System.Drawing.Point(6, 42)
+        Me.Schiff4RB.Location = New System.Drawing.Point(6, 65)
         Me.Schiff4RB.Name = "Schiff4RB"
         Me.Schiff4RB.Size = New System.Drawing.Size(73, 17)
-        Me.Schiff4RB.TabIndex = 1
+        Me.Schiff4RB.TabIndex = 2
         Me.Schiff4RB.TabStop = True
         Me.Schiff4RB.Text = "4-er Schiff"
         Me.Schiff4RB.UseVisualStyleBackColor = True
@@ -76,10 +89,10 @@ Partial Class FeldPlatzierenDialog
         'Schiff3RB
         '
         Me.Schiff3RB.AutoSize = True
-        Me.Schiff3RB.Location = New System.Drawing.Point(6, 19)
+        Me.Schiff3RB.Location = New System.Drawing.Point(6, 42)
         Me.Schiff3RB.Name = "Schiff3RB"
         Me.Schiff3RB.Size = New System.Drawing.Size(73, 17)
-        Me.Schiff3RB.TabIndex = 0
+        Me.Schiff3RB.TabIndex = 1
         Me.Schiff3RB.TabStop = True
         Me.Schiff3RB.Text = "3-er Schiff"
         Me.Schiff3RB.UseVisualStyleBackColor = True
@@ -94,7 +107,7 @@ Partial Class FeldPlatzierenDialog
         Me.RichtungGB.Enabled = False
         Me.RichtungGB.Location = New System.Drawing.Point(107, 12)
         Me.RichtungGB.Name = "RichtungGB"
-        Me.RichtungGB.Size = New System.Drawing.Size(161, 91)
+        Me.RichtungGB.Size = New System.Drawing.Size(161, 114)
         Me.RichtungGB.TabIndex = 1
         Me.RichtungGB.TabStop = False
         Me.RichtungGB.Text = "Richtung"
@@ -147,7 +160,7 @@ Partial Class FeldPlatzierenDialog
         '
         Me.OkBT.BackgroundImage = CType(resources.GetObject("OkBT.BackgroundImage"), System.Drawing.Image)
         Me.OkBT.Enabled = False
-        Me.OkBT.Location = New System.Drawing.Point(107, 109)
+        Me.OkBT.Location = New System.Drawing.Point(113, 132)
         Me.OkBT.Name = "OkBT"
         Me.OkBT.Size = New System.Drawing.Size(75, 23)
         Me.OkBT.TabIndex = 2
@@ -158,7 +171,7 @@ Partial Class FeldPlatzierenDialog
         '
         Me.AbortBT.BackgroundImage = CType(resources.GetObject("AbortBT.BackgroundImage"), System.Drawing.Image)
         Me.AbortBT.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.AbortBT.Location = New System.Drawing.Point(193, 109)
+        Me.AbortBT.Location = New System.Drawing.Point(193, 132)
         Me.AbortBT.Name = "AbortBT"
         Me.AbortBT.Size = New System.Drawing.Size(75, 23)
         Me.AbortBT.TabIndex = 3
@@ -172,11 +185,12 @@ Partial Class FeldPlatzierenDialog
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.CancelButton = Me.AbortBT
-        Me.ClientSize = New System.Drawing.Size(280, 144)
+        Me.ClientSize = New System.Drawing.Size(280, 167)
         Me.Controls.Add(Me.AbortBT)
         Me.Controls.Add(Me.OkBT)
         Me.Controls.Add(Me.RichtungGB)
         Me.Controls.Add(Me.SchiffTypeGB)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FeldPlatzierenDialog"
@@ -201,4 +215,5 @@ Partial Class FeldPlatzierenDialog
     Friend WithEvents NordenRB As RadioButton
     Friend WithEvents OkBT As Button
     Friend WithEvents AbortBT As Button
+    Friend WithEvents Schiff2RB As RadioButton
 End Class

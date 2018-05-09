@@ -3,14 +3,27 @@
     Public Type As SchiffType
     Private norden, osten, suden, westen As Integer
 
-    Private Sub Schiff3RB_CheckedChanged(sender As Object, e As EventArgs) Handles Schiff3RB.CheckedChanged, Schiff4RB.CheckedChanged, Schiff5RB.CheckedChanged
+    Private Sub Schiff3RB_CheckedChanged(sender As Object, e As EventArgs) Handles Schiff3RB.CheckedChanged, Schiff4RB.CheckedChanged, Schiff5RB.CheckedChanged, Schiff2RB.CheckedChanged
         RichtungGB.Enabled = True
         NordenRB.Enabled = False
         OstenRB.Enabled = False
         SudenRB.Enabled = False
         WestenRB.Enabled = False
 
-        If Schiff3RB.Checked Then
+        If Schiff2RB.Checked Then
+            If norden >= 1 Then
+                NordenRB.Enabled = True
+            End If
+            If westen >= 1 Then
+                WestenRB.Enabled = True
+            End If
+            If suden >= 1 Then
+                SudenRB.Enabled = True
+            End If
+            If osten >= 1 Then
+                OstenRB.Enabled = True
+            End If
+        ElseIf Schiff3RB.Checked Then
             If norden >= 2 Then
                 NordenRB.Enabled = True
             End If
@@ -57,6 +70,9 @@
     End Sub
 
     Private Sub OkBT_Click(sender As Object, e As EventArgs) Handles OkBT.Click
+        If Schiff2RB.Checked Then
+            Type = SchiffType._2er
+        End If
         If Schiff3RB.Checked Then
             Type = SchiffType._3er
         End If
@@ -87,7 +103,10 @@
         Me.Close()
     End Sub
 
-    Public Sub setMoeglichkeiten(S3 As Integer, S4 As Integer, S5 As Integer, norden As Integer, osten As Integer, suden As Integer, westen As Integer)
+    Public Sub setMoeglichkeiten(S2 As Integer, S3 As Integer, S4 As Integer, S5 As Integer, norden As Integer, osten As Integer, suden As Integer, westen As Integer)
+        If S2 = 0 Then
+            Schiff2RB.Enabled = False
+        End If
         If S3 = 0 Then
             Schiff3RB.Enabled = False
         End If

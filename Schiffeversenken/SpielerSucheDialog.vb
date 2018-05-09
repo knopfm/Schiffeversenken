@@ -231,6 +231,10 @@
     Private Sub SpielC_Start(e As Boolean) Handles SpielC.Start
         bottomForm.enableStart(e)
     End Sub
+
+    Private Sub ListBox1_DoubleClick(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
+        ConnectBT.PerformClick()
+    End Sub
 End Class
 
 Public Enum SpielerSucheStatus

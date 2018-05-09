@@ -22,6 +22,7 @@ Partial Class ShopDialog
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ShopDialog))
         Me.CloseBT = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -43,6 +44,7 @@ Partial Class ShopDialog
         Me.CancelButton = Me.CloseBT
         Me.ClientSize = New System.Drawing.Size(784, 411)
         Me.Controls.Add(Me.CloseBT)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ShopDialog"
         Me.Text = "Shop"
         Me.ResumeLayout(False)

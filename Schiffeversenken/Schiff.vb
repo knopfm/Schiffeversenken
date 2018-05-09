@@ -16,6 +16,8 @@
 
     Public Function getLaenge() As Integer
         Select Case type
+            Case SchiffType._2er
+                Return 2
             Case SchiffType._3er
                 Return 3
             Case SchiffType._4er
@@ -29,6 +31,13 @@
 
     Public Function getImage(nr As Integer) As Image
         Select Case type
+            Case SchiffType._2er
+                Select Case nr
+                    Case 0
+                        Return My.Resources.schiff_2_0
+                    Case 1
+                        Return My.Resources.schiff_2_1
+                End Select
             Case SchiffType._3er
                 Select Case nr
                     Case 0
@@ -68,6 +77,13 @@
 
     Public Function getImage_g(nr As Integer) As Image
         Select Case type
+            Case SchiffType._2er
+                Select Case nr
+                    Case 0
+                        Return My.Resources.schiff_2_0_g
+                    Case 1
+                        Return My.Resources.schiff_2_1_g
+                End Select
             Case SchiffType._3er
                 Select Case nr
                     Case 0
@@ -128,6 +144,7 @@
 End Class
 
 Public Enum SchiffType
+    _2er
     _3er
     _4er
     _5er

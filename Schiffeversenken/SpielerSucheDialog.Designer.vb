@@ -88,6 +88,7 @@ Partial Class SpielerSucheDialog
         Me.Controls.Add(Me.AbortBT)
         Me.Controls.Add(Me.ConnectBT)
         Me.Controls.Add(Me.ListBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(300, 200)
         Me.Name = "SpielerSucheDialog"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

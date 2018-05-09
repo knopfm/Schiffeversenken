@@ -22,6 +22,7 @@ Partial Class StatistikDialog
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StatistikDialog))
         Me.SchließenBT = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -44,6 +45,7 @@ Partial Class StatistikDialog
         Me.CancelButton = Me.SchließenBT
         Me.ClientSize = New System.Drawing.Size(830, 449)
         Me.Controls.Add(Me.SchließenBT)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "StatistikDialog"
         Me.Text = "Statistik"
         Me.ResumeLayout(False)
