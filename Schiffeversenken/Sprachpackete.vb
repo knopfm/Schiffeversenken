@@ -24,3 +24,5 @@ Module Sprachpackete
         End Try
     End Function
 End Module
+
+'Andere Sprachen übersetzen

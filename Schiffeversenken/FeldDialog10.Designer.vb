@@ -28,11 +28,11 @@ Partial Class FeldDialog10
         Me.StartBT = New System.Windows.Forms.Button()
         Me.CloseBT = New System.Windows.Forms.Button()
         Me.BackgroundTLP = New System.Windows.Forms.TableLayoutPanel()
-        Me.RightTLP = New System.Windows.Forms.TableLayoutPanel()
         Me.TimeLeftL = New System.Windows.Forms.Label()
         Me.FeldBackground1 = New Schiffeversenken.FeldBackground()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BackgroundTLP.SuspendLayout()
-        Me.RightTLP.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -52,6 +52,7 @@ Partial Class FeldDialog10
         'StartBT
         '
         Me.StartBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.StartBT.BackColor = System.Drawing.SystemColors.Control
         Me.StartBT.BackgroundImage = CType(resources.GetObject("StartBT.BackgroundImage"), System.Drawing.Image)
         Me.StartBT.Enabled = False
         Me.StartBT.Location = New System.Drawing.Point(543, 405)
@@ -59,18 +60,19 @@ Partial Class FeldDialog10
         Me.StartBT.Size = New System.Drawing.Size(75, 23)
         Me.StartBT.TabIndex = 3
         Me.StartBT.Text = "Start"
-        Me.StartBT.UseVisualStyleBackColor = True
+        Me.StartBT.UseVisualStyleBackColor = False
         '
         'CloseBT
         '
         Me.CloseBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CloseBT.BackColor = System.Drawing.SystemColors.Control
         Me.CloseBT.BackgroundImage = CType(resources.GetObject("CloseBT.BackgroundImage"), System.Drawing.Image)
         Me.CloseBT.Location = New System.Drawing.Point(543, 434)
         Me.CloseBT.Name = "CloseBT"
         Me.CloseBT.Size = New System.Drawing.Size(75, 23)
         Me.CloseBT.TabIndex = 1
         Me.CloseBT.Text = "Beenden"
-        Me.CloseBT.UseVisualStyleBackColor = True
+        Me.CloseBT.UseVisualStyleBackColor = False
         '
         'BackgroundTLP
         '
@@ -78,8 +80,8 @@ Partial Class FeldDialog10
         Me.BackgroundTLP.ColumnCount = 2
         Me.BackgroundTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.09711!))
         Me.BackgroundTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.90289!))
-        Me.BackgroundTLP.Controls.Add(Me.RightTLP, 1, 0)
         Me.BackgroundTLP.Controls.Add(Me.FeldBackground1, 0, 0)
+        Me.BackgroundTLP.Controls.Add(Me.Panel1, 1, 0)
         Me.BackgroundTLP.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BackgroundTLP.Location = New System.Drawing.Point(0, 0)
         Me.BackgroundTLP.Margin = New System.Windows.Forms.Padding(0)
@@ -89,33 +91,12 @@ Partial Class FeldDialog10
         Me.BackgroundTLP.Size = New System.Drawing.Size(630, 482)
         Me.BackgroundTLP.TabIndex = 0
         '
-        'RightTLP
-        '
-        Me.RightTLP.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
-        Me.RightTLP.ColumnCount = 1
-        Me.RightTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.RightTLP.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.RightTLP.Controls.Add(Me.TimeLeftL, 0, 0)
-        Me.RightTLP.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RightTLP.Location = New System.Drawing.Point(463, 3)
-        Me.RightTLP.Name = "RightTLP"
-        Me.RightTLP.RowCount = 5
-        Me.RightTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.RightTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.RightTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.RightTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.RightTLP.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.RightTLP.Size = New System.Drawing.Size(164, 476)
-        Me.RightTLP.TabIndex = 1
-        '
         'TimeLeftL
         '
-        Me.TimeLeftL.AutoSize = True
-        Me.TimeLeftL.Location = New System.Drawing.Point(3, 0)
+        Me.TimeLeftL.Location = New System.Drawing.Point(18, 95)
         Me.TimeLeftL.Name = "TimeLeftL"
-        Me.TimeLeftL.Size = New System.Drawing.Size(39, 13)
+        Me.TimeLeftL.Size = New System.Drawing.Size(140, 142)
         Me.TimeLeftL.TabIndex = 0
-        Me.TimeLeftL.Text = "Label1"
         '
         'FeldBackground1
         '
@@ -127,6 +108,18 @@ Partial Class FeldDialog10
         Me.FeldBackground1.Padding = New System.Windows.Forms.Padding(19)
         Me.FeldBackground1.Size = New System.Drawing.Size(422, 422)
         Me.FeldBackground1.TabIndex = 2
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
+        Me.Panel1.Controls.Add(Me.TimeLeftL)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(460, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(170, 482)
+        Me.Panel1.TabIndex = 3
         '
         'FeldDialog10
         '
@@ -143,19 +136,18 @@ Partial Class FeldDialog10
         Me.Name = "FeldDialog10"
         Me.Text = "Feld"
         Me.BackgroundTLP.ResumeLayout(False)
-        Me.RightTLP.ResumeLayout(False)
-        Me.RightTLP.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents BackgroundTLP As TableLayoutPanel
-    Friend WithEvents RightTLP As TableLayoutPanel
     Friend WithEvents TimeLeftL As Label
     Friend WithEvents CloseBT As Button
     Friend WithEvents FeldBackground1 As FeldBackground
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents AktionTSSL As ToolStripStatusLabel
     Friend WithEvents StartBT As Button
+    Friend WithEvents Panel1 As Panel
 End Class

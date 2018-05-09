@@ -185,7 +185,7 @@
         mpc.Send(msg)
     End Sub
 
-    Private Sub SpielC_Time(pT As String) Handles SpielC.Time
+    Private Sub SpielC_Time(pT As String) Handles SpielC.TimeR
         Invoke(New dSetTime(AddressOf SetTime), pT)
     End Sub
 

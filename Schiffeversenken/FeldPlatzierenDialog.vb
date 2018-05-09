@@ -80,7 +80,7 @@
         NordenRB.Text = Sprachpackete.GetUbersetzung("northRB")
         OstenRB.Text = Sprachpackete.GetUbersetzung("eastRB")
         SudenRB.Text = Sprachpackete.GetUbersetzung("sudenRB")
-        WestenRB.Text = Sprachpackete.GetUbersetzung("wesetRB")
+        WestenRB.Text = Sprachpackete.GetUbersetzung("westRB")
         OkBT.Text = Sprachpackete.GetUbersetzung("okBT")
         AbortBT.Text = Sprachpackete.GetUbersetzung("abortBT")
     End Sub

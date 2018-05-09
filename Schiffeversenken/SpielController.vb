@@ -1,13 +1,13 @@
 ﻿Public Class SpielController
     Public Event NetzwerkSend(msg As String)
-    Public Event Time(pT As String)
+    Public Event TimeR(pT As String)
     Public Event Beenden()
     Public Event changeLayout()
     Public Event placeSchip(schip As Schiff)
     Public Event Start(e As Boolean)
     Public ichID As Integer
     Public duID As Integer
-    Private Zeitwächter As Timer
+    Private WithEvents Zeitwächter As New Threading.Thread(AddressOf owenTimer)
     Private startZeit As DateTime
     Private status As SpielControllerStatus = SpielControllerStatus.Aus
     Private schiffe2ueberig As Integer = 1
@@ -78,6 +78,17 @@
                     End If
                 End If
             Case SpielControllerStatus.Schießen
+                If ft.Zustand = FeldTeilState.Wasser Then
+                    ft.Zustand = FeldTeilState.Daneben
+                ElseIf ft.Zustand = FeldTeilState.Schiff Then
+                    ft.Zustand = FeldTeilState.Getroffen
+                End If
+            Case SpielControllerStatus.Warten
+                If ft.Zustand = FeldTeilState.Wasser Then
+                    ft.Zustand = FeldTeilState.Daneben
+                ElseIf ft.Zustand = FeldTeilState.Schiff Then
+                    ft.Zustand = FeldTeilState.Getroffen
+                End If
                 'TODO: schießen
 
             Case Else
@@ -122,12 +133,12 @@
 
     Private Sub Zeitwächter_Tick()
         Dim span As TimeSpan = Now - startZeit
-        RaiseEvent Time(span.ToString("mm\:ss"))
+        RaiseEvent TimeR(span.ToString("mm\:ss"))
     End Sub
 
     Public Sub stopGame()
         If Zeitwächter IsNot Nothing Then
-            Zeitwächter.Enabled = False
+            Zeitwächter.Abort()
         End If
     End Sub
 
@@ -149,16 +160,24 @@
     End Sub
 
     Private Sub Feld_vorbereiten()
-        Zeitwächter = New Timer
-        AddHandler Zeitwächter.Tick, AddressOf Zeitwächter_Tick
-        Zeitwächter.Interval = 100
         Zeitwächter.Start()
-        Zeitwächter.Enabled = True
         startZeit = Now
         RaiseEvent changeLayout()
 
     End Sub
 
+    Private Sub owenTimer()
+        Do
+            Try
+                Threading.Thread.Sleep(100)
+                Zeitwächter_Tick()
+            Catch ex As Threading.ThreadAbortException
+                Exit Do
+            Catch ex As Exception
+
+            End Try
+        Loop
+    End Sub
 End Class
 
 Public Enum SpielControllerStatus
