@@ -24,4 +24,13 @@
     Private Sub CloseBT_Click(sender As Object, e As EventArgs) Handles CloseBT.Click
         Me.Close()
     End Sub
+
+    Private Sub HauptmenüDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Sprachpackete.Datei = "../../DE.lang"
+        PlayBT.Text = Sprachpackete.GetUbersetzung("playBT")
+        StatistikBT.Text = Sprachpackete.GetUbersetzung("statisticsBT")
+        ShopBT.Text = Sprachpackete.GetUbersetzung("shopBT")
+        CloseBT.Text = Sprachpackete.GetUbersetzung("endBT")
+        Me.Text = Sprachpackete.GetUbersetzung("mainmenu")
+    End Sub
 End Class

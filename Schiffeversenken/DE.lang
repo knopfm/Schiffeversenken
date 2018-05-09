@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<lang>
+  <mainmenu>Hauptmenü</mainmenu>
+  <playBT>Spielen</playBT>
+  <statisticsBT>Statistik</statisticsBT>
+  <shopBT>Shop</shopBT>
+  <endBT>Ende</endBT>
+  <playerSearch>Spieler suche</playerSearch>
+  <serverBT>Server</serverBT>
+  <connectBT>Verbinden</connectBT>
+  <backBT>Zurück</backBT>
+  <endingBT>Beenden</endingBT>
+  <startenBT>Starten</startenBT>
+  <placeship>Schiff platzieren</placeship>
+  <shiptypeGB>Schiff's Typ</shiptypeGB>
+  <_2erShipRB>2-er Schiff</_2erShipRB>
+  <_3erShipRB>3-er Schiff</_3erShipRB>
+  <_4erShipRB>4-er Schiff</_4erShipRB>
+  <_5erShipRB>5-er Schiff</_5erShipRB>
+  <directionGB>Richtung</directionGB>
+  <northRB>Norden</northRB>
+  <eastRB>Osten</eastRB>
+  <sudenRB>Süden</sudenRB>
+  <westRB>Westen</westRB>
+  <okBT>Ok</okBT>
+  <abortBT>Abbrechen</abortBT>
+
+  <msg_WriteIP>Tippe die IP Adresse des Servers ein.</msg_WriteIP>
+  <msg_WriteIP2>Zum Beispiel:</msg_WriteIP2>_
+  <msg_SIP>Server IP Adresse</msg_SIP>
+  <msg_NoValidIP>Keine gültige IP Adresse oder der Server ist nicht erreichbar.</msg_NoValidIP>
+  <msg_TryAgain>Versuch es später nocheinmal.</msg_TryAgain>
+  <msg_ConnectYourself>Du kannst dich nicht mit dir selbst verbinden!</msg_ConnectYourself>
+  <msg_PlayerAnim>Spieler aufforden</msg_PlayerAnim>
+  <msg_PlayWith>Möchten sie sich mit</msg_PlayWith>
+  <msg_PlayWith2>verbinden?</msg_PlayWith2>
+  <msg_ChoosPlayer>Wählen sie einen Spieler aus!</msg_ChoosPlayer>
+  <msg_WouldPlay>möchte mit dir spielen?</msg_WouldPlay>
+  <msg_WouldNotPlay>möchte nicht mit dir spielen!</msg_WouldNotPlay>
+  <msg_NoShipThere>Keine Möglichkeit hier Schiff zu platzieren!</msg_NoShipThere>
+  <msg_NoShipThere2>Versuche es an einer anderen Stelle.</msg_NoShipThere2>
+  
+</lang>

@@ -69,6 +69,22 @@
         OkBT.Enabled = True
     End Sub
 
+    Private Sub FeldPlatzierenDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Text = Sprachpackete.GetUbersetzung("placeship")
+        SchiffTypeGB.Text = Sprachpackete.GetUbersetzung("shiptypeGB")
+        Schiff2RB.Text = Sprachpackete.GetUbersetzung("_2erShipRB")
+        Schiff3RB.Text = Sprachpackete.GetUbersetzung("_3erShipRB")
+        Schiff4RB.Text = Sprachpackete.GetUbersetzung("_4erShipRB")
+        Schiff5RB.Text = Sprachpackete.GetUbersetzung("_5erShipRB")
+        RichtungGB.Text = Sprachpackete.GetUbersetzung("directionGB")
+        NordenRB.Text = Sprachpackete.GetUbersetzung("northRB")
+        OstenRB.Text = Sprachpackete.GetUbersetzung("eastRB")
+        SudenRB.Text = Sprachpackete.GetUbersetzung("sudenRB")
+        WestenRB.Text = Sprachpackete.GetUbersetzung("wesetRB")
+        OkBT.Text = Sprachpackete.GetUbersetzung("okBT")
+        AbortBT.Text = Sprachpackete.GetUbersetzung("abortBT")
+    End Sub
+
     Private Sub OkBT_Click(sender As Object, e As EventArgs) Handles OkBT.Click
         If Schiff2RB.Checked Then
             Type = SchiffType._2er

@@ -52,7 +52,7 @@
                 Dim suden As Integer = 9 - y
                 Dim westen As Integer = x
                 If schiffImWeg(x, y, norden, osten, suden, westen) Then
-                    MessageBox.Show("Keine Möglichkeit Schiff zu platzieren!" & vbCrLf & "Versuche es an einer anderen Stelle", "Schiff platzieren", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    MessageBox.Show(Sprachpackete.GetUbersetzung("msg_NoShipThere") & vbCrLf & Sprachpackete.GetUbersetzung("msg_NoShipThere2"), Sprachpackete.GetUbersetzung("placeship"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     eingabe.setMoeglichkeiten(schiffe2ueberig, schiffe3ueberig, schiffe4ueberig, schiffe5ueberig, norden, osten, suden, westen)
                     If eingabe.ShowDialog() = DialogResult.OK Then
