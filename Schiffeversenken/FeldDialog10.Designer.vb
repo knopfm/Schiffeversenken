@@ -51,6 +51,7 @@ Partial Class FeldDialog10
         '
         'StartBT
         '
+        Me.StartBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.StartBT.BackgroundImage = CType(resources.GetObject("StartBT.BackgroundImage"), System.Drawing.Image)
         Me.StartBT.Enabled = False
         Me.StartBT.Location = New System.Drawing.Point(543, 405)
@@ -134,6 +135,7 @@ Partial Class FeldDialog10
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.CloseBT)
         Me.Controls.Add(Me.BackgroundTLP)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "FeldDialog10"
         Me.Text = "Feld"

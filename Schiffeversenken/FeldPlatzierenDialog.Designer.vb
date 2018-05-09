@@ -181,7 +181,7 @@ Partial Class FeldPlatzierenDialog
         Me.MinimizeBox = False
         Me.Name = "FeldPlatzierenDialog"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FeldPlatzierenDialog"
+        Me.Text = "Schiff platzieren"
         Me.SchiffTypeGB.ResumeLayout(False)
         Me.SchiffTypeGB.PerformLayout()
         Me.RichtungGB.ResumeLayout(False)
