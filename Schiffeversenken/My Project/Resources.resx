@@ -157,7 +157,7 @@
   <data name="schiff_5_4_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schiff_5_4_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="csm_Metall_64fe9ea47b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Metallplatte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\csm_Metall_64fe9ea47b.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="schiff_4_1_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -199,19 +199,10 @@
   <data name="schiff_3_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schiff_3_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I22802_130-001tem-metall-gold-6060_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\I22802_130-001tem-metall-gold-6060_01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="meer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Meer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\meer2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="scratched_steel_texture_by_aarondesign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Metallplatte_skretched" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\scratched_steel_texture_by_aarondesign1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="I22802_130-001tem-metall-gold-6060_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\I22802_130-001tem-metall-gold-6060_01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="csm_Metall_64fe9ea47b1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\csm_Metall_64fe9ea47b1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
