@@ -23,7 +23,7 @@ Public Class MultiplayerClient
         End Set
     End Property
 
-    Public Function send(msg As String) As Boolean
+    Public Function Send(msg As String) As Boolean
         If client.Connected And id <> NOTCONNECTED Then
             Try
                 streamw.WriteLine(msg)

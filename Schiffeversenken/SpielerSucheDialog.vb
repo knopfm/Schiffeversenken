@@ -43,7 +43,7 @@
             MessageBox.Show("No valid IP Addres or Server not avaible.", "Server IP Address", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Status = SpielerSucheStatus.Offline
         Else
-            mpc.send("getClients")
+            mpc.Send("getClients")
             ListBox1.Enabled = True
             Me.Status = SpielerSucheStatus.Online
         End If
@@ -65,7 +65,7 @@
                 MessageBox.Show("No valid IP Address or Server not avaible." & vbCrLf & "Try it again.", "Server IP Address", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.Status = SpielerSucheStatus.Offline
             Else
-                mpc.send("getClients")
+                mpc.Send("getClients")
                 ListBox1.Enabled = True
                 Me.Status = SpielerSucheStatus.Online
             End If
@@ -81,7 +81,7 @@
                 MessageBox.Show("Du kannst dich nicht mit dir selbst verbinden!", "Spieler auffordern", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
                 If MessageBox.Show("Möchten sie sich mt " & ListBox1.SelectedItem.ToString & " verbinden?", "Spieler auffordern", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                    mpc.send("TryConnect:" & ListBox1.SelectedItem.ToString & ";" & id)
+                    mpc.Send("TryConnect:" & ListBox1.SelectedItem.ToString & ";" & id)
                     Me.Status = SpielerSucheStatus.Verbinden
                 End If
             End If
@@ -110,11 +110,11 @@
         ElseIf msg.StartsWith("TryConnect:") Then
             If MessageBox.Show("Möcheten Sie sich mit " & msg.Substring(msg.IndexOf(";") + 1) & " verbinden um zu spielen?", "Spieler auffordern", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Me.Status = SpielerSucheStatus.Spielen
-                mpc.send("ConnectWith:" & msg.Substring(msg.IndexOf(";") + 1) & ";" & Me.id)
+                mpc.Send("ConnectWith:" & msg.Substring(msg.IndexOf(";") + 1) & ";" & Me.id)
                 SpielC = New SpielController(Me.id, CInt(msg.Substring(msg.IndexOf(";") + 1)))
                 Invoke(New dCreatGame(AddressOf createGame), SpielC)
             Else
-                mpc.send("AbortConnect:" & msg.Substring(msg.IndexOf(";") + 1) & ";" & Me.id)
+                mpc.Send("AbortConnect:" & msg.Substring(msg.IndexOf(";") + 1) & ";" & Me.id)
                 Me.Status = SpielerSucheStatus.Online
                 SpielC = Nothing
             End If
@@ -178,7 +178,7 @@
     End Sub
 
     Private Sub SpielC_NetzwerkSend(msg As String) Handles SpielC.NetzwerkSend
-        mpc.send(msg)
+        mpc.Send(msg)
     End Sub
 
     Private Sub SpielC_Time(pT As String) Handles SpielC.Time
