@@ -2,37 +2,11 @@
     Private id As Integer = 0
     Private HauptmenüForm As HauptmenüDialog
     Private WithEvents mpc As New MultiplayerClient
-    Private WithEvents bottomForm, topForm As FeldDialog10
     Private WithEvents SpielC As SpielController
     Private Status As SpielerSucheStatus = SpielerSucheStatus.Offline
     Public Event Schließen()
-
-    Private Sub GameChoose_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        clear_windows()
-        mpc.disconnect()
-        RaiseEvent Schließen()
-    End Sub
-
-    Private Sub clear_windows()
-        Try
-            topForm.Dispose()
-        Catch ex As Exception
-        End Try
-        Try
-            bottomForm.Dispose()
-        Catch ex As Exception
-        End Try
-    End Sub
-
-    Private Sub AbortBT_Click(sender As Object, e As EventArgs) Handles AbortBT.Click
-        Me.Status = SpielerSucheStatus.Offline
-        Me.DialogResult = DialogResult.Abort
-        Me.Close()
-    End Sub
-
-    Private Sub SpielerSucheDialog_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
-        ListBox1.Size = New Point(Me.Size.Width - 109, ListBox1.Size.Height)
-    End Sub
+    Private Delegate Sub dNR(MsgBox As String)
+    Private Delegate Sub dNL()
 
     Private Sub SpielerSucheDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = Sprachpackete.GetUbersetzung("playerSearch")
@@ -105,40 +79,98 @@
             Next
             Invoke(New dSelectIndex(AddressOf SelectIndex), -1)
         ElseIf msg.StartsWith("ConnectWith:") Then
-            Me.Status = SpielerSucheStatus.Spielen
-            SpielC = New SpielController(Me.id, CInt(msg.Substring(msg.IndexOf(";") + 1)))
-            Invoke(New dCreatGame(AddressOf createGame), SpielC)
-        ElseIf msg.StartsWith("AbortConnect:") Then
-            MessageBox.Show(msg.Substring(msg.IndexOf(";") + 1) & " " & Sprachpackete.GetUbersetzung("msg_WouldNotPlay"), Sprachpackete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Me.Status = SpielerSucheStatus.Online
-        ElseIf msg.StartsWith("TryConnect:") Then
-            If MessageBox.Show(msg.Substring(msg.IndexOf(";") + 1) & " " & Sprachpackete.GetUbersetzung("msg_WouldPlay"), "Spieler auffordern", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            If CInt(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1)) = id Then
                 Me.Status = SpielerSucheStatus.Spielen
-                mpc.Send("ConnectWith:" & msg.Substring(msg.IndexOf(";") + 1) & ";" & Me.id)
-                SpielC = New SpielController(Me.id, CInt(msg.Substring(msg.IndexOf(";") + 1)))
-                Invoke(New dCreatGame(AddressOf createGame), SpielC)
-            Else
-                mpc.Send("AbortConnect:" & msg.Substring(msg.IndexOf(";") + 1) & ";" & Me.id)
-                Me.Status = SpielerSucheStatus.Online
-                SpielC = Nothing
+                If SpielC Is Nothing Then
+                    SpielC = New SpielController(Me.id, CInt(msg.Substring(msg.IndexOf(";") + 1)))
+                    Invoke(New dCreatGame(AddressOf createGame), SpielC)
+                End If
             End If
+        ElseIf msg.StartsWith("AbortConnect:") Then
+            If CInt(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1)) = id Then
+                MessageBox.Show(msg.Substring(msg.IndexOf(";") + 1) & " " & Sprachpackete.GetUbersetzung("msg_WouldNotPlay"), Sprachpackete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Me.Status = SpielerSucheStatus.Online
+            End If
+        ElseIf msg.StartsWith("TryConnect:") Then
+            If CInt(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1)) = id Then
+                If MessageBox.Show(msg.Substring(msg.IndexOf(";") + 1) & " " & Sprachpackete.GetUbersetzung("msg_WouldPlay"), "Spieler auffordern", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    Me.Status = SpielerSucheStatus.Spielen
+                    mpc.Send("ConnectWith:" & msg.Substring(msg.IndexOf(";") + 1) & ";" & Me.id)
+                    SpielC = New SpielController(Me.id, CInt(msg.Substring(msg.IndexOf(";") + 1)))
+                    Invoke(New dCreatGame(AddressOf createGame), SpielC)
+                Else
+                    mpc.Send("AbortConnect:" & msg.Substring(msg.IndexOf(";") + 1) & ";" & Me.id)
+                    Me.Status = SpielerSucheStatus.Online
+                    SpielC = Nothing
+                End If
 
+            End If
         Else
             If Me.Status = SpielerSucheStatus.Spielen Then
-                SpielC.NetzwerkReceive(msg)
+                Invoke(New dNR(AddressOf SpielC.NetzwerkReceive), msg)
             End If
         End If
     End Sub
 
+    Private Sub mpc_ConnectionLost() Handles mpc.ConnectionLost
+        Try
+            Invoke(New dClearClients(AddressOf ClearClients))
+            Invoke(New dEnableClients(AddressOf EnableClients), False)
+            'MsgBox("Connection Lost")
+            If Me.Status = SpielerSucheStatus.Spielen Then
+                Invoke(New dNL(AddressOf SpielC.NetzwerkLost))
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub AbortBT_Click(sender As Object, e As EventArgs) Handles AbortBT.Click
+        Me.Status = SpielerSucheStatus.Offline
+        Me.DialogResult = DialogResult.Abort
+        Me.Close()
+    End Sub
+
+    Private Sub GameChoose_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If SpielC IsNot Nothing Then
+            SpielC.Dispose()
+        End If
+        mpc.disconnect()
+        RaiseEvent Schließen()
+    End Sub
+
+
+
+    Private Sub SpielerSucheDialog_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        ListBox1.Size = New Point(Me.Size.Width - 109, ListBox1.Size.Height)
+    End Sub
+
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+        If ListBox1.SelectedIndex <> -1 Then
+            ConnectBT.Enabled = True
+        Else
+            ConnectBT.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ListBox1_DoubleClick(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
+        ConnectBT.PerformClick()
+    End Sub
+
+    Private Sub SpielC_NetzwerkSend(msg As String) Handles SpielC.NetzwerkSend
+        mpc.Send(msg)
+    End Sub
+
+
+
+
+    Private Sub SpielC_UnHide() Handles SpielC.UnHide
+        Me.Show()
+    End Sub
+
     Private Delegate Sub dCreatGame(spc As SpielController)
     Private Sub createGame(spc As SpielController)
-        clear_windows()
-        topForm = New FeldDialog10(spc.duID)
-        bottomForm = New FeldDialog10(spc.ichID)
-        bottomForm.Show()
+        spc.PlanenPhaseBeginen()
         Me.Hide()
-        bottomForm.Location = New Point(My.Computer.Screen.WorkingArea.Size.Width / 2 - bottomForm.Size.Width / 2, My.Computer.Screen.WorkingArea.Size.Height / 2 - bottomForm.Size.Height / 2)
-        spc.startGame()
     End Sub
 
     Private Delegate Sub dAddClient(s As String)
@@ -160,85 +192,6 @@
     Private Sub EnableClients(e As Boolean)
         ListBox1.Enabled = e
     End Sub
-
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-        If ListBox1.SelectedIndex <> -1 Then
-            ConnectBT.Enabled = True
-        Else
-            ConnectBT.Enabled = False
-        End If
-    End Sub
-
-    Private Sub mpc_ConnectionLost() Handles mpc.ConnectionLost
-        Try
-            Invoke(New dClearClients(AddressOf ClearClients))
-            Invoke(New dEnableClients(AddressOf EnableClients), False)
-            'MsgBox("Connection Lost")
-            If Me.Status = SpielerSucheStatus.Spielen Then
-                SpielC.NetzwerkLost()
-            End If
-        Catch ex As Exception
-        End Try
-    End Sub
-
-    Private Sub SpielC_NetzwerkSend(msg As String) Handles SpielC.NetzwerkSend
-        mpc.Send(msg)
-    End Sub
-
-    Private Sub SpielC_Time(pT As String) Handles SpielC.TimeR
-        Invoke(New dSetTime(AddressOf SetTime), pT)
-    End Sub
-
-    Private Delegate Sub dSetTime(pT As String)
-    Private Sub SetTime(pT As String)
-        bottomForm.setTime(pT)
-        topForm.setTime(pT)
-    End Sub
-
-    Private Sub bottomForm_FeldKlick(ft As FeldTeil) Handles bottomForm.FeldKlick
-        SpielC.EigenesFeldKlick(ft)
-    End Sub
-
-    Private Sub bottomForm_Beenden() Handles bottomForm.Beenden
-        SpielC.stopGame()
-        topForm.Close()
-        bottomForm.Close()
-        Me.Show()
-    End Sub
-
-    Private Sub SpielC_Beenden() Handles SpielC.Beenden
-        topForm.Close()
-        bottomForm.Close()
-        Me.Show()
-    End Sub
-
-    Private Sub SpielC_ChangeLayout() Handles SpielC.changeLayout
-        Invoke(New dChangeLyout(AddressOf ChangeLayout))
-    End Sub
-
-    Private Delegate Sub dChangeLyout()
-    Private Sub ChangeLayout()
-        topForm.Show()
-        topForm.diasableStop()
-        topForm.Location = New Point(My.Computer.Screen.WorkingArea.Size.Width / 2 - topForm.Size.Width / 2, My.Computer.Screen.WorkingArea.Size.Height / 2 - topForm.Size.Height - 20)
-        bottomForm.Location = New Point(My.Computer.Screen.WorkingArea.Size.Width / 2 - bottomForm.Size.Width / 2, My.Computer.Screen.WorkingArea.Size.Height / 2 + 20)
-    End Sub
-
-    Private Sub SpielC_placeShip(ship As Schiff) Handles SpielC.placeSchip
-        bottomForm.platziereSchiff(ship)
-    End Sub
-
-    Private Sub bottomForm_Start() Handles bottomForm.Start
-        SpielC.startKlick()
-    End Sub
-
-    Private Sub SpielC_Start(e As Boolean) Handles SpielC.Start
-        bottomForm.enableStart(e)
-    End Sub
-
-    Private Sub ListBox1_DoubleClick(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
-        ConnectBT.PerformClick()
-    End Sub
 End Class
 
 Public Enum SpielerSucheStatus
@@ -247,5 +200,3 @@ Public Enum SpielerSucheStatus
     Verbinden
     Spielen
 End Enum
-
-'hallo 2

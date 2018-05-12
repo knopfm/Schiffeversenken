@@ -63,9 +63,19 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Kreuz() As System.Drawing.Bitmap
+        Friend ReadOnly Property Kreuz_grun() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Kreuz", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Kreuz_grun", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Kreuz_rot() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Kreuz_rot", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

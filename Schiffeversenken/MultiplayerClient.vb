@@ -41,16 +41,16 @@ Public Class MultiplayerClient
             Try
                 Dim msg As String
                 msg = streamr.ReadLine()
-                Select Case msg
-                    Case "ServerStop"
-                        RaiseEvent ConnectionLost()
-                    Case Else
-                        RaiseEvent NeueNachricht(msg)
-                End Select
+                If msg = "ServerStop" Then
+                    RaiseEvent ConnectionLost()
+                Else
+                    RaiseEvent NeueNachricht(msg)
+                End If
             Catch ex As Threading.ThreadAbortException
                 Exit Sub
             Catch ex As Exception
                 Console.WriteLine("Error on receive Message")
+                client.Close()
                 RaiseEvent ConnectionLost()
             End Try
         End While

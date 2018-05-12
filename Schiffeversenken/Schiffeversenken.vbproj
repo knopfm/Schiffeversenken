@@ -13,6 +13,7 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -37,7 +37,10 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Schiffeversenken.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +50,9 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>Schiffeversenken.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -198,12 +203,9 @@
     <None Include="Resources\meer2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WasserTest.png" />
-    <None Include="Resources\KreuzTest.png" />
     <None Include="Resources\schiff_3_0.png" />
     <None Include="Resources\schiff_3_1.png" />
     <None Include="Resources\schiff_3_2.png" />
-    <None Include="Resources\Kreuz.png" />
     <None Include="Resources\Wasser.png" />
     <None Include="Resources\schiff_3_0_g.png" />
     <None Include="Resources\schiff_3_1_g.png" />
@@ -228,12 +230,14 @@
     <None Include="Resources\schiff_5_3_g.png" />
     <None Include="Resources\schiff_5_4.png" />
     <None Include="Resources\schiff_5_4_g.png" />
-    <None Include="Resources\scratched_steel_texture_by_aarondesign1.jpg" />
-    <None Include="Resources\csm_Metall_64fe9ea47b.jpg" />
     <None Include="Resources\schiff_2_0.png" />
     <None Include="Resources\schiff_2_0_g.png" />
     <None Include="Resources\schiff_2_1.png" />
     <None Include="Resources\schiff_2_1_g.png" />
+    <None Include="Resources\Kreuz_grun.png" />
+    <None Include="Resources\Kreuz_rot.png" />
+    <None Include="Resources\Metallplatte.jpg" />
+    <None Include="Resources\Metallplatte_skretched.jpg" />
     <Content Include="ToDo.txt" />
   </ItemGroup>
   <ItemGroup>

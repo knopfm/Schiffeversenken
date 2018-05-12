@@ -7,11 +7,18 @@
     Private innerGetroffen As Integer = 0
 
     Public Function getroffen(pX As Integer, pY As Integer) As Boolean
-        If (pX >= startPoint.X And pX <= endPoint.X And pY >= startPoint.Y And pY <= endPoint.y) Then
-            Return True
-        Else
-            Return False
-        End If
+        Select Case direction
+            Case SchiffRichtung.LR
+                Return startPoint.X <= pX And endPoint.X >= pX And startPoint.Y = pY
+            Case SchiffRichtung.RL
+                Return startPoint.X >= pX And endPoint.X <= pX And startPoint.Y = pY
+            Case SchiffRichtung.OU
+                Return startPoint.Y <= pY And endPoint.Y >= pY And startPoint.X = pX
+            Case SchiffRichtung.UO
+                Return startPoint.Y >= pY And endPoint.Y <= pY And startPoint.X = pX
+            Case Else
+                Return False
+        End Select
     End Function
 
     Public Function getLaenge() As Integer
@@ -118,7 +125,7 @@
                         Return My.Resources.schiff_5_4_g
                 End Select
         End Select
-        Return My.Resources.Kreuz
+        Return My.Resources.Kreuz_rot
     End Function
 
     Public Sub EndPunktBerechnen()
@@ -134,13 +141,38 @@
         End Select
     End Sub
 
-    Public Sub getroffen()
+    Public Sub treffer()
         innerGetroffen += 1
     End Sub
 
     Public Function versenkt() As Boolean
         Return innerGetroffen >= getLaenge()
     End Function
+
+    Public Property Convert As String
+        Get
+            Return "{" & startPoint.X & "#" & startPoint.Y & "#" & type & "#" & direction & "}"
+        End Get
+        Set(value As String)
+            Dim rest As String = value.Substring(1)
+            Dim x As Integer = rest.Substring(0, rest.IndexOf("#"))
+            rest = rest.Substring(rest.IndexOf("#") + 1)
+            startPoint = New Point(x, rest.Substring(0, rest.IndexOf("#")))
+            rest = rest.Substring(rest.IndexOf("#") + 1)
+            type = rest.Substring(0, rest.IndexOf("#"))
+            rest = rest.Substring(rest.IndexOf("#") + 1)
+            direction = rest.Substring(0, rest.IndexOf("}"))
+        End Set
+    End Property
+
+    Public Sub New()
+    End Sub
+
+    Public Sub New(s As String)
+        Convert = s
+    End Sub
+
+
 End Class
 
 Public Enum SchiffType

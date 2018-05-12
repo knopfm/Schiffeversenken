@@ -27,6 +27,10 @@
     End Function
 
     Public Function getControl(x As Integer, y As Integer) As FeldTeil
-        Return Me.Controls("p" & x & "v" & y)
+        If exists(x, y) Then
+            Return Me.Controls("p" & x & "v" & y)
+        Else
+            Return Nothing
+        End If
     End Function
 End Class
