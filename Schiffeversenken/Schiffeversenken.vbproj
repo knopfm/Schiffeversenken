@@ -234,10 +234,10 @@
     <None Include="Resources\schiff_2_0_g.png" />
     <None Include="Resources\schiff_2_1.png" />
     <None Include="Resources\schiff_2_1_g.png" />
-    <None Include="Resources\Kreuz_grun.png" />
-    <None Include="Resources\Kreuz_rot.png" />
     <None Include="Resources\Metallplatte.jpg" />
     <None Include="Resources\Metallplatte_skretched.jpg" />
+    <None Include="Resources\Kreis.png" />
+    <None Include="Resources\Kreuz.png" />
     <Content Include="ToDo.txt" />
   </ItemGroup>
   <ItemGroup>

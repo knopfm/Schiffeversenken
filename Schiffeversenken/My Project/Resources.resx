@@ -208,16 +208,16 @@
   <data name="schiff_2_1_g" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schiff_2_1_g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Kreuz_grun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kreuz_grun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Kreuz_rot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kreuz_rot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Metallplatte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Metallplatte.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Metallplatte_skretched" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Metallplatte_skretched.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kreis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kreis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kreuz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kreuz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

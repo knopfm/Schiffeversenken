@@ -125,7 +125,7 @@
                         Return My.Resources.schiff_5_4_g
                 End Select
         End Select
-        Return My.Resources.Kreuz_rot
+        Return My.Resources.Kreis
     End Function
 
     Public Sub EndPunktBerechnen()

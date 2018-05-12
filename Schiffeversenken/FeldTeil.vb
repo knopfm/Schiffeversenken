@@ -26,14 +26,14 @@
             innerZustand = value
             Select Case innerZustand
                 Case FeldTeilStatus.Daneben
-                    Bild(My.Resources.Kreuz_grun, SchiffRichtung.None)
+                    Bild(My.Resources.Kreuz, SchiffRichtung.None)
 
                 Case FeldTeilStatus.Wasser
                     Bild(My.Resources.Wasser, SchiffRichtung.None)
 
                 Case FeldTeilStatus.Getroffen
                     If getroffenAktiv Then
-                        Bild(My.Resources.Kreuz_rot, SchiffRichtung.None)
+                        Bild(My.Resources.Kreis, SchiffRichtung.None)
                     Else
                         Try
                             Dim x As Integer = getX()
