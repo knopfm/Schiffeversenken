@@ -83,6 +83,8 @@
         WestenRB.Text = Sprachpackete.GetUbersetzung("westRB")
         OkBT.Text = Sprachpackete.GetUbersetzung("okBT")
         AbortBT.Text = Sprachpackete.GetUbersetzung("abortBT")
+        RichtungGB.BackColor = HauptmenüDialog.Color
+        SchiffTypeGB.BackColor = HauptmenüDialog.Color
     End Sub
 
     Private Sub OkBT_Click(sender As Object, e As EventArgs) Handles OkBT.Click
