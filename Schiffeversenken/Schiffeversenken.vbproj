@@ -149,7 +149,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Sprachpackete.vb" />
+    <Compile Include="Sprachpakete.vb" />
     <Compile Include="StatistikDialog.Designer.vb">
       <DependentUpon>StatistikDialog.vb</DependentUpon>
     </Compile>

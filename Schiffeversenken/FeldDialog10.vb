@@ -9,8 +9,8 @@
     End Sub
 
     Private Sub FeldDialog10_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CloseBT.Text = Sprachpackete.GetUbersetzung("endingBT")
-        StartBT.Text = Sprachpackete.GetUbersetzung("startenBT")
+        CloseBT.Text = Sprachpakete.GetUbersetzung("endingBT")
+        StartBT.Text = Sprachpakete.GetUbersetzung("startenBT")
         For w As Integer = 0 To 9
             For h As Integer = 0 To 9
                 Dim p As New FeldTeil

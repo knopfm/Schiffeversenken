@@ -76,19 +76,19 @@
     End Sub
 
     Private Sub FeldPlatzierenDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Text = Sprachpackete.GetUbersetzung("placeship")
-        SchiffTypeGB.Text = Sprachpackete.GetUbersetzung("shiptypeGB")
-        Schiff2RB.Text = Sprachpackete.GetUbersetzung("_2erShipRB")
-        Schiff3RB.Text = Sprachpackete.GetUbersetzung("_3erShipRB")
-        Schiff4RB.Text = Sprachpackete.GetUbersetzung("_4erShipRB")
-        Schiff5RB.Text = Sprachpackete.GetUbersetzung("_5erShipRB")
-        RichtungGB.Text = Sprachpackete.GetUbersetzung("directionGB")
-        NordenRB.Text = Sprachpackete.GetUbersetzung("northRB")
-        OstenRB.Text = Sprachpackete.GetUbersetzung("eastRB")
-        SudenRB.Text = Sprachpackete.GetUbersetzung("sudenRB")
-        WestenRB.Text = Sprachpackete.GetUbersetzung("westRB")
-        OkBT.Text = Sprachpackete.GetUbersetzung("okBT")
-        AbortBT.Text = Sprachpackete.GetUbersetzung("abortBT")
+        Me.Text = Sprachpakete.GetUbersetzung("placeship")
+        SchiffTypeGB.Text = Sprachpakete.GetUbersetzung("shiptypeGB")
+        Schiff2RB.Text = Sprachpakete.GetUbersetzung("_2erShipRB")
+        Schiff3RB.Text = Sprachpakete.GetUbersetzung("_3erShipRB")
+        Schiff4RB.Text = Sprachpakete.GetUbersetzung("_4erShipRB")
+        Schiff5RB.Text = Sprachpakete.GetUbersetzung("_5erShipRB")
+        RichtungGB.Text = Sprachpakete.GetUbersetzung("directionGB")
+        NordenRB.Text = Sprachpakete.GetUbersetzung("northRB")
+        OstenRB.Text = Sprachpakete.GetUbersetzung("eastRB")
+        SudenRB.Text = Sprachpakete.GetUbersetzung("sudenRB")
+        WestenRB.Text = Sprachpakete.GetUbersetzung("westRB")
+        OkBT.Text = Sprachpakete.GetUbersetzung("okBT")
+        AbortBT.Text = Sprachpakete.GetUbersetzung("abortBT")
         Me.Location = New Point(base.Location.X + (base.Width / 2 - Width / 2), base.Location.Y + (base.Height / 2 - Height / 2))
     End Sub
 

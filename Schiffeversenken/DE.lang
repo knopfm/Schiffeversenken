@@ -29,7 +29,9 @@
   <colorGB>Farben</colorGB>
   <otherBT>Andere</otherBT>
   <useBT>Übernehmen</useBT>
-  <graphicL>Grafik</graphicL>
+  <graphicGB>Grafik</graphicGB>
+  <highL>Hoch</highL>
+  <lowL>Niedrig</lowL>
   <_2erShips>2-er Schiffe</_2erShips>
   <_3erShips>3-er Schiffe</_3erShips>
   <_4erShips>4-er Schiffe</_4erShips>
@@ -39,6 +41,9 @@
   <shipsLeft>Übrige Schiffe</shipsLeft>
   <myState>Status</myState>
   <yourState>Status</yourState>
+  <langGB>Sprache</langGB>
+  <fileLang>Sprachdateien</fileLang>
+  <fileAll>Alle Dateien</fileAll>
   
   <msg_WriteIP>Tippe die IP Adresse des Servers ein.</msg_WriteIP>
   <msg_WriteIP2>Zum Beispiel:</msg_WriteIP2>_

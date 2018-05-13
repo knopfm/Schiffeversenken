@@ -1,11 +1,10 @@
 ﻿Public Class HauptmenüDialog
-    Private ShopForm As New EinstellungenDialog
+    Private EinstellunForm As New EinstellungenDialog
     Private StatistikForm As New StatistikDialog
     Private WithEvents SpielerSucheForm As SpielerSucheDialog
-    Public Shared Color As Color = Color.LightSeaGreen
-    Public Shared GrafikIndex As Integer = 5
     Private t As New Threading.Thread(AddressOf bilder)
     Private innerBilderIndex As Integer = 0
+    Public Shared config As New SettingsObject
 
     Private Sub PlayBT_Click(sender As Object, e As EventArgs) Handles PlayBT.Click
         Me.Hide()
@@ -13,7 +12,7 @@
         SpielerSucheForm.Show()
     End Sub
 
-    Private Sub SpilerSuchenForm_Schließen() Handles SpielerSucheForm.Schließen
+    Private Sub SpielerSuchenForm_Schließen() Handles SpielerSucheForm.Schließen
         Me.Show()
     End Sub
 
@@ -22,7 +21,7 @@
     End Sub
 
     Private Sub ConfigBT_Click(sender As Object, e As EventArgs) Handles ConfigBT.Click
-        ShopForm.ShowDialog()
+        EinstellunForm.ShowDialog()
     End Sub
 
     Private Sub CloseBT_Click(sender As Object, e As EventArgs) Handles CloseBT.Click
@@ -30,12 +29,18 @@
     End Sub
 
     Private Sub HauptmenüDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Sprachpackete.Datei = "../../DE.lang"
-        PlayBT.Text = Sprachpackete.GetUbersetzung("playBT")
-        StatistikBT.Text = Sprachpackete.GetUbersetzung("statisticsBT")
-        ConfigBT.Text = Sprachpackete.GetUbersetzung("configBT")
-        CloseBT.Text = Sprachpackete.GetUbersetzung("endBT")
-        Me.Text = Sprachpackete.GetUbersetzung("mainmenu")
+        If IO.File.Exists("config.xml") Then
+            Dim file As New IO.StreamReader("config.xml")
+            Dim reader As New Xml.Serialization.XmlSerializer(GetType(SettingsObject))
+            config = CType(reader.Deserialize(file), SettingsObject)
+            file.Close()
+        End If
+        Sprachpakete.Datei = config.Lang
+        PlayBT.Text = Sprachpakete.GetUbersetzung("playBT")
+        StatistikBT.Text = Sprachpakete.GetUbersetzung("statisticsBT")
+        ConfigBT.Text = Sprachpakete.GetUbersetzung("configBT")
+        CloseBT.Text = Sprachpakete.GetUbersetzung("endBT")
+        Me.Text = Sprachpakete.GetUbersetzung("mainmenu")
         t.Start()
     End Sub
 
@@ -45,6 +50,7 @@
                 Select Case innerBilderIndex
                     Case 0
                         'LogoPB.Image = 
+                        'TODO: Bilder
                 End Select
 
                 innerBilderIndex += 1
@@ -61,7 +67,27 @@
 
     Private Sub HauptmenüDialog_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         t.Abort()
+        Dim file As New IO.StreamWriter("config.xml")
+        Dim writer As New Xml.Serialization.XmlSerializer(GetType(SettingsObject))
+        writer.Serialize(file, config)
+        file.Close()
     End Sub
 End Class
 
-'TODO: Bilder für LogoPB -> mit Timer mehrere?
+Public Class SettingsObject
+    Public Ip As String = "127.0.0.1"
+    Public Lang As String = "..\..\DE.lang"
+    Public c As String = (-14634326).ToString
+    Public points As Double = 1
+    Public GrafikIndex As Integer = 5
+
+    <System.Xml.Serialization.XmlIgnoreAttribute>
+    Public Property Color As Color
+        Get
+            Return Color.FromArgb(c)
+        End Get
+        Set(value As Color)
+            c = value.ToArgb
+        End Set
+    End Property
+End Class

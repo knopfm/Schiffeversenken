@@ -1,6 +1,6 @@
 ﻿Imports System.Xml
 
-Module Sprachpackete
+Module Sprachpakete
 
     Private _datei As String
     Private _xmlDoc As New XmlDocument

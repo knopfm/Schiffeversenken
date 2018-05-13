@@ -38,8 +38,8 @@ Public Class SpielController
     End Sub
 
     Public Sub PlanenPhaseBeginen()
-        bottomForm = New FeldDialog10(Sprachpackete.GetUbersetzung("your_field"))
-        topForm = New FeldDialog10(Sprachpackete.GetUbersetzung("my_field"))
+        bottomForm = New FeldDialog10(Sprachpakete.GetUbersetzung("your_field"))
+        topForm = New FeldDialog10(Sprachpakete.GetUbersetzung("my_field"))
         topForm.Show()
         topForm.setLocation(New Point(CInt(My.Computer.Screen.WorkingArea.Size.Width / 2 - topForm.Size.Width / 2), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 - topForm.Size.Height / 2)))
         Me.status = SpielControllerStatus.Planen
@@ -49,20 +49,20 @@ Public Class SpielController
 
     Private Function berechneInfoBoxPlanen() As String
         Dim s As String
-        s = Sprachpackete.GetUbersetzung("msg_placeShip") & vbCrLf & vbCrLf
-        s &= Sprachpackete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
-        s &= Sprachpackete.GetUbersetzung("_2erShips") & ": " & schiffe2ueberigPlatzieren & vbCrLf
-        s &= Sprachpackete.GetUbersetzung("_3erShips") & ": " & schiffe3ueberigPlatzieren & vbCrLf
-        s &= Sprachpackete.GetUbersetzung("_4erShips") & ": " & schiffe4ueberigPlatzieren & vbCrLf
-        s &= Sprachpackete.GetUbersetzung("_5erShips") & ": " & schiffe5ueberigPlatzieren & vbCrLf
+        s = Sprachpakete.GetUbersetzung("msg_placeShip") & vbCrLf & vbCrLf
+        s &= Sprachpakete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
+        s &= Sprachpakete.GetUbersetzung("_2erShips") & ": " & schiffe2ueberigPlatzieren & vbCrLf
+        s &= Sprachpakete.GetUbersetzung("_3erShips") & ": " & schiffe3ueberigPlatzieren & vbCrLf
+        s &= Sprachpakete.GetUbersetzung("_4erShips") & ": " & schiffe4ueberigPlatzieren & vbCrLf
+        s &= Sprachpakete.GetUbersetzung("_5erShips") & ": " & schiffe5ueberigPlatzieren & vbCrLf
         If (schiffe2ueberigPlatzieren + schiffe3ueberigPlatzieren + schiffe4ueberigPlatzieren + schiffe5ueberigPlatzieren) = 0 Then
-            s &= vbCrLf & Sprachpackete.GetUbersetzung("msg_startPress")
+            s &= vbCrLf & Sprachpakete.GetUbersetzung("msg_startPress")
         End If
         If Me.status = SpielControllerStatus.ReadyStart Then
-            s &= vbCrLf & Sprachpackete.GetUbersetzung("msg_NotReady")
+            s &= vbCrLf & Sprachpakete.GetUbersetzung("msg_NotReady")
         End If
         If Me.statusAnderer = SpielControllerStatus.ReadyStart Then
-            s &= vbCrLf & Sprachpackete.GetUbersetzung("msg_Ready")
+            s &= vbCrLf & Sprachpakete.GetUbersetzung("msg_Ready")
         End If
         Return s
     End Function
@@ -76,7 +76,7 @@ Public Class SpielController
         If Me.status = SpielControllerStatus.Planen Then
             If schiffe2ueberigPlatzieren = 0 And schiffe3ueberigPlatzieren = 0 And schiffe4ueberigPlatzieren = 0 And schiffe5ueberigPlatzieren = 0 Then
                 topForm.enableStart(True)
-                If MessageBox.Show(Sprachpackete.GetUbersetzung("msg_StartGame"), Sprachpackete.GetUbersetzung("placeship"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                If MessageBox.Show(Sprachpakete.GetUbersetzung("msg_StartGame"), Sprachpakete.GetUbersetzung("placeship"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     topForm.PerformStart()
                 End If
             Else
@@ -85,7 +85,7 @@ Public Class SpielController
                 Dim suden As Integer = 9 - y
                 Dim westen As Integer = x
                 If schiffImWeg(x, y, norden, osten, suden, westen) Then
-                    MessageBox.Show(Sprachpackete.GetUbersetzung("msg_NoShipThere") & vbCrLf & Sprachpackete.GetUbersetzung("msg_NoShipThere2"), Sprachpackete.GetUbersetzung("placeship"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    MessageBox.Show(Sprachpakete.GetUbersetzung("msg_NoShipThere") & vbCrLf & Sprachpakete.GetUbersetzung("msg_NoShipThere2"), Sprachpakete.GetUbersetzung("placeship"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
                     Dim eingabe As New FeldPlatzierenDialog(topForm)
                     eingabe.setMoeglichkeiten(schiffe2ueberigPlatzieren, schiffe3ueberigPlatzieren, schiffe4ueberigPlatzieren, schiffe5ueberigPlatzieren, norden, osten, suden, westen)
@@ -361,40 +361,40 @@ Public Class SpielController
     End Sub
 
     Private Function berechneInfoBoxOben() As String
-        Dim ret As String = Sprachpackete.GetUbersetzung("points") & ":"
+        Dim ret As String = Sprachpakete.GetUbersetzung("points") & ":"
         If (deineTreffer + deineDaneben) = 0 Then
             ret &= ""
         Else
             ret &= Format((deineTreffer / (deineTreffer + deineDaneben)) * 100, "0.00")
         End If
         ret &= vbCrLf & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_2erShips") & ": " & meineSchiffe2uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_3erShips") & ": " & meineSchiffe3uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_4erShips") & ": " & meineSchiffe4uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_5erShips") & ": " & meineSchiffe5uebrig & vbCrLf
-        ret &= vbCrLf & Sprachpackete.GetUbersetzung("yourState") & ": " & translateState(Me.statusAnderer)
+        ret &= Sprachpakete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
+        ret &= Sprachpakete.GetUbersetzung("_2erShips") & ": " & meineSchiffe2uebrig & vbCrLf
+        ret &= Sprachpakete.GetUbersetzung("_3erShips") & ": " & meineSchiffe3uebrig & vbCrLf
+        ret &= Sprachpakete.GetUbersetzung("_4erShips") & ": " & meineSchiffe4uebrig & vbCrLf
+        ret &= Sprachpakete.GetUbersetzung("_5erShips") & ": " & meineSchiffe5uebrig & vbCrLf
+        ret &= vbCrLf & Sprachpakete.GetUbersetzung("yourState") & ": " & translateState(Me.statusAnderer)
         Return ret
     End Function
 
     Private Function berechneInfoBoxUnten() As String
         Dim span As TimeSpan = endZeit - startZeit
-        Dim ret As String = Sprachpackete.GetUbersetzung("gameTime") & ": "
+        Dim ret As String = Sprachpakete.GetUbersetzung("gameTime") & ": "
         ret &= span.ToString("mm\:ss")
         ret &= vbCrLf & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("points") & ":"
+        ret &= Sprachpakete.GetUbersetzung("points") & ":"
         If (meineTreffer + meineDaneben) = 0 Then
             ret &= ""
         Else
             ret &= Format((meineTreffer / (meineTreffer + meineDaneben)) * 100, "0.00")
         End If
         ret &= vbCrLf & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_2erShips") & ": " & deineSchiffe2uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_3erShips") & ": " & deineSchiffe3uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_4erShips") & ": " & deineSchiffe4uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_5erShips") & ": " & deineSchiffe5uebrig & vbCrLf
-        ret &= vbCrLf & Sprachpackete.GetUbersetzung("myState") & ": " & translateState(Me.status)
+        ret &= Sprachpakete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
+        ret &= Sprachpakete.GetUbersetzung("_2erShips") & ": " & deineSchiffe2uebrig & vbCrLf
+        ret &= Sprachpakete.GetUbersetzung("_3erShips") & ": " & deineSchiffe3uebrig & vbCrLf
+        ret &= Sprachpakete.GetUbersetzung("_4erShips") & ": " & deineSchiffe4uebrig & vbCrLf
+        ret &= Sprachpakete.GetUbersetzung("_5erShips") & ": " & deineSchiffe5uebrig & vbCrLf
+        ret &= vbCrLf & Sprachpakete.GetUbersetzung("myState") & ": " & translateState(Me.status)
         Return ret
     End Function
 
@@ -446,13 +446,13 @@ Public Class SpielController
     Public Shared Function translateState(s As SpielControllerStatus) As String
         Select Case s
             Case SpielControllerStatus.Gewonnen
-                Return Sprachpackete.GetUbersetzung("state_win")
+                Return Sprachpakete.GetUbersetzung("state_win")
             Case SpielControllerStatus.Verloren
-                Return Sprachpackete.GetUbersetzung("state_loose")
+                Return Sprachpakete.GetUbersetzung("state_loose")
             Case SpielControllerStatus.Schießen
-                Return Sprachpackete.GetUbersetzung("state_shot")
+                Return Sprachpakete.GetUbersetzung("state_shot")
             Case SpielControllerStatus.Warten
-                Return Sprachpackete.GetUbersetzung("state_wait")
+                Return Sprachpakete.GetUbersetzung("state_wait")
             Case Else
                 Return s.ToString()
         End Select

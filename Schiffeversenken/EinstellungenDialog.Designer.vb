@@ -33,9 +33,21 @@ Partial Class EinstellungenDialog
         Me.LightSeaGreenRB = New System.Windows.Forms.RadioButton()
         Me.FarbenDialog = New System.Windows.Forms.ColorDialog()
         Me.GrafikTB = New System.Windows.Forms.TrackBar()
-        Me.GrafikL = New System.Windows.Forms.Label()
+        Me.HighL = New System.Windows.Forms.Label()
+        Me.LowL = New System.Windows.Forms.Label()
+        Me.GrafikGB = New System.Windows.Forms.GroupBox()
+        Me.SpracheGB = New System.Windows.Forms.GroupBox()
+        Me.SpracheL = New System.Windows.Forms.Label()
+        Me.SpracheBT = New System.Windows.Forms.Button()
+        Me.LanguageOFD = New System.Windows.Forms.OpenFileDialog()
+        Me.ServerBT = New System.Windows.Forms.Button()
+        Me.ServerGB = New System.Windows.Forms.GroupBox()
+        Me.ServerL = New System.Windows.Forms.Label()
         Me.FarbenGB.SuspendLayout()
         CType(Me.GrafikTB, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GrafikGB.SuspendLayout()
+        Me.SpracheGB.SuspendLayout()
+        Me.ServerGB.SuspendLayout()
         Me.SuspendLayout()
         '
         'CloseBT
@@ -131,27 +143,106 @@ Partial Class EinstellungenDialog
         '
         'FarbenDialog
         '
-        Me.FarbenDialog.Color = System.Drawing.Color.LightSeaGreen
+        Me.FarbenDialog.Color = System.Drawing.Color.White
         Me.FarbenDialog.FullOpen = True
         '
         'GrafikTB
         '
-        Me.GrafikTB.Location = New System.Drawing.Point(191, 12)
+        Me.GrafikTB.Location = New System.Drawing.Point(6, 19)
         Me.GrafikTB.Name = "GrafikTB"
         Me.GrafikTB.Orientation = System.Windows.Forms.Orientation.Vertical
-        Me.GrafikTB.Size = New System.Drawing.Size(45, 138)
+        Me.GrafikTB.Size = New System.Drawing.Size(45, 110)
         Me.GrafikTB.TabIndex = 2
         Me.GrafikTB.TickStyle = System.Windows.Forms.TickStyle.Both
         Me.GrafikTB.Value = 5
         '
-        'GrafikL
+        'HighL
         '
-        Me.GrafikL.AutoSize = True
-        Me.GrafikL.Location = New System.Drawing.Point(147, 16)
-        Me.GrafikL.Name = "GrafikL"
-        Me.GrafikL.Size = New System.Drawing.Size(38, 13)
-        Me.GrafikL.TabIndex = 3
-        Me.GrafikL.Text = "Grafik:"
+        Me.HighL.AutoSize = True
+        Me.HighL.Location = New System.Drawing.Point(57, 21)
+        Me.HighL.Name = "HighL"
+        Me.HighL.Size = New System.Drawing.Size(33, 13)
+        Me.HighL.TabIndex = 4
+        Me.HighL.Text = "Hoch"
+        '
+        'LowL
+        '
+        Me.LowL.AutoSize = True
+        Me.LowL.Location = New System.Drawing.Point(50, 111)
+        Me.LowL.Name = "LowL"
+        Me.LowL.Size = New System.Drawing.Size(40, 13)
+        Me.LowL.TabIndex = 5
+        Me.LowL.Text = "Niedrig"
+        '
+        'GrafikGB
+        '
+        Me.GrafikGB.Controls.Add(Me.GrafikTB)
+        Me.GrafikGB.Controls.Add(Me.LowL)
+        Me.GrafikGB.Controls.Add(Me.HighL)
+        Me.GrafikGB.Location = New System.Drawing.Point(119, 12)
+        Me.GrafikGB.Name = "GrafikGB"
+        Me.GrafikGB.Size = New System.Drawing.Size(110, 138)
+        Me.GrafikGB.TabIndex = 6
+        Me.GrafikGB.TabStop = False
+        Me.GrafikGB.Text = "Grafik"
+        '
+        'SpracheGB
+        '
+        Me.SpracheGB.Controls.Add(Me.SpracheL)
+        Me.SpracheGB.Controls.Add(Me.SpracheBT)
+        Me.SpracheGB.Location = New System.Drawing.Point(235, 12)
+        Me.SpracheGB.Name = "SpracheGB"
+        Me.SpracheGB.Size = New System.Drawing.Size(136, 138)
+        Me.SpracheGB.TabIndex = 7
+        Me.SpracheGB.TabStop = False
+        Me.SpracheGB.Text = "Sprache"
+        '
+        'SpracheL
+        '
+        Me.SpracheL.AutoSize = True
+        Me.SpracheL.Location = New System.Drawing.Point(6, 21)
+        Me.SpracheL.Name = "SpracheL"
+        Me.SpracheL.Size = New System.Drawing.Size(45, 13)
+        Me.SpracheL.TabIndex = 1
+        Me.SpracheL.Text = "DE.lang"
+        '
+        'SpracheBT
+        '
+        Me.SpracheBT.Location = New System.Drawing.Point(9, 39)
+        Me.SpracheBT.Name = "SpracheBT"
+        Me.SpracheBT.Size = New System.Drawing.Size(75, 23)
+        Me.SpracheBT.TabIndex = 0
+        Me.SpracheBT.Text = "Language"
+        Me.SpracheBT.UseVisualStyleBackColor = True
+        '
+        'ServerBT
+        '
+        Me.ServerBT.Location = New System.Drawing.Point(6, 39)
+        Me.ServerBT.Name = "ServerBT"
+        Me.ServerBT.Size = New System.Drawing.Size(75, 23)
+        Me.ServerBT.TabIndex = 8
+        Me.ServerBT.Text = "Server"
+        Me.ServerBT.UseVisualStyleBackColor = True
+        '
+        'ServerGB
+        '
+        Me.ServerGB.Controls.Add(Me.ServerL)
+        Me.ServerGB.Controls.Add(Me.ServerBT)
+        Me.ServerGB.Location = New System.Drawing.Point(377, 12)
+        Me.ServerGB.Name = "ServerGB"
+        Me.ServerGB.Size = New System.Drawing.Size(89, 138)
+        Me.ServerGB.TabIndex = 9
+        Me.ServerGB.TabStop = False
+        Me.ServerGB.Text = "Server"
+        '
+        'ServerL
+        '
+        Me.ServerL.AutoSize = True
+        Me.ServerL.Location = New System.Drawing.Point(6, 21)
+        Me.ServerL.Name = "ServerL"
+        Me.ServerL.Size = New System.Drawing.Size(52, 13)
+        Me.ServerL.TabIndex = 9
+        Me.ServerL.Text = "127.0.0.1"
         '
         'EinstellungenDialog
         '
@@ -159,19 +250,27 @@ Partial Class EinstellungenDialog
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.CloseBT
         Me.ClientSize = New System.Drawing.Size(784, 411)
-        Me.Controls.Add(Me.GrafikL)
-        Me.Controls.Add(Me.GrafikTB)
+        Me.Controls.Add(Me.ServerGB)
+        Me.Controls.Add(Me.SpracheGB)
+        Me.Controls.Add(Me.GrafikGB)
         Me.Controls.Add(Me.FarbenGB)
         Me.Controls.Add(Me.CloseBT)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "EinstellungenDialog"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Einstellungen"
         Me.FarbenGB.ResumeLayout(False)
         Me.FarbenGB.PerformLayout()
         CType(Me.GrafikTB, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GrafikGB.ResumeLayout(False)
+        Me.GrafikGB.PerformLayout()
+        Me.SpracheGB.ResumeLayout(False)
+        Me.SpracheGB.PerformLayout()
+        Me.ServerGB.ResumeLayout(False)
+        Me.ServerGB.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -185,5 +284,14 @@ Partial Class EinstellungenDialog
     Friend WithEvents OtherBT As Button
     Friend WithEvents FarbenDialog As ColorDialog
     Friend WithEvents GrafikTB As TrackBar
-    Friend WithEvents GrafikL As Label
+    Friend WithEvents HighL As Label
+    Friend WithEvents LowL As Label
+    Friend WithEvents GrafikGB As GroupBox
+    Friend WithEvents SpracheGB As GroupBox
+    Friend WithEvents LanguageOFD As OpenFileDialog
+    Friend WithEvents SpracheL As Label
+    Friend WithEvents SpracheBT As Button
+    Friend WithEvents ServerBT As Button
+    Friend WithEvents ServerGB As GroupBox
+    Friend WithEvents ServerL As Label
 End Class

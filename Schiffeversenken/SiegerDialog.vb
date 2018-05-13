@@ -29,14 +29,14 @@
         Do
             Try
                 Threading.Thread.Sleep(500)
-                If Me.BackColor = HauptmenüDialog.Color Then
+                If Me.BackColor = HauptmenüDialog.config.Color Then
                     If Me.innerState = SpielControllerStatus.Gewonnen Then
                         Me.BackColor = Color.GreenYellow
                     ElseIf Me.innerState = SpielControllerStatus.Verloren Then
                         Me.BackColor = Color.Red
                     End If
                 Else
-                    Me.BackColor = HauptmenüDialog.Color
+                    Me.BackColor = HauptmenüDialog.config.Color
                 End If
                 innerBreak -= 1
             Catch ex As Threading.ThreadAbortException
