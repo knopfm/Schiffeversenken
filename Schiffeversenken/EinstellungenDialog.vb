@@ -41,5 +41,3 @@
         HauptmenüDialog.Color = sender.BackColor
     End Sub
 End Class
-
-'TODO: Shop integrieren

@@ -10,7 +10,7 @@
   <connectBT>Verbinden</connectBT>
   <backBT>Zurück</backBT>
   <endingBT>Beenden</endingBT>
-  <startenBT>Starten</startenBT>
+  <startenBT>Start</startenBT>
   <placeship>Schiff platzieren</placeship>
   <shiptypeGB>Schiff's Typ</shiptypeGB>
   <_2erShipRB>2-er Schiff</_2erShipRB>
@@ -25,11 +25,20 @@
   <okBT>Ok</okBT>
   <abortBT>Abbrechen</abortBT>
   <my_field>Mein Feld</my_field>
-  <your_field>Dein Feld</your_field>
+  <your_field>Sein Feld</your_field>
   <colorGB>Farben</colorGB>
   <otherBT>Andere</otherBT>
   <useBT>Übernehmen</useBT>
   <graphicL>Grafik</graphicL>
+  <_2erShips>2-er Schiffe</_2erShips>
+  <_3erShips>3-er Schiffe</_3erShips>
+  <_4erShips>4-er Schiffe</_4erShips>
+  <_5erShips>5-er Schiffe</_5erShips>
+  <points>Trefferquote</points>
+  <gameTime>Spielzeit</gameTime>
+  <shipsLeft>Übrige Schiffe</shipsLeft>
+  <myState>Mein Status</myState>
+  <yourState>Sein Status</yourState>
   
   <msg_WriteIP>Tippe die IP Adresse des Servers ein.</msg_WriteIP>
   <msg_WriteIP2>Zum Beispiel:</msg_WriteIP2>_
@@ -46,4 +55,13 @@
   <msg_NoShipThere>Keine Möglichkeit hier Schiff zu platzieren!</msg_NoShipThere>
   <msg_NoShipThere2>Versuche es an einer anderen Stelle.</msg_NoShipThere2>
   <msg_StartGame>Möchtest du das Spiel starten?</msg_StartGame>
+  <msg_placeShip>Klicke auf ein Feld und platziere dann ein Schiff.</msg_placeShip>
+  <msg_startPress>Klicke jetzt auf Start, um zu Starten.</msg_startPress>
+  <msg_NotReady>Dein Gegenspieler ist noch nicht bereit.</msg_NotReady>
+  <msg_Ready>Dein Gegenspieler ist startklar.</msg_Ready>
+
+  <state_win>Gewonnen</state_win>
+  <state_loose>Verloren</state_loose>
+  <state_shot>Schießen</state_shot>
+  <state_wait>Warten</state_wait>
 </lang>

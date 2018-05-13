@@ -17,6 +17,7 @@ Public Class SpielController
     Private meineSchiffeFeld(9, 9) As Integer
     Private Zeitwächter As New Threading.Thread(AddressOf owenTimer)
     Private startZeit As DateTime
+    Private endZeit As DateTime
     Private lastX, lastY As Integer
     Private meineSchiffe2uebrig As Integer = schiffe2ueberigPlatzieren
     Private meineSchiffe3uebrig As Integer = schiffe3ueberigPlatzieren
@@ -26,6 +27,10 @@ Public Class SpielController
     Private deineSchiffe3uebrig As Integer = meineSchiffe3uebrig
     Private deineSchiffe4uebrig As Integer = meineSchiffe4uebrig
     Private deineSchiffe5uebrig As Integer = meineSchiffe5uebrig
+    Private meineTreffer As Integer = 0
+    Private meineDaneben As Integer = 0
+    Private deineTreffer As Integer = 0
+    Private deineDaneben As Integer = 0
 
     Public Sub New(ichID As Integer, duID As Integer)
         Me.ichID = ichID
@@ -39,7 +44,28 @@ Public Class SpielController
         topForm.setLocation(New Point(CInt(My.Computer.Screen.WorkingArea.Size.Width / 2 - topForm.Size.Width / 2), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 - topForm.Size.Height / 2)))
         Me.status = SpielControllerStatus.Planen
         Me.statusAnderer = SpielControllerStatus.Planen
+        topForm.setTime(berechneInfoBoxPlanen())
     End Sub
+
+    Private Function berechneInfoBoxPlanen() As String
+        Dim s As String
+        s = Sprachpackete.GetUbersetzung("msg_placeShip") & vbCrLf & vbCrLf
+        s &= Sprachpackete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
+        s &= Sprachpackete.GetUbersetzung("_2erShips") & ": " & schiffe2ueberigPlatzieren & vbCrLf
+        s &= Sprachpackete.GetUbersetzung("_3erShips") & ": " & schiffe3ueberigPlatzieren & vbCrLf
+        s &= Sprachpackete.GetUbersetzung("_4erShips") & ": " & schiffe4ueberigPlatzieren & vbCrLf
+        s &= Sprachpackete.GetUbersetzung("_5erShips") & ": " & schiffe5ueberigPlatzieren & vbCrLf
+        If (schiffe2ueberigPlatzieren + schiffe3ueberigPlatzieren + schiffe4ueberigPlatzieren + schiffe5ueberigPlatzieren) = 0 Then
+            s &= vbCrLf & Sprachpackete.GetUbersetzung("msg_startPress")
+        End If
+        If Me.status = SpielControllerStatus.ReadyStart Then
+            s &= vbCrLf & Sprachpackete.GetUbersetzung("msg_NotReady")
+        End If
+        If Me.statusAnderer = SpielControllerStatus.ReadyStart Then
+            s &= vbCrLf & Sprachpackete.GetUbersetzung("msg_Ready")
+        End If
+        Return s
+    End Function
 
     Private Sub topForm_FeldKlick(ft As FeldTeil, e As MouseEventArgs) Handles topForm.FeldKlick
         If Not e.Button = MouseButtons.Left Then
@@ -86,6 +112,7 @@ Public Class SpielController
                     End If
                 End If
             End If
+            topForm.setTime(berechneInfoBoxPlanen())
         End If
     End Sub
 
@@ -159,12 +186,14 @@ Public Class SpielController
             If CInt(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1)) = ichID Then
                 If Me.statusAnderer = SpielControllerStatus.Planen And Me.status = SpielControllerStatus.Planen Then
                     Me.statusAnderer = SpielControllerStatus.ReadyStart
+                    topForm.setTime(berechneInfoBoxPlanen())
                 ElseIf Me.statusAnderer = SpielControllerStatus.Planen And Me.status = SpielControllerStatus.ReadyStart Then
                     Me.status = SpielControllerStatus.Warten
                     Me.statusAnderer = SpielControllerStatus.Schießen
                     Feld_vorbereiten()
                 End If
             End If
+
         ElseIf msg.StartsWith("ShotBack:") Then
             Dim rest As String = msg.Substring(msg.IndexOf(":") + 1)
             Dim g As String = rest.Substring(0, rest.IndexOf(";"))
@@ -188,12 +217,15 @@ Public Class SpielController
                     End Select
                     Me.status = SpielControllerStatus.Schießen
                     Me.statusAnderer = SpielControllerStatus.Warten
-                ElseIf ft.Zustand = FeldTeilStatus.Daneben Then
-                    Me.status = SpielControllerStatus.Warten
-                    Me.statusAnderer = SpielControllerStatus.Schießen
+                    meineTreffer += 1
                 ElseIf ft.Zustand = FeldTeilStatus.Getroffen Then
                     Me.status = SpielControllerStatus.Schießen
                     Me.statusAnderer = SpielControllerStatus.Warten
+                    meineTreffer += 1
+                ElseIf ft.Zustand = FeldTeilStatus.Daneben Then
+                    Me.status = SpielControllerStatus.Warten
+                    Me.statusAnderer = SpielControllerStatus.Schießen
+                    meineDaneben += 1
                 End If
 
             End If
@@ -201,7 +233,12 @@ Public Class SpielController
             If (deineSchiffe2uebrig + deineSchiffe3uebrig + deineSchiffe4uebrig + deineSchiffe5uebrig) = 0 Then
                 Me.status = SpielControllerStatus.Gewonnen
                 Me.statusAnderer = SpielControllerStatus.Verloren
-                MsgBox("gewonnen")
+                Zeitwächter.Abort()
+                Me.SchiffeAktualisieren()
+                Dim dial As New SiegerDialog(bottomForm)
+                dial.setState(Me.status)
+                dial.setStatistik(berechneInfoBoxUnten())
+                dial.ShowDialog()
             End If
 
         ElseIf msg.StartsWith("Shot:") Then
@@ -232,14 +269,16 @@ Public Class SpielController
                             topForm.FeldBackground1.getControl(x, y).Zustand = FeldTeilStatus.Getroffen
                         End If
                         found = True
-                        Me.status = SpielControllerStatus.Schießen
-                        Me.statusAnderer = SpielControllerStatus.Warten
+                        Me.status = SpielControllerStatus.Warten
+                        Me.statusAnderer = SpielControllerStatus.Schießen
+                        deineTreffer += 1
                     End If
                 Next
                 If Not found Then
                     topForm.FeldBackground1.getControl(x, y).Zustand = FeldTeilStatus.Daneben
-                    Me.status = SpielControllerStatus.Warten
-                    Me.statusAnderer = SpielControllerStatus.Schießen
+                    Me.status = SpielControllerStatus.Schießen
+                    Me.statusAnderer = SpielControllerStatus.Warten
+                    deineDaneben += 1
                 End If
                 RaiseEvent NetzwerkSend("ShotBack:" & topForm.FeldBackground1.getControl(x, y).Zustand & ";" & duID & ";" & ichID)
             End If
@@ -247,7 +286,14 @@ Public Class SpielController
             If (meineSchiffe2uebrig + meineSchiffe3uebrig + meineSchiffe4uebrig + meineSchiffe5uebrig) = 0 Then
                 Me.status = SpielControllerStatus.Verloren
                 Me.statusAnderer = SpielControllerStatus.Gewonnen
-                MsgBox("verloren")
+                Zeitwächter.Abort()
+                Me.SchiffeAktualisieren()
+                If Me.ichID <> Me.duID Then
+                    Dim dial As New SiegerDialog(bottomForm)
+                    dial.setState(Me.status)
+                    dial.setStatistik(berechneInfoBoxUnten())
+                    dial.ShowDialog()
+                End If
             End If
 
         ElseIf msg.StartsWith("ShipBack:") Then
@@ -277,28 +323,31 @@ Public Class SpielController
         startZeit = Now
         bottomForm.Show()
         topForm.diasableStop()
-        topForm.Location = New Point(CInt(My.Computer.Screen.WorkingArea.Size.Width / 2 - topForm.Size.Width / 2), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 - topForm.Size.Height - 2))
-        bottomForm.setLocation(New Point(CInt(My.Computer.Screen.WorkingArea.Size.Width / 2 - bottomForm.Size.Width / 2), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 + 2)))
+        topForm.Location = New Point(CInt(topForm.Location.X), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 - topForm.Size.Height / 2))
+        bottomForm.Location = New Point(CInt(topForm.Location.X), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 + bottomForm.Size.Height / 2))
     End Sub
 
     Private Sub topForm_Start() Handles topForm.Start
         If Me.statusAnderer = SpielControllerStatus.Planen And Me.statusAnderer = SpielControllerStatus.Planen Then
             Me.status = SpielControllerStatus.ReadyStart
+            topForm.setTime(berechneInfoBoxPlanen())
         ElseIf Me.status = SpielControllerStatus.Planen And Me.statusAnderer = SpielControllerStatus.ReadyStart Then
             Me.status = SpielControllerStatus.Schießen
             Me.statusAnderer = SpielControllerStatus.Warten
             Feld_vorbereiten()
         End If
         RaiseEvent NetzwerkSend("ReadyPlay:" & duID & ";" & ichID)
-        bottomForm.enableStart(False)
+        topForm.enableStart(False)
     End Sub
 
     Private Sub bottomForm_FeldKlick(ft As FeldTeil, e As MouseEventArgs) Handles bottomForm.FeldKlick
         If e.Button = MouseButtons.Left Then
             If Me.status = SpielControllerStatus.Schießen Or (Me.status = SpielControllerStatus.Warten And Me.duID = Me.ichID) Then
-                lastX = ft.getX()
-                lastY = ft.getY()
-                RaiseEvent NetzwerkSend("Shot:" & ft.getX() & ";" & ft.getY() & ";" & duID & ";" & ichID)
+                If ft.Zustand = FeldTeilStatus.Wasser Then
+                    lastX = ft.getX()
+                    lastY = ft.getY()
+                    RaiseEvent NetzwerkSend("Shot:" & ft.getX() & ";" & ft.getY() & ";" & duID & ";" & ichID)
+                End If
             End If
         End If
     End Sub
@@ -306,12 +355,53 @@ Public Class SpielController
     Private Sub SchiffeAktualisieren()
         bottomForm.SchiffeAktualisieren()
         topForm.SchiffeAktualisieren()
+        bottomForm.setTime(berechneInfoBoxUnten())
+        topForm.setTime(berechneInfoBoxOben())
     End Sub
+
+    Private Function berechneInfoBoxOben() As String
+        Dim ret As String = Sprachpackete.GetUbersetzung("points") & ":"
+        If (deineTreffer + deineDaneben) = 0 Then
+            ret &= ""
+        Else
+            ret &= Format((deineTreffer / (deineTreffer + deineDaneben)) * 100, "0.00")
+        End If
+        ret &= vbCrLf & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_2erShips") & ": " & deineSchiffe2uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_3erShips") & ": " & deineSchiffe3uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_4erShips") & ": " & deineSchiffe4uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_5erShips") & ": " & deineSchiffe5uebrig & vbCrLf
+        ret &= vbCrLf & Sprachpackete.GetUbersetzung("yourState") & ": " & Me.translateState(Me.statusAnderer)
+        Return ret
+    End Function
+
+    Private Function berechneInfoBoxUnten() As String
+        Dim span As TimeSpan = endZeit - startZeit
+        Dim ret As String = Sprachpackete.GetUbersetzung("gameTime") & ": "
+        ret &= span.ToString("mm\:ss")
+        ret &= vbCrLf & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("points") & ":"
+        If (meineTreffer + meineDaneben) = 0 Then
+            ret &= ""
+        Else
+            ret &= Format((meineTreffer / (meineTreffer + meineDaneben)) * 100, "0.00")
+        End If
+        ret &= vbCrLf & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_2erShips") & ": " & meineSchiffe2uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_3erShips") & ": " & meineSchiffe3uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_4erShips") & ": " & meineSchiffe4uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_5erShips") & ": " & meineSchiffe5uebrig & vbCrLf
+        ret &= vbCrLf & Sprachpackete.GetUbersetzung("myState") & ": " & Me.translateState(Me.status)
+        Return ret
+    End Function
 
     Private Sub owenTimer()
         Do
             Try
                 Threading.Thread.Sleep(100)
+                endZeit = Now
                 Zeitwächter_Tick()
             Catch ex As Threading.ThreadAbortException
                 Exit Do
@@ -322,10 +412,8 @@ Public Class SpielController
     End Sub
 
     Private Sub Zeitwächter_Tick()
-        Dim span As TimeSpan = Now - startZeit
-        Dim s As String = span.ToString("mm\:ss")
-        bottomForm.setTime(s)
-        topForm.setTime(s)
+        bottomForm.setTime(berechneInfoBoxUnten())
+        topForm.setTime(berechneInfoBoxOben())
     End Sub
 
     Private Sub Form_Beenden() Handles bottomForm.Beenden, topForm.Beenden
@@ -353,6 +441,21 @@ Public Class SpielController
         Catch ex As Exception
         End Try
     End Sub
+
+    Public Shared Function translateState(s As SpielControllerStatus) As String
+        Select Case s
+            Case SpielControllerStatus.Gewonnen
+                Return Sprachpackete.GetUbersetzung("state_win")
+            Case SpielControllerStatus.Verloren
+                Return Sprachpackete.GetUbersetzung("state_loose")
+            Case SpielControllerStatus.Schießen
+                Return Sprachpackete.GetUbersetzung("state_shot")
+            Case SpielControllerStatus.Warten
+                Return Sprachpackete.GetUbersetzung("state_wait")
+            Case Else
+                Return s.ToString()
+        End Select
+    End Function
 End Class
 
 Public Enum SpielControllerStatus
@@ -364,6 +467,3 @@ Public Enum SpielControllerStatus
     Verloren
     Gewonnen
 End Enum
-
-'TODO: hierrüber läuft das spiel 
-'       Zeit, Mausklicks, netzwerk, anzeige, schiffe, statistik

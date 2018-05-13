@@ -36,3 +36,5 @@
         Me.Text = Sprachpackete.GetUbersetzung("mainmenu")
     End Sub
 End Class
+
+'TODO: Bilder für LogoPB -> mit Timer mehrere?

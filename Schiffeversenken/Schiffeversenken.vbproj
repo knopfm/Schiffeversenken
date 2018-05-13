@@ -118,6 +118,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Schiff.vb" />
+    <Compile Include="SiegerDialog.Designer.vb">
+      <DependentUpon>SiegerDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SiegerDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SpielController.vb" />
     <Compile Include="SpielerSucheDialog.Designer.vb">
       <DependentUpon>SpielerSucheDialog.vb</DependentUpon>
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FeldPlatzierenDialog.resx">
       <DependentUpon>FeldPlatzierenDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SiegerDialog.resx">
+      <DependentUpon>SiegerDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpielerSucheDialog.resx">
       <DependentUpon>SpielerSucheDialog.vb</DependentUpon>

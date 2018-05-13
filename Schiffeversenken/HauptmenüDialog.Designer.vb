@@ -138,6 +138,7 @@ Partial Class HauptmenüDialog
         '
         'LogoPB
         '
+        Me.LogoPB.BackColor = System.Drawing.Color.Transparent
         Me.LogoPB.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LogoPB.Location = New System.Drawing.Point(395, 3)
         Me.LogoPB.Name = "LogoPB"
