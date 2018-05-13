@@ -12,7 +12,7 @@
   <endingBT>Beenden</endingBT>
   <startenBT>Start</startenBT>
   <placeship>Schiff platzieren</placeship>
-  <shiptypeGB>Schiff's Typ</shiptypeGB>
+  <shiptypeGB>Schiffs Typ</shiptypeGB>
   <_2erShipRB>2-er Schiff</_2erShipRB>
   <_3erShipRB>3-er Schiff</_3erShipRB>
   <_4erShipRB>4-er Schiff</_4erShipRB>
@@ -25,7 +25,7 @@
   <okBT>Ok</okBT>
   <abortBT>Abbrechen</abortBT>
   <my_field>Mein Feld</my_field>
-  <your_field>Sein Feld</your_field>
+  <your_field>Gegnerisches Feld</your_field>
   <colorGB>Farben</colorGB>
   <otherBT>Andere</otherBT>
   <useBT>Übernehmen</useBT>

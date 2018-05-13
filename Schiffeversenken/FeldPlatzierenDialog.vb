@@ -2,6 +2,12 @@
     Public Richtung As SchiffRichtung
     Public Type As SchiffType
     Private norden, osten, suden, westen As Integer
+    Private base As FeldDialog10
+
+    Public Sub New(pSC As FeldDialog10)
+        InitializeComponent()
+        base = pSC
+    End Sub
 
     Private Sub Schiff3RB_CheckedChanged(sender As Object, e As EventArgs) Handles Schiff3RB.CheckedChanged, Schiff4RB.CheckedChanged, Schiff5RB.CheckedChanged, Schiff2RB.CheckedChanged
         RichtungGB.Enabled = True
@@ -83,6 +89,7 @@
         WestenRB.Text = Sprachpackete.GetUbersetzung("westRB")
         OkBT.Text = Sprachpackete.GetUbersetzung("okBT")
         AbortBT.Text = Sprachpackete.GetUbersetzung("abortBT")
+        Me.Location = New Point(base.Location.X + (base.Width / 2 - Width / 2), base.Location.Y + (base.Height / 2 - Height / 2))
     End Sub
 
     Private Sub OkBT_Click(sender As Object, e As EventArgs) Handles OkBT.Click

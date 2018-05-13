@@ -87,7 +87,7 @@ Public Class SpielController
                 If schiffImWeg(x, y, norden, osten, suden, westen) Then
                     MessageBox.Show(Sprachpackete.GetUbersetzung("msg_NoShipThere") & vbCrLf & Sprachpackete.GetUbersetzung("msg_NoShipThere2"), Sprachpackete.GetUbersetzung("placeship"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Else
-                    Dim eingabe As New FeldPlatzierenDialog
+                    Dim eingabe As New FeldPlatzierenDialog(topForm)
                     eingabe.setMoeglichkeiten(schiffe2ueberigPlatzieren, schiffe3ueberigPlatzieren, schiffe4ueberigPlatzieren, schiffe5ueberigPlatzieren, norden, osten, suden, westen)
                     If eingabe.ShowDialog() = DialogResult.OK Then
                         Dim newSchiff As New Schiff
@@ -239,6 +239,7 @@ Public Class SpielController
                 dial.setState(Me.status)
                 dial.setStatistik(berechneInfoBoxUnten())
                 dial.ShowDialog()
+                'TODO: Weiterspielen
             End If
 
         ElseIf msg.StartsWith("Shot:") Then

@@ -15,7 +15,7 @@
         AbortBT.Text = Sprachpackete.GetUbersetzung("backBT")
         mpc.ServerIP = New Net.IPEndPoint(New Net.IPAddress({127, 0, 0, 1}), 8130)
         id = mpc.connect()
-        Me.Text = Me.Text & " - " & Me.id
+        Me.Text = Sprachpackete.GetUbersetzung("playerSearch") & " - " & Me.id
         If id = MultiplayerClient.NOTCONNECTED Then
             ListBox1.Enabled = False
             MessageBox.Show(Sprachpackete.GetUbersetzung("msg_NoValidIP"), Sprachpackete.GetUbersetzung("msg_SIP"), MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -34,25 +34,30 @@
             mpc.disconnect()
         End If
         Dim input As String = InputBox(Sprachpackete.GetUbersetzung("msg_WriteIP") & vbCrLf & Sprachpackete.GetUbersetzung("msg_WriteIP2") & " 127.0.0.1", Sprachpackete.GetUbersetzung("msg_SIP"), "127.0.0.1")
-        Try
-            Dim bArray() As Byte = {input.Split(".")(0), input.Split(".")(1), input.Split(".")(2), input.Split(".")(3)}
-            mpc.ServerIP = New Net.IPEndPoint(New Net.IPAddress(bArray), 8130)
-            id = mpc.connect()
-            Me.Text = Me.Text & " - " & Me.id
-            If id = MultiplayerClient.NOTCONNECTED Then
+        If input <> "" Then
+            Try
+                Dim bArray() As Byte = {input.Split(".")(0), input.Split(".")(1), input.Split(".")(2), input.Split(".")(3)}
+                mpc.ServerIP = New Net.IPEndPoint(New Net.IPAddress(bArray), 8130)
+                id = mpc.connect()
+                Me.Text = Sprachpackete.GetUbersetzung("playerSearch") & " - " & Me.id
+                If id = MultiplayerClient.NOTCONNECTED Then
+                    ListBox1.Enabled = False
+                    MessageBox.Show(Sprachpackete.GetUbersetzung("msg_NoValidIP") & vbCrLf & Sprachpackete.GetUbersetzung("msg_TryAgain"), Sprachpackete.GetUbersetzung("msg_SIP"), MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Me.Status = SpielerSucheStatus.Offline
+                Else
+                    mpc.Send("getClients")
+                    ListBox1.Enabled = True
+                    Me.Status = SpielerSucheStatus.Online
+                End If
+            Catch ex As Exception
                 ListBox1.Enabled = False
+                ListBox1.Items.Clear()
                 MessageBox.Show(Sprachpackete.GetUbersetzung("msg_NoValidIP") & vbCrLf & Sprachpackete.GetUbersetzung("msg_TryAgain"), Sprachpackete.GetUbersetzung("msg_SIP"), MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Me.Status = SpielerSucheStatus.Offline
-            Else
-                mpc.Send("getClients")
-                ListBox1.Enabled = True
-                Me.Status = SpielerSucheStatus.Online
-            End If
-        Catch ex As Exception
+            End Try
+        Else
             ListBox1.Enabled = False
             ListBox1.Items.Clear()
-            MessageBox.Show(Sprachpackete.GetUbersetzung("msg_NoValidIP") & vbCrLf & Sprachpackete.GetUbersetzung("msg_TryAgain"), Sprachpackete.GetUbersetzung("msg_SIP"), MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        End If
         ListBox1.SelectedIndex = -1
     End Sub
 
