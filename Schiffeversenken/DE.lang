@@ -24,7 +24,7 @@
   <westRB>Westen</westRB>
   <okBT>Ok</okBT>
   <abortBT>Abbrechen</abortBT>
-  <my_field>Mein Feld</my_field>
+  <my_field>Eigens Feld</my_field>
   <your_field>Gegnerisches Feld</your_field>
   <colorGB>Farben</colorGB>
   <otherBT>Andere</otherBT>
@@ -37,8 +37,8 @@
   <points>Trefferquote</points>
   <gameTime>Spielzeit</gameTime>
   <shipsLeft>Übrige Schiffe</shipsLeft>
-  <myState>Mein Status</myState>
-  <yourState>Sein Status</yourState>
+  <myState>Status</myState>
+  <yourState>Status</yourState>
   
   <msg_WriteIP>Tippe die IP Adresse des Servers ein.</msg_WriteIP>
   <msg_WriteIP2>Zum Beispiel:</msg_WriteIP2>_

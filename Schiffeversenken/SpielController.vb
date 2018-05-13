@@ -369,11 +369,11 @@ Public Class SpielController
         End If
         ret &= vbCrLf & vbCrLf
         ret &= Sprachpackete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_2erShips") & ": " & deineSchiffe2uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_3erShips") & ": " & deineSchiffe3uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_4erShips") & ": " & deineSchiffe4uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_5erShips") & ": " & deineSchiffe5uebrig & vbCrLf
-        ret &= vbCrLf & Sprachpackete.GetUbersetzung("yourState") & ": " & Me.translateState(Me.statusAnderer)
+        ret &= Sprachpackete.GetUbersetzung("_2erShips") & ": " & meineSchiffe2uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_3erShips") & ": " & meineSchiffe3uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_4erShips") & ": " & meineSchiffe4uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_5erShips") & ": " & meineSchiffe5uebrig & vbCrLf
+        ret &= vbCrLf & Sprachpackete.GetUbersetzung("yourState") & ": " & translateState(Me.statusAnderer)
         Return ret
     End Function
 
@@ -390,11 +390,11 @@ Public Class SpielController
         End If
         ret &= vbCrLf & vbCrLf
         ret &= Sprachpackete.GetUbersetzung("shipsLeft") & ": " & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_2erShips") & ": " & meineSchiffe2uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_3erShips") & ": " & meineSchiffe3uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_4erShips") & ": " & meineSchiffe4uebrig & vbCrLf
-        ret &= Sprachpackete.GetUbersetzung("_5erShips") & ": " & meineSchiffe5uebrig & vbCrLf
-        ret &= vbCrLf & Sprachpackete.GetUbersetzung("myState") & ": " & Me.translateState(Me.status)
+        ret &= Sprachpackete.GetUbersetzung("_2erShips") & ": " & deineSchiffe2uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_3erShips") & ": " & deineSchiffe3uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_4erShips") & ": " & deineSchiffe4uebrig & vbCrLf
+        ret &= Sprachpackete.GetUbersetzung("_5erShips") & ": " & deineSchiffe5uebrig & vbCrLf
+        ret &= vbCrLf & Sprachpackete.GetUbersetzung("myState") & ": " & translateState(Me.status)
         Return ret
     End Function
 

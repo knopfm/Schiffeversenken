@@ -63,7 +63,7 @@ Partial Class HauptmenüDialog
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -151,6 +151,8 @@ Partial Class HauptmenüDialog
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.CloseBT
         Me.ClientSize = New System.Drawing.Size(784, 386)
         Me.Controls.Add(Me.TableLayoutPanel1)
