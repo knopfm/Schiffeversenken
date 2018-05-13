@@ -50,9 +50,9 @@
                     Case 0
                         Return My.Resources.schiff_3_0
                     Case 1
-                        Return My.Resources.schiff_3_4
-                    Case 2
                         Return My.Resources.schiff_3_2
+                    Case 2
+                        Return My.Resources.schiff_3_4
                 End Select
             Case SchiffType._4er
                 Select Case nr
@@ -96,9 +96,9 @@
                     Case 0
                         Return My.Resources.schiff_3_0_v
                     Case 1
-                        Return My.Resources.schiff_3_4_v
-                    Case 2
                         Return My.Resources.schiff_3_2_v
+                    Case 2
+                        Return My.Resources.schiff_3_4_v
                 End Select
             Case SchiffType._4er
                 Select Case nr
