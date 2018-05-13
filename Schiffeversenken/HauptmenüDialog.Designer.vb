@@ -28,7 +28,7 @@ Partial Class HauptmenüDialog
         Me.CloseBT = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ShopBT = New System.Windows.Forms.Button()
+        Me.ConfigBT = New System.Windows.Forms.Button()
         Me.PlayBT = New System.Windows.Forms.Button()
         Me.StatistikBT = New System.Windows.Forms.Button()
         Me.HauptLogoPB = New System.Windows.Forms.PictureBox()
@@ -115,15 +115,15 @@ Partial Class HauptmenüDialog
         '
         'ShopBT
         '
-        Me.ShopBT.BackgroundImage = CType(resources.GetObject("ShopBT.BackgroundImage"), System.Drawing.Image)
-        Me.ShopBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ShopBT.Enabled = False
-        Me.ShopBT.Location = New System.Drawing.Point(3, 231)
-        Me.ShopBT.Name = "ShopBT"
-        Me.ShopBT.Size = New System.Drawing.Size(380, 70)
-        Me.ShopBT.TabIndex = 2
-        Me.ShopBT.Text = "Shop"
-        Me.ShopBT.UseVisualStyleBackColor = True
+        Me.ConfigBT.BackgroundImage = CType(resources.GetObject("ShopBT.BackgroundImage"), System.Drawing.Image)
+        Me.ConfigBT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ConfigBT.Enabled = False
+        Me.ConfigBT.Location = New System.Drawing.Point(3, 231)
+        Me.ConfigBT.Name = "ShopBT"
+        Me.ConfigBT.Size = New System.Drawing.Size(380, 70)
+        Me.ConfigBT.TabIndex = 2
+        Me.ConfigBT.Text = "Shop"
+        Me.ConfigBT.UseVisualStyleBackColor = True
         '
         'PlayBT
         '

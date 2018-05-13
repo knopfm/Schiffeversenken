@@ -18,6 +18,14 @@ Public Class SpielController
     Private Zeitwächter As New Threading.Thread(AddressOf owenTimer)
     Private startZeit As DateTime
     Private lastX, lastY As Integer
+    Private meineSchiffe2uebrig As Integer = schiffe2ueberigPlatzieren
+    Private meineSchiffe3uebrig As Integer = schiffe3ueberigPlatzieren
+    Private meineSchiffe4uebrig As Integer = schiffe4ueberigPlatzieren
+    Private meineSchiffe5uebrig As Integer = schiffe5ueberigPlatzieren
+    Private deineSchiffe2uebrig As Integer = meineSchiffe2uebrig
+    Private deineSchiffe3uebrig As Integer = meineSchiffe3uebrig
+    Private deineSchiffe4uebrig As Integer = meineSchiffe4uebrig
+    Private deineSchiffe5uebrig As Integer = meineSchiffe5uebrig
 
     Public Sub New(ichID As Integer, duID As Integer)
         Me.ichID = ichID
@@ -168,6 +176,21 @@ Public Class SpielController
                 ft.Zustand = g
                 If ft.Zustand = FeldTeilStatus.Versenkt Then
                     bottomForm.platziereSchiff(ft.Schiff, ft.Zustand)
+                    Select Case ft.Schiff.type
+                        Case SchiffType._2er
+                            deineSchiffe2uebrig -= 1
+                        Case SchiffType._3er
+                            deineSchiffe3uebrig -= 1
+                        Case SchiffType._4er
+                            deineSchiffe4uebrig -= 1
+                        Case SchiffType._5er
+                            deineSchiffe5uebrig -= 1
+                    End Select
+                    If (deineSchiffe2uebrig + deineSchiffe3uebrig + deineSchiffe4uebrig + deineSchiffe5uebrig) = 0 Then
+                        Me.status = SpielControllerStatus.Gewonnen
+                        Me.statusAnderer = SpielControllerStatus.Verloren
+                        MsgBox("gewonnen")
+                    End If
                 End If
             End If
             Me.SchiffeAktualisieren()
@@ -186,6 +209,21 @@ Public Class SpielController
                         If ship.versenkt() Then
                             topForm.FeldBackground1.getControl(x, y).Zustand = FeldTeilStatus.Versenkt
                             RaiseEvent NetzwerkSend("ShipBack:" & ship.Convert & ";" & duID & ";" & ichID)
+                            Select Case ship.type
+                                Case SchiffType._2er
+                                    meineSchiffe2uebrig -= 1
+                                Case SchiffType._3er
+                                    meineSchiffe3uebrig -= 1
+                                Case SchiffType._4er
+                                    meineSchiffe4uebrig -= 1
+                                Case SchiffType._5er
+                                    meineSchiffe5uebrig -= 1
+                            End Select
+                            If (meineSchiffe2uebrig + meineSchiffe3uebrig + meineSchiffe4uebrig + meineSchiffe5uebrig) = 0 Then
+                                Me.status = SpielControllerStatus.Verloren
+                                Me.statusAnderer = SpielControllerStatus.Gewonnen
+                                MsgBox("verloren")
+                            End If
                         Else
                             topForm.FeldBackground1.getControl(x, y).Zustand = FeldTeilStatus.Getroffen
                         End If
@@ -310,7 +348,8 @@ Public Enum SpielControllerStatus
     ReadyStart
     Warten
     Schießen
-    Ende
+    Verloren
+    Gewonnen
 End Enum
 
 'TODO: hierrüber läuft das spiel 

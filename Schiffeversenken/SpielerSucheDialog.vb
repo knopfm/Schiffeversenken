@@ -26,6 +26,7 @@
             Me.Status = SpielerSucheStatus.Online
         End If
         ListBox1.SelectedIndex = -1
+        ListBox1.BackColor = HauptmenüDialog.Color
     End Sub
 
     Private Sub ServerBT_Click(sender As Object, e As EventArgs) Handles ServerBT.Click
@@ -48,6 +49,8 @@
                 Me.Status = SpielerSucheStatus.Online
             End If
         Catch ex As Exception
+            ListBox1.Enabled = False
+            ListBox1.Items.Clear()
             MessageBox.Show(Sprachpackete.GetUbersetzung("msg_NoValidIP") & vbCrLf & Sprachpackete.GetUbersetzung("msg_TryAgain"), Sprachpackete.GetUbersetzung("msg_SIP"), MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         ListBox1.SelectedIndex = -1

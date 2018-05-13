@@ -19,7 +19,7 @@
         StatistikForm.ShowDialog()
     End Sub
 
-    Private Sub ShopBT_Click(sender As Object, e As EventArgs) Handles ConfigBT.Click
+    Private Sub ConfigBT_Click(sender As Object, e As EventArgs) Handles ConfigBT.Click
         ShopForm.ShowDialog()
     End Sub
 
