@@ -96,8 +96,22 @@ Module Module1
                     send(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1), msg)
                 ElseIf msg.StartsWith("AbortConnect:") Then
                     send(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1), msg)
-                ElseIf msg.StartsWith("ReadyStart:") Then
+                ElseIf msg.StartsWith("ReadyPlay:") Then
                     send(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1), msg)
+
+                ElseIf msg.StartsWith("ShipBack:") Then
+                    Dim rest As String = msg.Substring(msg.IndexOf(";") + 1)
+                    send(rest.Substring(0, rest.IndexOf(";")), msg)
+                ElseIf msg.StartsWith("ShotBack:") Then
+                    Dim rest As String = msg.Substring(msg.IndexOf(";") + 1)
+                    send(rest.Substring(0, rest.IndexOf(";")), msg)
+                ElseIf msg.StartsWith("Shot:") Then
+                    Dim rest1 As String = msg.Substring(msg.IndexOf(";") + 1)
+                    Dim rest2 As String = rest1.Substring(rest1.IndexOf(";") + 1)
+                    send(rest2.Substring(0, rest2.IndexOf(";")), msg)
+                ElseIf msg.StartsWith("AbortGame:") Then
+                    send(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1), msg)
+
                 Else
                     SendToAllClients(msg)
                 End If

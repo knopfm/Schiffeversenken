@@ -23,42 +23,19 @@ Partial Class HauptmenüDialog
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HauptmenüDialog))
-        Me.StatistikBT = New System.Windows.Forms.Button()
-        Me.ShopBT = New System.Windows.Forms.Button()
         Me.CloseBT = New System.Windows.Forms.Button()
-        Me.PlayBT = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.ShopBT = New System.Windows.Forms.Button()
+        Me.PlayBT = New System.Windows.Forms.Button()
+        Me.StatistikBT = New System.Windows.Forms.Button()
+        Me.HauptLogoPB = New System.Windows.Forms.PictureBox()
         Me.LogoPB = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
+        CType(Me.HauptLogoPB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoPB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'StatistikBT
-        '
-        Me.StatistikBT.BackgroundImage = CType(resources.GetObject("StatistikBT.BackgroundImage"), System.Drawing.Image)
-        Me.StatistikBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.StatistikBT.Enabled = False
-        Me.StatistikBT.Location = New System.Drawing.Point(3, 155)
-        Me.StatistikBT.Name = "StatistikBT"
-        Me.StatistikBT.Size = New System.Drawing.Size(380, 70)
-        Me.StatistikBT.TabIndex = 1
-        Me.StatistikBT.Text = "Statistik"
-        Me.StatistikBT.UseVisualStyleBackColor = True
-        '
-        'ShopBT
-        '
-        Me.ShopBT.BackgroundImage = CType(resources.GetObject("ShopBT.BackgroundImage"), System.Drawing.Image)
-        Me.ShopBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ShopBT.Enabled = False
-        Me.ShopBT.Location = New System.Drawing.Point(3, 231)
-        Me.ShopBT.Name = "ShopBT"
-        Me.ShopBT.Size = New System.Drawing.Size(380, 70)
-        Me.ShopBT.TabIndex = 2
-        Me.ShopBT.Text = "Shop"
-        Me.ShopBT.UseVisualStyleBackColor = True
         '
         'CloseBT
         '
@@ -71,31 +48,6 @@ Partial Class HauptmenüDialog
         Me.CloseBT.TabIndex = 3
         Me.CloseBT.Text = "Ende"
         Me.CloseBT.UseVisualStyleBackColor = True
-        '
-        'PlayBT
-        '
-        Me.PlayBT.BackColor = System.Drawing.Color.White
-        Me.PlayBT.BackgroundImage = CType(resources.GetObject("PlayBT.BackgroundImage"), System.Drawing.Image)
-        Me.PlayBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PlayBT.Location = New System.Drawing.Point(3, 79)
-        Me.PlayBT.Name = "PlayBT"
-        Me.PlayBT.Size = New System.Drawing.Size(380, 70)
-        Me.PlayBT.TabIndex = 0
-        Me.PlayBT.Text = "Spielen"
-        Me.PlayBT.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.LightSeaGreen
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Font = New System.Drawing.Font("Courier New", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(380, 76)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "SCHIFFE VERSENKEN"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TableLayoutPanel1
         '
@@ -123,7 +75,7 @@ Partial Class HauptmenüDialog
         Me.TableLayoutPanel2.Controls.Add(Me.ShopBT, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.PlayBT, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.StatistikBT, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.HauptLogoPB, 0, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -135,6 +87,54 @@ Partial Class HauptmenüDialog
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(386, 380)
         Me.TableLayoutPanel2.TabIndex = 0
+        '
+        'ShopBT
+        '
+        Me.ShopBT.BackgroundImage = CType(resources.GetObject("ShopBT.BackgroundImage"), System.Drawing.Image)
+        Me.ShopBT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ShopBT.Enabled = False
+        Me.ShopBT.Location = New System.Drawing.Point(3, 231)
+        Me.ShopBT.Name = "ShopBT"
+        Me.ShopBT.Size = New System.Drawing.Size(380, 70)
+        Me.ShopBT.TabIndex = 2
+        Me.ShopBT.Text = "Shop"
+        Me.ShopBT.UseVisualStyleBackColor = True
+        '
+        'PlayBT
+        '
+        Me.PlayBT.BackColor = System.Drawing.Color.White
+        Me.PlayBT.BackgroundImage = CType(resources.GetObject("PlayBT.BackgroundImage"), System.Drawing.Image)
+        Me.PlayBT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PlayBT.Location = New System.Drawing.Point(3, 79)
+        Me.PlayBT.Name = "PlayBT"
+        Me.PlayBT.Size = New System.Drawing.Size(380, 70)
+        Me.PlayBT.TabIndex = 0
+        Me.PlayBT.Text = "Spielen"
+        Me.PlayBT.UseVisualStyleBackColor = False
+        '
+        'StatistikBT
+        '
+        Me.StatistikBT.BackgroundImage = CType(resources.GetObject("StatistikBT.BackgroundImage"), System.Drawing.Image)
+        Me.StatistikBT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.StatistikBT.Enabled = False
+        Me.StatistikBT.Location = New System.Drawing.Point(3, 155)
+        Me.StatistikBT.Name = "StatistikBT"
+        Me.StatistikBT.Size = New System.Drawing.Size(380, 70)
+        Me.StatistikBT.TabIndex = 1
+        Me.StatistikBT.Text = "Statistik"
+        Me.StatistikBT.UseVisualStyleBackColor = True
+        '
+        'HauptLogoPB
+        '
+        Me.HauptLogoPB.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Logo
+        Me.HauptLogoPB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.HauptLogoPB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.HauptLogoPB.InitialImage = Nothing
+        Me.HauptLogoPB.Location = New System.Drawing.Point(3, 3)
+        Me.HauptLogoPB.Name = "HauptLogoPB"
+        Me.HauptLogoPB.Size = New System.Drawing.Size(380, 70)
+        Me.HauptLogoPB.TabIndex = 4
+        Me.HauptLogoPB.TabStop = False
         '
         'LogoPB
         '
@@ -161,7 +161,7 @@ Partial Class HauptmenüDialog
         Me.Text = "Hauptmenü"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
+        CType(Me.HauptLogoPB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogoPB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -170,8 +170,8 @@ Partial Class HauptmenüDialog
     Friend WithEvents ShopBT As Button
     Friend WithEvents CloseBT As Button
     Friend WithEvents PlayBT As Button
-    Friend WithEvents Label1 As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents LogoPB As PictureBox
+    Friend WithEvents HauptLogoPB As PictureBox
 End Class

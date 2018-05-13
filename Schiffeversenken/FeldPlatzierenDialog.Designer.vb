@@ -41,11 +41,12 @@ Partial Class FeldPlatzierenDialog
         '
         'SchiffTypeGB
         '
-        Me.SchiffTypeGB.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.SchiffTypeGB.BackColor = System.Drawing.Color.Black
         Me.SchiffTypeGB.Controls.Add(Me.Schiff2RB)
         Me.SchiffTypeGB.Controls.Add(Me.Schiff5RB)
         Me.SchiffTypeGB.Controls.Add(Me.Schiff4RB)
         Me.SchiffTypeGB.Controls.Add(Me.Schiff3RB)
+        Me.SchiffTypeGB.ForeColor = System.Drawing.SystemColors.Info
         Me.SchiffTypeGB.Location = New System.Drawing.Point(12, 12)
         Me.SchiffTypeGB.Name = "SchiffTypeGB"
         Me.SchiffTypeGB.Size = New System.Drawing.Size(89, 114)
@@ -99,12 +100,15 @@ Partial Class FeldPlatzierenDialog
         '
         'RichtungGB
         '
-        Me.RichtungGB.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.RichtungGB.BackColor = System.Drawing.Color.Transparent
+        Me.RichtungGB.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.realistisches_radar_beim_suchen_9677_103
+        Me.RichtungGB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RichtungGB.Controls.Add(Me.SudenRB)
         Me.RichtungGB.Controls.Add(Me.OstenRB)
         Me.RichtungGB.Controls.Add(Me.WestenRB)
         Me.RichtungGB.Controls.Add(Me.NordenRB)
         Me.RichtungGB.Enabled = False
+        Me.RichtungGB.ForeColor = System.Drawing.SystemColors.Info
         Me.RichtungGB.Location = New System.Drawing.Point(107, 12)
         Me.RichtungGB.Name = "RichtungGB"
         Me.RichtungGB.Size = New System.Drawing.Size(161, 114)
@@ -115,46 +119,50 @@ Partial Class FeldPlatzierenDialog
         'SudenRB
         '
         Me.SudenRB.AutoSize = True
+        Me.SudenRB.BackColor = System.Drawing.Color.Transparent
         Me.SudenRB.Location = New System.Drawing.Point(59, 65)
         Me.SudenRB.Name = "SudenRB"
         Me.SudenRB.Size = New System.Drawing.Size(56, 17)
         Me.SudenRB.TabIndex = 2
         Me.SudenRB.TabStop = True
         Me.SudenRB.Text = "Süden"
-        Me.SudenRB.UseVisualStyleBackColor = True
+        Me.SudenRB.UseVisualStyleBackColor = False
         '
         'OstenRB
         '
         Me.OstenRB.AutoSize = True
+        Me.OstenRB.BackColor = System.Drawing.Color.Transparent
         Me.OstenRB.Location = New System.Drawing.Point(102, 42)
         Me.OstenRB.Name = "OstenRB"
         Me.OstenRB.Size = New System.Drawing.Size(53, 17)
         Me.OstenRB.TabIndex = 1
         Me.OstenRB.TabStop = True
         Me.OstenRB.Text = "Osten"
-        Me.OstenRB.UseVisualStyleBackColor = True
+        Me.OstenRB.UseVisualStyleBackColor = False
         '
         'WestenRB
         '
         Me.WestenRB.AutoSize = True
+        Me.WestenRB.BackColor = System.Drawing.Color.Transparent
         Me.WestenRB.Location = New System.Drawing.Point(6, 42)
         Me.WestenRB.Name = "WestenRB"
         Me.WestenRB.Size = New System.Drawing.Size(62, 17)
         Me.WestenRB.TabIndex = 3
         Me.WestenRB.TabStop = True
         Me.WestenRB.Text = "Westen"
-        Me.WestenRB.UseVisualStyleBackColor = True
+        Me.WestenRB.UseVisualStyleBackColor = False
         '
         'NordenRB
         '
         Me.NordenRB.AutoSize = True
+        Me.NordenRB.BackColor = System.Drawing.Color.Transparent
         Me.NordenRB.Location = New System.Drawing.Point(59, 19)
         Me.NordenRB.Name = "NordenRB"
         Me.NordenRB.Size = New System.Drawing.Size(60, 17)
         Me.NordenRB.TabIndex = 0
         Me.NordenRB.TabStop = True
         Me.NordenRB.Text = "Norden"
-        Me.NordenRB.UseVisualStyleBackColor = True
+        Me.NordenRB.UseVisualStyleBackColor = False
         '
         'OkBT
         '
@@ -183,7 +191,8 @@ Partial Class FeldPlatzierenDialog
         Me.AcceptButton = Me.OkBT
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.AbortBT
         Me.ClientSize = New System.Drawing.Size(280, 167)
         Me.Controls.Add(Me.AbortBT)

@@ -28,9 +28,9 @@ Partial Class FeldDialog10
         Me.StartBT = New System.Windows.Forms.Button()
         Me.CloseBT = New System.Windows.Forms.Button()
         Me.BackgroundTLP = New System.Windows.Forms.TableLayoutPanel()
-        Me.TimeLeftL = New System.Windows.Forms.Label()
         Me.FeldBackground1 = New Schiffeversenken.FeldBackground()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TimeLeftL = New System.Windows.Forms.Label()
         Me.BackgroundTLP.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -91,13 +91,6 @@ Partial Class FeldDialog10
         Me.BackgroundTLP.Size = New System.Drawing.Size(630, 482)
         Me.BackgroundTLP.TabIndex = 0
         '
-        'TimeLeftL
-        '
-        Me.TimeLeftL.Location = New System.Drawing.Point(18, 95)
-        Me.TimeLeftL.Name = "TimeLeftL"
-        Me.TimeLeftL.Size = New System.Drawing.Size(140, 142)
-        Me.TimeLeftL.TabIndex = 0
-        '
         'FeldBackground1
         '
         Me.FeldBackground1.BackColor = System.Drawing.Color.Gray
@@ -120,6 +113,13 @@ Partial Class FeldDialog10
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(170, 482)
         Me.Panel1.TabIndex = 3
+        '
+        'TimeLeftL
+        '
+        Me.TimeLeftL.Location = New System.Drawing.Point(18, 95)
+        Me.TimeLeftL.Name = "TimeLeftL"
+        Me.TimeLeftL.Size = New System.Drawing.Size(140, 142)
+        Me.TimeLeftL.TabIndex = 0
         '
         'FeldDialog10
         '

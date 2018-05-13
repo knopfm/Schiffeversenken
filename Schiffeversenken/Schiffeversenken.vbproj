@@ -238,6 +238,8 @@
     <None Include="Resources\Metallplatte_skretched.jpg" />
     <None Include="Resources\Kreis.png" />
     <None Include="Resources\Kreuz.png" />
+    <None Include="Resources\Logo.jpg" />
+    <None Include="Resources\realistisches-radar-beim-suchen_9677-103.jpg" />
     <Content Include="ToDo.txt" />
   </ItemGroup>
   <ItemGroup>

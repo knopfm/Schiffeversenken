@@ -83,6 +83,16 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Logo() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Logo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Meer() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Meer", resourceCulture)
@@ -106,6 +116,16 @@ Namespace My.Resources
         Friend ReadOnly Property Metallplatte_skretched() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Metallplatte_skretched", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property realistisches_radar_beim_suchen_9677_103() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("realistisches-radar-beim-suchen_9677-103", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
