@@ -323,8 +323,8 @@ Public Class SpielController
         startZeit = Now
         bottomForm.Show()
         topForm.diasableStop()
-        topForm.Location = New Point(CInt(topForm.Location.X), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 - topForm.Size.Height / 2))
-        bottomForm.Location = New Point(CInt(topForm.Location.X), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 + bottomForm.Size.Height / 2))
+        topForm.Location = New Point(CInt(topForm.Location.X), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 - topForm.Size.Height + 2))
+        bottomForm.Location = New Point(CInt(topForm.Location.X), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 + 2))
     End Sub
 
     Private Sub topForm_Start() Handles topForm.Start
