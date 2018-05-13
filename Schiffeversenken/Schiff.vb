@@ -87,42 +87,42 @@
             Case SchiffType._2er
                 Select Case nr
                     Case 0
-                        Return My.Resources.schiff_2_0_g
+                        Return My.Resources.schiff_2_0_v
                     Case 1
-                        Return My.Resources.schiff_2_1_g
+                        Return My.Resources.schiff_2_1_v
                 End Select
             Case SchiffType._3er
                 Select Case nr
                     Case 0
-                        Return My.Resources.schiff_3_0_g
+                        Return My.Resources.schiff_3_0_v
                     Case 1
-                        Return My.Resources.schiff_3_1_g
+                        Return My.Resources.schiff_3_1_v
                     Case 2
-                        Return My.Resources.schiff_3_2_g
+                        Return My.Resources.schiff_3_2_v
                 End Select
             Case SchiffType._4er
                 Select Case nr
                     Case 0
-                        Return My.Resources.schiff_4_0_g
+                        Return My.Resources.schiff_4_0_v
                     Case 1
-                        Return My.Resources.schiff_4_1_g
+                        Return My.Resources.schiff_4_1_v
                     Case 2
-                        Return My.Resources.schiff_4_2_g
+                        Return My.Resources.schiff_4_2_v
                     Case 3
-                        Return My.Resources.schiff_4_3_g
+                        Return My.Resources.schiff_4_3_v
                 End Select
             Case SchiffType._5er
                 Select Case nr
                     Case 0
-                        Return My.Resources.schiff_5_0_g
+                        Return My.Resources.schiff_5_0_v
                     Case 1
-                        Return My.Resources.schiff_5_1_g
+                        Return My.Resources.schiff_5_1_v
                     Case 2
-                        Return My.Resources.schiff_5_2_g
+                        Return My.Resources.schiff_5_2_v
                     Case 3
-                        Return My.Resources.schiff_5_3_g
+                        Return My.Resources.schiff_5_3_v
                     Case 4
-                        Return My.Resources.schiff_5_4_g
+                        Return My.Resources.schiff_5_4_v
                 End Select
         End Select
         Return My.Resources.Kreis

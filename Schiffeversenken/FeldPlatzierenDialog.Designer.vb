@@ -101,7 +101,7 @@ Partial Class FeldPlatzierenDialog
         'RichtungGB
         '
         Me.RichtungGB.BackColor = System.Drawing.Color.Transparent
-        Me.RichtungGB.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.realistisches_radar_beim_suchen_9677_103
+        Me.RichtungGB.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Radar
         Me.RichtungGB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RichtungGB.Controls.Add(Me.SudenRB)
         Me.RichtungGB.Controls.Add(Me.OstenRB)

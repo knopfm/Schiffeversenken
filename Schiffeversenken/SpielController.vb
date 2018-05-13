@@ -186,14 +186,14 @@ Public Class SpielController
                         Case SchiffType._5er
                             deineSchiffe5uebrig -= 1
                     End Select
-                    If (deineSchiffe2uebrig + deineSchiffe3uebrig + deineSchiffe4uebrig + deineSchiffe5uebrig) = 0 Then
-                        Me.status = SpielControllerStatus.Gewonnen
-                        Me.statusAnderer = SpielControllerStatus.Verloren
-                        MsgBox("gewonnen")
-                    End If
                 End If
             End If
             Me.SchiffeAktualisieren()
+            If (deineSchiffe2uebrig + deineSchiffe3uebrig + deineSchiffe4uebrig + deineSchiffe5uebrig) = 0 Then
+                Me.status = SpielControllerStatus.Gewonnen
+                Me.statusAnderer = SpielControllerStatus.Verloren
+                MsgBox("gewonnen")
+            End If
 
         ElseIf msg.StartsWith("Shot:") Then
             Dim rest As String = msg.Substring(msg.IndexOf(":") + 1)
@@ -219,11 +219,6 @@ Public Class SpielController
                                 Case SchiffType._5er
                                     meineSchiffe5uebrig -= 1
                             End Select
-                            If (meineSchiffe2uebrig + meineSchiffe3uebrig + meineSchiffe4uebrig + meineSchiffe5uebrig) = 0 Then
-                                Me.status = SpielControllerStatus.Verloren
-                                Me.statusAnderer = SpielControllerStatus.Gewonnen
-                                MsgBox("verloren")
-                            End If
                         Else
                             topForm.FeldBackground1.getControl(x, y).Zustand = FeldTeilStatus.Getroffen
                         End If
@@ -236,6 +231,11 @@ Public Class SpielController
                 RaiseEvent NetzwerkSend("ShotBack:" & topForm.FeldBackground1.getControl(x, y).Zustand & ";" & duID & ";" & ichID)
             End If
             Me.SchiffeAktualisieren()
+            If (meineSchiffe2uebrig + meineSchiffe3uebrig + meineSchiffe4uebrig + meineSchiffe5uebrig) = 0 Then
+                Me.status = SpielControllerStatus.Verloren
+                Me.statusAnderer = SpielControllerStatus.Gewonnen
+                MsgBox("verloren")
+            End If
 
         ElseIf msg.StartsWith("ShipBack:") Then
             Dim rest As String = msg.Substring(msg.IndexOf(":") + 1)
