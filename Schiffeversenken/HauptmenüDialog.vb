@@ -1,7 +1,9 @@
 ﻿Public Class HauptmenüDialog
-    Private ShopForm As New ShopDialog
+    Private ShopForm As New EinstellungenDialog
     Private StatistikForm As New StatistikDialog
     Private WithEvents SpielerSucheForm As SpielerSucheDialog
+    Public Shared Color As Color = Color.LightSeaGreen
+    Public Shared GrafikIndex As Integer = 5
 
     Private Sub PlayBT_Click(sender As Object, e As EventArgs) Handles PlayBT.Click
         Me.Hide()
@@ -17,7 +19,7 @@
         StatistikForm.ShowDialog()
     End Sub
 
-    Private Sub ShopBT_Click(sender As Object, e As EventArgs) Handles ShopBT.Click
+    Private Sub ShopBT_Click(sender As Object, e As EventArgs) Handles ConfigBT.Click
         ShopForm.ShowDialog()
     End Sub
 
@@ -29,7 +31,7 @@
         Sprachpackete.Datei = "../../DE.lang"
         PlayBT.Text = Sprachpackete.GetUbersetzung("playBT")
         StatistikBT.Text = Sprachpackete.GetUbersetzung("statisticsBT")
-        ShopBT.Text = Sprachpackete.GetUbersetzung("shopBT")
+        ConfigBT.Text = Sprachpackete.GetUbersetzung("configBT")
         CloseBT.Text = Sprachpackete.GetUbersetzung("endBT")
         Me.Text = Sprachpackete.GetUbersetzung("mainmenu")
     End Sub

@@ -150,10 +150,10 @@
     <Compile Include="StatistikDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShopDialog.Designer.vb">
-      <DependentUpon>ShopDialog.vb</DependentUpon>
+    <Compile Include="EinstellungenDialog.Designer.vb">
+      <DependentUpon>EinstellungenDialog.vb</DependentUpon>
     </Compile>
-    <Compile Include="ShopDialog.vb">
+    <Compile Include="EinstellungenDialog.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -179,8 +179,8 @@
     <EmbeddedResource Include="StatistikDialog.resx">
       <DependentUpon>StatistikDialog.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShopDialog.resx">
-      <DependentUpon>ShopDialog.vb</DependentUpon>
+    <EmbeddedResource Include="EinstellungenDialog.resx">
+      <DependentUpon>EinstellungenDialog.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

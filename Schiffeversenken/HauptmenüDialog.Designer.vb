@@ -24,7 +24,7 @@ Partial Class HauptmenüDialog
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HauptmenüDialog))
         Me.StatistikBT = New System.Windows.Forms.Button()
-        Me.ShopBT = New System.Windows.Forms.Button()
+        Me.ConfigBT = New System.Windows.Forms.Button()
         Me.CloseBT = New System.Windows.Forms.Button()
         Me.PlayBT = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -48,17 +48,16 @@ Partial Class HauptmenüDialog
         Me.StatistikBT.Text = "Statistik"
         Me.StatistikBT.UseVisualStyleBackColor = True
         '
-        'ShopBT
+        'ConfigBT
         '
-        Me.ShopBT.BackgroundImage = CType(resources.GetObject("ShopBT.BackgroundImage"), System.Drawing.Image)
-        Me.ShopBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ShopBT.Enabled = False
-        Me.ShopBT.Location = New System.Drawing.Point(3, 231)
-        Me.ShopBT.Name = "ShopBT"
-        Me.ShopBT.Size = New System.Drawing.Size(380, 70)
-        Me.ShopBT.TabIndex = 2
-        Me.ShopBT.Text = "Shop"
-        Me.ShopBT.UseVisualStyleBackColor = True
+        Me.ConfigBT.BackgroundImage = CType(resources.GetObject("ConfigBT.BackgroundImage"), System.Drawing.Image)
+        Me.ConfigBT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ConfigBT.Location = New System.Drawing.Point(3, 231)
+        Me.ConfigBT.Name = "ConfigBT"
+        Me.ConfigBT.Size = New System.Drawing.Size(380, 70)
+        Me.ConfigBT.TabIndex = 2
+        Me.ConfigBT.Text = "Einstellungen"
+        Me.ConfigBT.UseVisualStyleBackColor = True
         '
         'CloseBT
         '
@@ -120,7 +119,7 @@ Partial Class HauptmenüDialog
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 386.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.CloseBT, 0, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.ShopBT, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.ConfigBT, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.PlayBT, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.StatistikBT, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
@@ -167,7 +166,7 @@ Partial Class HauptmenüDialog
 
     End Sub
     Friend WithEvents StatistikBT As Button
-    Friend WithEvents ShopBT As Button
+    Friend WithEvents ConfigBT As Button
     Friend WithEvents CloseBT As Button
     Friend WithEvents PlayBT As Button
     Friend WithEvents Label1 As Label

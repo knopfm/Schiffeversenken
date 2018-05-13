@@ -190,6 +190,7 @@ Partial Class FeldPlatzierenDialog
         Me.Controls.Add(Me.OkBT)
         Me.Controls.Add(Me.RichtungGB)
         Me.Controls.Add(Me.SchiffTypeGB)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
