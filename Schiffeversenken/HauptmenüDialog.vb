@@ -2,7 +2,7 @@
     Private EinstellunForm As New EinstellungenDialog
     Private StatistikForm As New StatistikDialog
     Private WithEvents SpielerSucheForm As SpielerSucheDialog
-    Private t As New Threading.Thread(AddressOf bilder)
+    Private t As New Threading.Thread(AddressOf Bilder)
     Private innerBilderIndex As Integer = 0
     Public Shared config As New SettingsObject
 
@@ -44,7 +44,7 @@
         t.Start()
     End Sub
 
-    Private Sub bilder()
+    Private Sub Bilder()
         Do
             Try
                 Select Case innerBilderIndex
@@ -76,18 +76,18 @@ End Class
 
 Public Class SettingsObject
     Public Ip As String = "127.0.0.1"
-    Public Lang As String = "..\..\DE.lang"
-    Public c As String = (-14634326).ToString
-    Public points As Double = 1
+    Public Lang As String = ".\DE.lang"
+    Public C As String = (-14634326).ToString
+    Public Points As Double = 1
     Public GrafikIndex As Integer = 5
 
-    <System.Xml.Serialization.XmlIgnoreAttribute>
+    <Xml.Serialization.XmlIgnore>
     Public Property Color As Color
         Get
-            Return Color.FromArgb(c)
+            Return Color.FromArgb(C)
         End Get
         Set(value As Color)
-            c = value.ToArgb
+            C = value.ToArgb
         End Set
     End Property
 End Class

@@ -238,8 +238,12 @@ Public Class SpielController
                 Dim dial As New SiegerDialog(bottomForm)
                 dial.setState(Me.status)
                 dial.setStatistik(berechneInfoBoxUnten())
-                dial.ShowDialog()
-                'TODO: Weiterspielen
+                If dial.ShowDialog() = DialogResult.Yes Then
+                    RaiseEvent NetzwerkSend("TryConnect:" & duID & ";" & ichID)
+                    Me.status = SpielControllerStatus.Aus
+                    Me.statusAnderer = SpielControllerStatus.Aus
+                End If
+                beenden(True)
             End If
 
         ElseIf msg.StartsWith("Shot:") Then
@@ -293,7 +297,12 @@ Public Class SpielController
                     Dim dial As New SiegerDialog(bottomForm)
                     dial.setState(Me.status)
                     dial.setStatistik(berechneInfoBoxUnten())
-                    dial.ShowDialog()
+                    If dial.ShowDialog() = DialogResult.Yes Then
+                        RaiseEvent NetzwerkSend("TryConnect:" & duID & ";" & ichID)
+                        Me.status = SpielControllerStatus.Aus
+                        Me.statusAnderer = SpielControllerStatus.Aus
+                    End If
+                    beenden(True)
                 End If
             End If
 
@@ -309,6 +318,7 @@ Public Class SpielController
 
         ElseIf msg.StartsWith("AbortGame:") Then
             If CInt(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1)) = ichID Then
+                MessageBox.Show(Sprachpakete.GetUbersetzung("msg_abortGame"), Sprachpakete.GetUbersetzung("msg_abortGameL"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 beenden(True)
             End If
         End If
@@ -418,7 +428,9 @@ Public Class SpielController
     End Sub
 
     Private Sub Form_Beenden() Handles bottomForm.Beenden, topForm.Beenden
-        beenden(False)
+        If MessageBox.Show(Sprachpakete.GetUbersetzung("msg_abortQ"), Sprachpakete.GetUbersetzung("msg_abortGameL"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            beenden(Me.status = SpielControllerStatus.Verloren Or Me.status = SpielControllerStatus.Gewonnen)
+        End If
     End Sub
 
     Private Sub beenden(netzwerknachricht As Boolean)

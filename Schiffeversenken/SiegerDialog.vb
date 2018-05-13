@@ -11,8 +11,11 @@
     End Sub
 
     Private Sub SiegerDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CloseBT.Text = Sprachpakete.GetUbersetzung("closeBT")
+        NeuesSpielBT.Text = Sprachpakete.GetUbersetzung("newGameBT")
         SpielStatistikL.Text = innerStatistik
         GewonnenL.Text = SpielController.translateState(innerState)
+        Me.BackColor = HauptmenüDialog.config.Color
         t.Start()
         Me.Location = New Point(base.Location.X + (base.Width / 2 - Width / 2), base.Location.Y + (base.Height / 2 - Height / 2))
     End Sub
@@ -49,11 +52,16 @@
     End Sub
 
     Private Sub CloseBT_Click(sender As Object, e As EventArgs) Handles CloseBT.Click
-        Me.DialogResult = DialogResult.OK
+        Me.DialogResult = DialogResult.No
         Me.Close()
     End Sub
 
     Private Sub SiegerDialog_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         t.Abort()
+    End Sub
+
+    Private Sub NeuesSpielBT_Click(sender As Object, e As EventArgs) Handles NeuesSpielBT.Click
+        Me.DialogResult = DialogResult.Yes
+        Me.Close()
     End Sub
 End Class

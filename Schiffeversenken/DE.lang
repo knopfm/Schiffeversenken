@@ -44,6 +44,8 @@
   <langGB>Sprache</langGB>
   <fileLang>Sprachdateien</fileLang>
   <fileAll>Alle Dateien</fileAll>
+  <newGameBT>Neus Spiel</newGameBT>
+  <closeBT>Schließen</closeBT>
   
   <msg_WriteIP>Tippe die IP Adresse des Servers ein.</msg_WriteIP>
   <msg_WriteIP2>Zum Beispiel:</msg_WriteIP2>_
@@ -65,6 +67,10 @@
   <msg_NotReady>Dein Gegenspieler ist noch nicht bereit.</msg_NotReady>
   <msg_Ready>Dein Gegenspieler ist startklar.</msg_Ready>
   <msg_gameQuestion>Eine Spielanfrage läuft bereits!</msg_gameQuestion>
+  <msg_abortGame>Dein Gegner hat das Spiel abgebrochen!</msg_abortGame>
+  <msg_abortGameL>Spiel abgebrochen</msg_abortGameL>
+  <msg_abortQ>Möchtest du das Spiel wirklich abbrechen?</msg_abortQ>
+    
   <state_win>Gewonnen</state_win>
   <state_loose>Verloren</state_loose>
   <state_shot>Schießen</state_shot>

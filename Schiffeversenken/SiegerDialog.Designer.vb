@@ -26,6 +26,7 @@ Partial Class SiegerDialog
         Me.GewonnenL = New System.Windows.Forms.Label()
         Me.SpielStatistikL = New System.Windows.Forms.Label()
         Me.CloseBT = New System.Windows.Forms.Button()
+        Me.NeuesSpielBT = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -75,10 +76,20 @@ Partial Class SiegerDialog
         Me.CloseBT.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.CloseBT.Location = New System.Drawing.Point(12, 157)
         Me.CloseBT.Name = "CloseBT"
-        Me.CloseBT.Size = New System.Drawing.Size(75, 23)
+        Me.CloseBT.Size = New System.Drawing.Size(84, 23)
         Me.CloseBT.TabIndex = 1
         Me.CloseBT.Text = "Schließen"
         Me.CloseBT.UseVisualStyleBackColor = True
+        '
+        'NeuesSpielBT
+        '
+        Me.NeuesSpielBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.NeuesSpielBT.Location = New System.Drawing.Point(195, 157)
+        Me.NeuesSpielBT.Name = "NeuesSpielBT"
+        Me.NeuesSpielBT.Size = New System.Drawing.Size(92, 23)
+        Me.NeuesSpielBT.TabIndex = 2
+        Me.NeuesSpielBT.Text = "Neues Spiel"
+        Me.NeuesSpielBT.UseVisualStyleBackColor = True
         '
         'SiegerDialog
         '
@@ -88,6 +99,7 @@ Partial Class SiegerDialog
         Me.BackColor = System.Drawing.Color.LightSeaGreen
         Me.CancelButton = Me.CloseBT
         Me.ClientSize = New System.Drawing.Size(469, 192)
+        Me.Controls.Add(Me.NeuesSpielBT)
         Me.Controls.Add(Me.CloseBT)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -105,4 +117,5 @@ Partial Class SiegerDialog
     Friend WithEvents GewonnenL As Label
     Friend WithEvents SpielStatistikL As Label
     Friend WithEvents CloseBT As Button
+    Friend WithEvents NeuesSpielBT As Button
 End Class

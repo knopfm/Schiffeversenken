@@ -68,6 +68,7 @@
         If ListBox1.SelectedIndex <> -1 Then
             If ListBox1.SelectedItem.ToString = Me.id And False Then
                 MessageBox.Show(Sprachpakete.GetUbersetzung("msg_ConnectYourself"), Sprachpakete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Me.Status = SpielerSucheStatus.Online
             Else
                 If Me.Status = SpielerSucheStatus.Online Then
                     If MessageBox.Show(Sprachpakete.GetUbersetzung("msg_PlayWith") & " " & ListBox1.SelectedItem.ToString & " " & Sprachpakete.GetUbersetzung("msg_PlayWith2"), Sprachpakete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -76,13 +77,14 @@
                     End If
                 Else
                     MessageBox.Show(Sprachpakete.GetUbersetzung("msg_gameQuestion"), Sprachpakete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Me.Status = SpielerSucheStatus.Verbinden
                 End If
             End If
         Else
             MessageBox.Show(Sprachpakete.GetUbersetzung("msg_ChoosPlayer"), Sprachpakete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.Status = SpielerSucheStatus.Online
         End If
         ListBox1.SelectedIndex = -1
-        Me.Status = SpielerSucheStatus.Online
     End Sub
 
     Private Sub mpc_NeueNachricht(msg As String) Handles mpc.NeueNachricht
