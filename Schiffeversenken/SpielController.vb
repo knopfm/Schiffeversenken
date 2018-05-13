@@ -186,7 +186,16 @@ Public Class SpielController
                         Case SchiffType._5er
                             deineSchiffe5uebrig -= 1
                     End Select
+                    Me.status = SpielControllerStatus.Schießen
+                    Me.statusAnderer = SpielControllerStatus.Warten
+                ElseIf ft.Zustand = FeldTeilStatus.Daneben Then
+                    Me.status = SpielControllerStatus.Warten
+                    Me.statusAnderer = SpielControllerStatus.Schießen
+                ElseIf ft.Zustand = FeldTeilStatus.Getroffen Then
+                    Me.status = SpielControllerStatus.Schießen
+                    Me.statusAnderer = SpielControllerStatus.Warten
                 End If
+
             End If
             Me.SchiffeAktualisieren()
             If (deineSchiffe2uebrig + deineSchiffe3uebrig + deineSchiffe4uebrig + deineSchiffe5uebrig) = 0 Then
@@ -223,10 +232,14 @@ Public Class SpielController
                             topForm.FeldBackground1.getControl(x, y).Zustand = FeldTeilStatus.Getroffen
                         End If
                         found = True
+                        Me.status = SpielControllerStatus.Schießen
+                        Me.statusAnderer = SpielControllerStatus.Warten
                     End If
                 Next
                 If Not found Then
                     topForm.FeldBackground1.getControl(x, y).Zustand = FeldTeilStatus.Daneben
+                    Me.status = SpielControllerStatus.Warten
+                    Me.statusAnderer = SpielControllerStatus.Schießen
                 End If
                 RaiseEvent NetzwerkSend("ShotBack:" & topForm.FeldBackground1.getControl(x, y).Zustand & ";" & duID & ";" & ichID)
             End If

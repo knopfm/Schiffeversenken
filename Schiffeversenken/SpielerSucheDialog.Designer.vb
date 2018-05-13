@@ -46,6 +46,7 @@ Partial Class SpielerSucheDialog
         'ListBox1
         '
         Me.ListBox1.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Left
         Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBox1.ForeColor = System.Drawing.SystemColors.WindowText

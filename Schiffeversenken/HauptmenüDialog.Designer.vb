@@ -24,13 +24,11 @@ Partial Class HauptmenüDialog
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HauptmenüDialog))
         Me.StatistikBT = New System.Windows.Forms.Button()
-        Me.ConfigBT = New System.Windows.Forms.Button()
         Me.CloseBT = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.ConfigBT = New System.Windows.Forms.Button()
         Me.PlayBT = New System.Windows.Forms.Button()
-        Me.StatistikBT = New System.Windows.Forms.Button()
         Me.HauptLogoPB = New System.Windows.Forms.PictureBox()
         Me.LogoPB = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -50,17 +48,6 @@ Partial Class HauptmenüDialog
         Me.StatistikBT.TabIndex = 1
         Me.StatistikBT.Text = "Statistik"
         Me.StatistikBT.UseVisualStyleBackColor = True
-        '
-        'ConfigBT
-        '
-        Me.ConfigBT.BackgroundImage = CType(resources.GetObject("ConfigBT.BackgroundImage"), System.Drawing.Image)
-        Me.ConfigBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ConfigBT.Location = New System.Drawing.Point(3, 231)
-        Me.ConfigBT.Name = "ConfigBT"
-        Me.ConfigBT.Size = New System.Drawing.Size(380, 70)
-        Me.ConfigBT.TabIndex = 2
-        Me.ConfigBT.Text = "Einstellungen"
-        Me.ConfigBT.UseVisualStyleBackColor = True
         '
         'CloseBT
         '
@@ -113,17 +100,17 @@ Partial Class HauptmenüDialog
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(386, 380)
         Me.TableLayoutPanel2.TabIndex = 0
         '
-        'ShopBT
+        'ConfigBT
         '
-        Me.ConfigBT.BackgroundImage = CType(resources.GetObject("ShopBT.BackgroundImage"), System.Drawing.Image)
+        Me.ConfigBT.BackColor = System.Drawing.Color.White
+        Me.ConfigBT.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte
         Me.ConfigBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ConfigBT.Enabled = False
         Me.ConfigBT.Location = New System.Drawing.Point(3, 231)
-        Me.ConfigBT.Name = "ShopBT"
+        Me.ConfigBT.Name = "ConfigBT"
         Me.ConfigBT.Size = New System.Drawing.Size(380, 70)
         Me.ConfigBT.TabIndex = 2
-        Me.ConfigBT.Text = "Shop"
-        Me.ConfigBT.UseVisualStyleBackColor = True
+        Me.ConfigBT.Text = "Einstellungen"
+        Me.ConfigBT.UseVisualStyleBackColor = False
         '
         'PlayBT
         '
@@ -136,18 +123,6 @@ Partial Class HauptmenüDialog
         Me.PlayBT.TabIndex = 0
         Me.PlayBT.Text = "Spielen"
         Me.PlayBT.UseVisualStyleBackColor = False
-        '
-        'StatistikBT
-        '
-        Me.StatistikBT.BackgroundImage = CType(resources.GetObject("StatistikBT.BackgroundImage"), System.Drawing.Image)
-        Me.StatistikBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.StatistikBT.Enabled = False
-        Me.StatistikBT.Location = New System.Drawing.Point(3, 155)
-        Me.StatistikBT.Name = "StatistikBT"
-        Me.StatistikBT.Size = New System.Drawing.Size(380, 70)
-        Me.StatistikBT.TabIndex = 1
-        Me.StatistikBT.Text = "Statistik"
-        Me.StatistikBT.UseVisualStyleBackColor = True
         '
         'HauptLogoPB
         '
