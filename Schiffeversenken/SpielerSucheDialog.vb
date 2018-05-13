@@ -66,9 +66,13 @@
             If ListBox1.SelectedItem.ToString = Me.id And False Then
                 MessageBox.Show(Sprachpackete.GetUbersetzung("msg_ConnectYourself"), Sprachpackete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Else
-                If MessageBox.Show(Sprachpackete.GetUbersetzung("msg_PlayWith") & " " & ListBox1.SelectedItem.ToString & " " & Sprachpackete.GetUbersetzung("msg_PlayWith2"), Sprachpackete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                    mpc.Send("TryConnect:" & ListBox1.SelectedItem.ToString & ";" & id)
-                    Me.Status = SpielerSucheStatus.Verbinden
+                If Me.Status = SpielerSucheStatus.Online Then
+                    If MessageBox.Show(Sprachpackete.GetUbersetzung("msg_PlayWith") & " " & ListBox1.SelectedItem.ToString & " " & Sprachpackete.GetUbersetzung("msg_PlayWith2"), Sprachpackete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                        mpc.Send("TryConnect:" & ListBox1.SelectedItem.ToString & ";" & id)
+                        Me.Status = SpielerSucheStatus.Verbinden
+                    End If
+                Else
+                    MessageBox.Show(Sprachpackete.GetUbersetzung("msg_gameQuestion"), Sprachpackete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End If
             End If
         Else

@@ -59,7 +59,7 @@
   <msg_startPress>Klicke jetzt auf Start, um zu Starten.</msg_startPress>
   <msg_NotReady>Dein Gegenspieler ist noch nicht bereit.</msg_NotReady>
   <msg_Ready>Dein Gegenspieler ist startklar.</msg_Ready>
-
+  <msg_gameQuestion>Eine Spielanfrage läuft bereits!</msg_gameQuestion>
   <state_win>Gewonnen</state_win>
   <state_loose>Verloren</state_loose>
   <state_shot>Schießen</state_shot>
