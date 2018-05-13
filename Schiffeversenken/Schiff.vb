@@ -50,7 +50,7 @@
                     Case 0
                         Return My.Resources.schiff_3_0
                     Case 1
-                        Return My.Resources.schiff_3_1
+                        Return My.Resources.schiff_3_4
                     Case 2
                         Return My.Resources.schiff_3_2
                 End Select
@@ -96,7 +96,7 @@
                     Case 0
                         Return My.Resources.schiff_3_0_v
                     Case 1
-                        Return My.Resources.schiff_3_1_v
+                        Return My.Resources.schiff_3_4_v
                     Case 2
                         Return My.Resources.schiff_3_2_v
                 End Select

@@ -225,8 +225,6 @@
     <None Include="Resources\schiff_2_1_v.png" />
     <None Include="Resources\schiff_3_0.png" />
     <None Include="Resources\schiff_3_0_v.png" />
-    <None Include="Resources\schiff_3_1.png" />
-    <None Include="Resources\schiff_3_1_v.png" />
     <None Include="Resources\schiff_3_2.png" />
     <None Include="Resources\schiff_3_2_v.png" />
     <None Include="Resources\schiff_4_0.png" />
@@ -247,6 +245,8 @@
     <None Include="Resources\schiff_5_3_v.png" />
     <None Include="Resources\schiff_5_4.png" />
     <None Include="Resources\schiff_5_4_v.png" />
+    <None Include="Resources\schiff_3_4.png" />
+    <None Include="Resources\schiff_3_4_v.png" />
     <Content Include="ToDo.txt" />
   </ItemGroup>
   <ItemGroup>

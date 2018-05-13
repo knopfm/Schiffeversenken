@@ -193,26 +193,6 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property schiff_3_1() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("schiff_3_1", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property schiff_3_1_v() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("schiff_3_1_v", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property schiff_3_2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("schiff_3_2", resourceCulture)
@@ -226,6 +206,26 @@ Namespace My.Resources
         Friend ReadOnly Property schiff_3_2_v() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("schiff_3_2_v", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property schiff_3_4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("schiff_3_4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property schiff_3_4_v() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("schiff_3_4_v", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
