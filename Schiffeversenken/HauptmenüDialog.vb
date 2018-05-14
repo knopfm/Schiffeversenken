@@ -83,7 +83,7 @@ Public Class SettingsObject
     Public Ip As String = "127.0.0.1"
     Public Lang As String = ".\EN.lang"
     Public C As String = (-14634326).ToString
-    Public Points As Double = 1
+    Public Stats As New StatistikObject
     Public GrafikIndex As Integer = 5
 
     <Xml.Serialization.XmlIgnore>
@@ -93,6 +93,25 @@ Public Class SettingsObject
         End Get
         Set(value As Color)
             C = value.ToArgb
+        End Set
+    End Property
+End Class
+
+Public Class StatistikObject
+    Public versenkt As Integer = 0
+    Public daneben As Integer = 0
+    Public getroffen As Integer = 0
+    Public gewonnen As Integer = 0
+    Public verloren As Integer = 0
+    Public ticks As Long
+
+    <Xml.Serialization.XmlIgnore>
+    Public Property spielzeit As TimeSpan
+        Get
+            Return TimeSpan.FromTicks(ticks)
+        End Get
+        Set(value As TimeSpan)
+            ticks = value.Ticks
         End Set
     End Property
 End Class

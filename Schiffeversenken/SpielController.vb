@@ -4,6 +4,7 @@ Public Class SpielController
     Public Event NetzwerkSend(msgs As String)
     Public Event UnHide()
     Public Event Online()
+    Public Event Connect(did As Integer)
     Public ichID As Integer
     Public duID As Integer
     Private WithEvents bottomForm As FeldDialog10
@@ -218,14 +219,18 @@ Public Class SpielController
                     End Select
                     Me.status = SpielControllerStatus.Schießen
                     Me.statusAnderer = SpielControllerStatus.Warten
+                    HauptmenüDialog.config.Stats.versenkt += 1
+                    HauptmenüDialog.config.Stats.getroffen += 1
                     meineTreffer += 1
                 ElseIf ft.Zustand = FeldTeilStatus.Getroffen Then
                     Me.status = SpielControllerStatus.Schießen
                     Me.statusAnderer = SpielControllerStatus.Warten
+                    HauptmenüDialog.config.Stats.getroffen += 1
                     meineTreffer += 1
                 ElseIf ft.Zustand = FeldTeilStatus.Daneben Then
                     Me.status = SpielControllerStatus.Warten
                     Me.statusAnderer = SpielControllerStatus.Schießen
+                    HauptmenüDialog.config.Stats.daneben += 1
                     meineDaneben += 1
                 End If
 
@@ -234,15 +239,18 @@ Public Class SpielController
             If (deineSchiffe2uebrig + deineSchiffe3uebrig + deineSchiffe4uebrig + deineSchiffe5uebrig) = 0 Then
                 Me.status = SpielControllerStatus.Gewonnen
                 Me.statusAnderer = SpielControllerStatus.Verloren
+                HauptmenüDialog.config.Stats.gewonnen += 1
                 Zeitwächter.Abort()
                 Me.SchiffeAktualisieren()
                 Dim dial As New SiegerDialog(bottomForm)
                 dial.setState(Me.status)
                 dial.setStatistik(berechneInfoBoxUnten())
+                HauptmenüDialog.config.Stats.spielzeit = HauptmenüDialog.config.Stats.spielzeit.Add(endZeit - startZeit)
                 If dial.ShowDialog() = DialogResult.Yes Then
                     RaiseEvent NetzwerkSend("TryConnect:" & duID & ";" & ichID)
                     Me.status = SpielControllerStatus.Aus
                     Me.statusAnderer = SpielControllerStatus.Aus
+                    RaiseEvent Connect(Me.duID)
                 Else
                     RaiseEvent Online()
                 End If
@@ -297,13 +305,16 @@ Public Class SpielController
                 Zeitwächter.Abort()
                 Me.SchiffeAktualisieren()
                 If Me.ichID <> Me.duID Then
+                    HauptmenüDialog.config.Stats.verloren += 1
                     Dim dial As New SiegerDialog(bottomForm)
                     dial.setState(Me.status)
                     dial.setStatistik(berechneInfoBoxUnten())
+                    HauptmenüDialog.config.Stats.spielzeit = HauptmenüDialog.config.Stats.spielzeit.Add(endZeit - startZeit)
                     If dial.ShowDialog() = DialogResult.Yes Then
                         RaiseEvent NetzwerkSend("TryConnect:" & duID & ";" & ichID)
                         Me.status = SpielControllerStatus.Aus
                         Me.statusAnderer = SpielControllerStatus.Aus
+                        RaiseEvent Connect(Me.duID)
                     Else
                         RaiseEvent Online()
                     End If

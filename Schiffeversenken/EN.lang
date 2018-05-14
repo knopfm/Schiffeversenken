@@ -70,9 +70,25 @@
   <msg_abortGame>Your enemy has left the game!</msg_abortGame>
   <msg_abortGameL>Game aborted</msg_abortGameL>
   <msg_abortQ>Do you want to leave?</msg_abortQ>
+  <msg_timeout>Timeout</msg_timeout>
+  <msg_timeoutC>Timeout while connect to Player!</msg_timeoutC>
     
   <state_win>Victory</state_win>
   <state_loose>Defeat</state_loose>
   <state_shot>Shoot</state_shot>
   <state_wait>Wait</state_wait>
+
+  <stat_Head>Statistics for this PC</stat_Head>
+  <stat_GameWin>Match wins</stat_GameWin>
+  <stat_GameLoose>Match looses</stat_GameLoose>
+  <stat_GamePlayed>Match played</stat_GamePlayed>
+  <stat_GamePercent>Win Percent</stat_GamePercent>
+  <stat_ShotLoose>Shots loose</stat_ShotLoose>
+  <stat_ShotPoint>Shots hit</stat_ShotPoint>
+  <stat_ShipDown>Ships sunk</stat_ShipDown>
+  <stat_Points>Accuracy</stat_Points>
+  <stat_TimePlay>Time per Round</stat_TimePlay>
+  <stat_TimeGame>Whole Game Time</stat_TimeGame>
+  <stat_resetBT>Reset</stat_resetBT>
+  <stat_reset>Are you sure to reset the Statistics?</stat_reset>
 </lang>

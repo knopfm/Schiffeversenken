@@ -7,6 +7,7 @@
     Public Event Schließen()
     Private Delegate Sub dNR(MsgBox As String)
     Private Delegate Sub dNL()
+    Private timeout As New Threading.Thread(AddressOf TimeoutConnect)
 
     Private Sub SpielerSucheDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = Sprachpakete.GetUbersetzung("playerSearch")
@@ -73,6 +74,7 @@
                 If Me.Status = SpielerSucheStatus.Online Then
                     If MessageBox.Show(Sprachpakete.GetUbersetzung("msg_PlayWith") & " " & ListBox1.SelectedItem.ToString & " " & Sprachpakete.GetUbersetzung("msg_PlayWith2"), Sprachpakete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                         mpc.Send("TryConnect:" & ListBox1.SelectedItem.ToString & ";" & id)
+                        startTimeout(ListBox1.SelectedItem.ToString)
                         Me.Status = SpielerSucheStatus.Verbinden
                     End If
                 Else
@@ -98,6 +100,7 @@
         ElseIf msg.StartsWith("ConnectWith:") Then
             If CInt(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1)) = id Then
                 Me.Status = SpielerSucheStatus.Spielen
+                stopTimeout()
                 If SpielC Is Nothing Then
                     SpielC = New SpielController(Me.id, CInt(msg.Substring(msg.IndexOf(";") + 1)))
                     Invoke(New dCreatGame(AddressOf createGame), SpielC)
@@ -106,17 +109,21 @@
         ElseIf msg.StartsWith("AbortConnect:") Then
             If CInt(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1)) = id Then
                 MessageBox.Show(msg.Substring(msg.IndexOf(";") + 1) & " " & Sprachpakete.GetUbersetzung("msg_WouldNotPlay"), Sprachpakete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                stopTimeout()
                 Me.Status = SpielerSucheStatus.Online
+                SpielC.Dispose()
             End If
         ElseIf msg.StartsWith("TryConnect:") Then
             If CInt(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1)) = id Then
-                If MessageBox.Show(msg.Substring(msg.IndexOf(";") + 1) & " " & Sprachpakete.GetUbersetzung("msg_WouldPlay"), "Spieler auffordern", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                If MessageBox.Show(msg.Substring(msg.IndexOf(";") + 1) & " " & Sprachpakete.GetUbersetzung("msg_WouldPlay"), Sprachpakete.GetUbersetzung("msg_PlayerAnim"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     Me.Status = SpielerSucheStatus.Spielen
+                    stopTimeout()
                     mpc.Send("ConnectWith:" & msg.Substring(msg.IndexOf(";") + 1) & ";" & Me.id)
                     SpielC = New SpielController(Me.id, CInt(msg.Substring(msg.IndexOf(";") + 1)))
                     Invoke(New dCreatGame(AddressOf createGame), SpielC)
                 Else
                     mpc.Send("AbortConnect:" & msg.Substring(msg.IndexOf(";") + 1) & ";" & Me.id)
+                    stopTimeout()
                     Me.Status = SpielerSucheStatus.Online
                     SpielC = Nothing
                 End If
@@ -148,6 +155,7 @@
     End Sub
 
     Private Sub GameChoose_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        stopTimeout()
         Try
             HauptmenüDialog.config.Ip = mpc.ServerIP.Address.ToString()
         Catch ex As Exception
@@ -181,9 +189,6 @@
         mpc.Send(msg)
     End Sub
 
-
-
-
     Private Sub SpielC_UnHide() Handles SpielC.UnHide
         Me.Show()
     End Sub
@@ -191,6 +196,9 @@
     Private Sub SpielC_Online() Handles SpielC.Online
         Me.Status = SpielerSucheStatus.Online
     End Sub
+
+
+
 
     Private Delegate Sub dCreatGame(spc As SpielController)
     Private Sub createGame(spc As SpielController)
@@ -216,6 +224,34 @@
     Private Delegate Sub dEnableClients(e As Boolean)
     Private Sub EnableClients(e As Boolean)
         ListBox1.Enabled = e
+    End Sub
+
+
+
+    Private Sub startTimeout(did As Integer) Handles SpielC.Connect
+        timeout = New Threading.Thread(AddressOf TimeoutConnect)
+        timeout.Start(did)
+    End Sub
+
+    Private Sub TimeoutConnect(did As Integer)
+        Try
+            Threading.Thread.Sleep(60000)
+            Invoke(New dShowTimeout(AddressOf showTimeout), did)
+        Catch ex As Threading.ThreadAbortException
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub stopTimeout()
+        timeout.Abort()
+    End Sub
+
+    Private Delegate Sub dShowTimeout(did As Integer)
+    Private Sub showTimeout(did As Integer)
+        MessageBox.Show(Sprachpakete.GetUbersetzung("msg_timeoutC"), Sprachpakete.GetUbersetzung("msg_timeout"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Me.Status = SpielerSucheStatus.Online
+        'mpc.Send("AbortConnect:" & did & ";" & Me.id)
     End Sub
 End Class
 
