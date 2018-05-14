@@ -27,9 +27,9 @@ Partial Class FeldDialog10
         Me.StartBT = New System.Windows.Forms.Button()
         Me.CloseBT = New System.Windows.Forms.Button()
         Me.BackgroundTLP = New System.Windows.Forms.TableLayoutPanel()
+        Me.FeldBackground1 = New Schiffeversenken.FeldBackground()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TimeLeftL = New System.Windows.Forms.Label()
-        Me.FeldBackground1 = New Schiffeversenken.FeldBackground()
         Me.BackgroundTLP.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -82,6 +82,17 @@ Partial Class FeldDialog10
         Me.BackgroundTLP.Size = New System.Drawing.Size(630, 460)
         Me.BackgroundTLP.TabIndex = 0
         '
+        'FeldBackground1
+        '
+        Me.FeldBackground1.BackColor = System.Drawing.Color.Gray
+        Me.FeldBackground1.Cursor = System.Windows.Forms.Cursors.Cross
+        Me.FeldBackground1.Location = New System.Drawing.Point(19, 19)
+        Me.FeldBackground1.Margin = New System.Windows.Forms.Padding(19)
+        Me.FeldBackground1.Name = "FeldBackground1"
+        Me.FeldBackground1.Padding = New System.Windows.Forms.Padding(19)
+        Me.FeldBackground1.Size = New System.Drawing.Size(422, 422)
+        Me.FeldBackground1.TabIndex = 2
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
@@ -96,21 +107,11 @@ Partial Class FeldDialog10
         '
         'TimeLeftL
         '
-        Me.TimeLeftL.Location = New System.Drawing.Point(18, 95)
+        Me.TimeLeftL.Font = New System.Drawing.Font("Stencil", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TimeLeftL.Location = New System.Drawing.Point(3, 9)
         Me.TimeLeftL.Name = "TimeLeftL"
-        Me.TimeLeftL.Size = New System.Drawing.Size(140, 277)
+        Me.TimeLeftL.Size = New System.Drawing.Size(155, 384)
         Me.TimeLeftL.TabIndex = 0
-        '
-        'FeldBackground1
-        '
-        Me.FeldBackground1.BackColor = System.Drawing.Color.Gray
-        Me.FeldBackground1.Cursor = System.Windows.Forms.Cursors.Cross
-        Me.FeldBackground1.Location = New System.Drawing.Point(19, 19)
-        Me.FeldBackground1.Margin = New System.Windows.Forms.Padding(19)
-        Me.FeldBackground1.Name = "FeldBackground1"
-        Me.FeldBackground1.Padding = New System.Windows.Forms.Padding(19)
-        Me.FeldBackground1.Size = New System.Drawing.Size(422, 422)
-        Me.FeldBackground1.TabIndex = 2
         '
         'FeldDialog10
         '

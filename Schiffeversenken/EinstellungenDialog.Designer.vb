@@ -53,8 +53,9 @@ Partial Class EinstellungenDialog
         'CloseBT
         '
         Me.CloseBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CloseBT.BackgroundImage = CType(resources.GetObject("CloseBT.BackgroundImage"), System.Drawing.Image)
         Me.CloseBT.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.CloseBT.Location = New System.Drawing.Point(694, 376)
+        Me.CloseBT.Location = New System.Drawing.Point(390, 160)
         Me.CloseBT.Name = "CloseBT"
         Me.CloseBT.Size = New System.Drawing.Size(78, 23)
         Me.CloseBT.TabIndex = 0
@@ -63,6 +64,7 @@ Partial Class EinstellungenDialog
         '
         'FarbenGB
         '
+        Me.FarbenGB.BackColor = System.Drawing.Color.Transparent
         Me.FarbenGB.Controls.Add(Me.OtherBT)
         Me.FarbenGB.Controls.Add(Me.OtherRB)
         Me.FarbenGB.Controls.Add(Me.CornflowerBlueRB)
@@ -148,6 +150,7 @@ Partial Class EinstellungenDialog
         '
         'GrafikTB
         '
+        Me.GrafikTB.BackColor = System.Drawing.Color.White
         Me.GrafikTB.Location = New System.Drawing.Point(6, 19)
         Me.GrafikTB.Name = "GrafikTB"
         Me.GrafikTB.Orientation = System.Windows.Forms.Orientation.Vertical
@@ -176,6 +179,7 @@ Partial Class EinstellungenDialog
         '
         'GrafikGB
         '
+        Me.GrafikGB.BackColor = System.Drawing.Color.Transparent
         Me.GrafikGB.Controls.Add(Me.GrafikTB)
         Me.GrafikGB.Controls.Add(Me.LowL)
         Me.GrafikGB.Controls.Add(Me.HighL)
@@ -188,6 +192,7 @@ Partial Class EinstellungenDialog
         '
         'SpracheGB
         '
+        Me.SpracheGB.BackColor = System.Drawing.Color.Transparent
         Me.SpracheGB.Controls.Add(Me.SpracheL)
         Me.SpracheGB.Controls.Add(Me.SpracheBT)
         Me.SpracheGB.Location = New System.Drawing.Point(235, 12)
@@ -208,15 +213,17 @@ Partial Class EinstellungenDialog
         '
         'SpracheBT
         '
+        Me.SpracheBT.BackgroundImage = CType(resources.GetObject("SpracheBT.BackgroundImage"), System.Drawing.Image)
         Me.SpracheBT.Location = New System.Drawing.Point(9, 39)
         Me.SpracheBT.Name = "SpracheBT"
         Me.SpracheBT.Size = New System.Drawing.Size(75, 23)
         Me.SpracheBT.TabIndex = 0
-        Me.SpracheBT.Text = "Language"
+        Me.SpracheBT.Text = "Sprache"
         Me.SpracheBT.UseVisualStyleBackColor = True
         '
         'ServerBT
         '
+        Me.ServerBT.BackgroundImage = CType(resources.GetObject("ServerBT.BackgroundImage"), System.Drawing.Image)
         Me.ServerBT.Location = New System.Drawing.Point(6, 39)
         Me.ServerBT.Name = "ServerBT"
         Me.ServerBT.Size = New System.Drawing.Size(75, 23)
@@ -226,6 +233,7 @@ Partial Class EinstellungenDialog
         '
         'ServerGB
         '
+        Me.ServerGB.BackColor = System.Drawing.Color.Transparent
         Me.ServerGB.Controls.Add(Me.ServerL)
         Me.ServerGB.Controls.Add(Me.ServerBT)
         Me.ServerGB.Location = New System.Drawing.Point(377, 12)
@@ -248,8 +256,10 @@ Partial Class EinstellungenDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.CloseBT
-        Me.ClientSize = New System.Drawing.Size(784, 411)
+        Me.ClientSize = New System.Drawing.Size(478, 195)
         Me.Controls.Add(Me.ServerGB)
         Me.Controls.Add(Me.SpracheGB)
         Me.Controls.Add(Me.GrafikGB)

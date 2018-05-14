@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<lang>
+  <mainmenu>Mainmenu</mainmenu>
+  <playBT>Play</playBT>
+  <statisticsBT>Statistics</statisticsBT>
+  <configBT>Settings</configBT>
+  <endBT>End</endBT>
+  <playerSearch>Player Search</playerSearch>
+  <serverBT>Server</serverBT>
+  <connectBT>Connect</connectBT>
+  <backBT>Back</backBT>
+  <endingBT>End</endingBT>
+  <startenBT>Start</startenBT>
+  <placeship>Place Ship</placeship>
+  <shiptypeGB>Ship Type</shiptypeGB>
+  <_2erShipRB>2 Ship</_2erShipRB>
+  <_3erShipRB>3 Ship</_3erShipRB>
+  <_4erShipRB>4 Ship</_4erShipRB>
+  <_5erShipRB>5 Ship</_5erShipRB>
+  <directionGB>Direction</directionGB>
+  <northRB>North</northRB>
+  <eastRB>East</eastRB>
+  <sudenRB>South</sudenRB>
+  <westRB>West</westRB>
+  <okBT>Ok</okBT>
+  <abortBT>Abort</abortBT>
+  <my_field>My Field</my_field>
+  <your_field>Enemy Field</your_field>
+  <colorGB>Colour</colorGB>
+  <otherBT>Other</otherBT>
+  <useBT>Accept</useBT>
+  <graphicGB>Graphic</graphicGB>
+  <highL>High</highL>
+  <lowL>Low</lowL>
+  <_2erShips>2 Ship</_2erShips>
+  <_3erShips>3 Ship</_3erShips>
+  <_4erShips>4 Ship</_4erShips>
+  <_5erShips>5 Ship</_5erShips>
+  <points>Accuracy</points>
+  <gameTime>Play Time</gameTime>
+  <shipsLeft>Ships Left</shipsLeft>
+  <myState>Status</myState>
+  <yourState>Status</yourState>
+  <langGB>Language</langGB>
+  <fileLang>Language Data</fileLang>
+  <fileAll>All Data</fileAll>
+  <newGameBT>New Game</newGameBT>
+  <closeBT>Close</closeBT>
+  
+  <msg_WriteIP>Enter the IP adress of the server</msg_WriteIP>
+  <msg_WriteIP2>Example:</msg_WriteIP2>_
+  <msg_SIP>Server IP Adress</msg_SIP>
+  <msg_NoValidIP>No valid IP adress or server not available.</msg_NoValidIP>
+  <msg_TryAgain>Try again later.</msg_TryAgain>
+  <msg_ConnectYourself>You can not connect to yourself</msg_ConnectYourself>
+  <msg_PlayerAnim>Request player</msg_PlayerAnim>
+  <msg_PlayWith>Do you want to connect with</msg_PlayWith>
+  <msg_PlayWith2>?</msg_PlayWith2>
+  <msg_ChoosPlayer>Select a player!</msg_ChoosPlayer>
+  <msg_WouldPlay>wants to play with you!</msg_WouldPlay>
+  <msg_WouldNotPlay>does not want to play with you!</msg_WouldNotPlay>
+  <msg_NoShipThere>Ship cannot be placed here!</msg_NoShipThere>
+  <msg_NoShipThere2>Try somewhere else.</msg_NoShipThere2>
+  <msg_StartGame>Do you want to start?</msg_StartGame>
+  <msg_placeShip>Click on a spot and place a ship</msg_placeShip>
+  <msg_startPress>Press start to begin.</msg_startPress>
+  <msg_NotReady>Your enemy is not ready.</msg_NotReady>
+  <msg_Ready>Your enemy is ready</msg_Ready>
+  <msg_gameQuestion>A request is already active!</msg_gameQuestion>
+  <msg_abortGame>Your enemy has left the game!</msg_abortGame>
+  <msg_abortGameL>Game aborted</msg_abortGameL>
+  <msg_abortQ>Do you want to leave?</msg_abortQ>
+    
+  <state_win>Victory</state_win>
+  <state_loose>Defeat</state_loose>
+  <state_shot>Shoot</state_shot>
+  <state_wait>Wait</state_wait>
+</lang>

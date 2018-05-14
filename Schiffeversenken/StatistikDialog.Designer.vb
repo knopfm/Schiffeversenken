@@ -29,6 +29,7 @@ Partial Class StatistikDialog
         'SchließenBT
         '
         Me.SchließenBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SchließenBT.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte
         Me.SchließenBT.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.SchließenBT.Location = New System.Drawing.Point(747, 414)
         Me.SchließenBT.Name = "SchließenBT"
@@ -42,6 +43,8 @@ Partial Class StatistikDialog
         Me.AcceptButton = Me.SchließenBT
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte_skretched
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.SchließenBT
         Me.ClientSize = New System.Drawing.Size(830, 449)
         Me.Controls.Add(Me.SchließenBT)
