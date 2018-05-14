@@ -70,9 +70,25 @@
   <msg_abortGame>Dein Gegner hat das Spiel abgebrochen!</msg_abortGame>
   <msg_abortGameL>Spiel abgebrochen</msg_abortGameL>
   <msg_abortQ>Möchtest du das Spiel wirklich abbrechen?</msg_abortQ>
+  <msg_timeout>Zeitüberschreitung</msg_timeout>
+  <msg_timeoutC>Der Gegenspieler braucht zu lang um zu antworten!</msg_timeoutC>
     
   <state_win>Gewonnen</state_win>
   <state_loose>Verloren</state_loose>
   <state_shot>Schießen</state_shot>
   <state_wait>Warten</state_wait>
+
+  <stat_Head>Statistik für diesen PC</stat_Head>
+  <stat_GameWin>Gewonnene Spiele</stat_GameWin>
+  <stat_GameLoose>Verlorene Spiele</stat_GameLoose>
+  <stat_GamePlayed>Gespielte Spiele</stat_GamePlayed>
+  <stat_GamePercent>Gewonnen Prozent</stat_GamePercent>
+  <stat_ShotLoose>Schüsse daneben</stat_ShotLoose>
+  <stat_ShotPoint>Schüsse getroffen</stat_ShotPoint>
+  <stat_ShipDown>Schiffe versenkt</stat_ShipDown>
+  <stat_Points>Trefferquote</stat_Points>
+  <stat_TimePlay>Rundenzeit</stat_TimePlay>
+  <stat_TimeGame>Gessamte Spielzeit</stat_TimeGame>
+  <stat_resetBT>Zurücksetzten</stat_resetBT>
+  <stat_reset>Möchtest du wirklich die Statistik zurücksetzten?</stat_reset>
 </lang>

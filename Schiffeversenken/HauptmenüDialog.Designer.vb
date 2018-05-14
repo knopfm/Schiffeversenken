@@ -41,7 +41,6 @@ Partial Class HauptmenüDialog
         '
         Me.StatistikBT.BackgroundImage = CType(resources.GetObject("StatistikBT.BackgroundImage"), System.Drawing.Image)
         Me.StatistikBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.StatistikBT.Enabled = False
         Me.StatistikBT.Location = New System.Drawing.Point(3, 155)
         Me.StatistikBT.Name = "StatistikBT"
         Me.StatistikBT.Size = New System.Drawing.Size(380, 70)
