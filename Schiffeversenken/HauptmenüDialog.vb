@@ -57,6 +57,7 @@
                 If innerBilderIndex = 1 Then
                     innerBilderIndex = 0
                 End If
+                Threading.Thread.Sleep(4000)
             Catch ex As Threading.ThreadAbortException
                 Exit Do
             Catch ex As Exception

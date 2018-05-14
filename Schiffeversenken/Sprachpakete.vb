@@ -11,7 +11,11 @@ Module Sprachpakete
         End Get
         Set(value As String)
             _datei = value
+            If Not IO.File.Exists(_datei) Then
+                _datei = "..\..\DE.lang"
+            End If
             _xmlDoc.Load(_datei)
+
         End Set
     End Property
 

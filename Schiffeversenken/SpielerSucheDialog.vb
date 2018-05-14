@@ -188,6 +188,10 @@
         Me.Show()
     End Sub
 
+    Private Sub SpielC_Online() Handles SpielC.Online
+        Me.Status = SpielerSucheStatus.Online
+    End Sub
+
     Private Delegate Sub dCreatGame(spc As SpielController)
     Private Sub createGame(spc As SpielController)
         spc.PlanenPhaseBeginen()

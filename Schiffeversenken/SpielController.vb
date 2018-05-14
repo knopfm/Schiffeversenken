@@ -3,6 +3,7 @@
 Public Class SpielController
     Public Event NetzwerkSend(msgs As String)
     Public Event UnHide()
+    Public Event Online()
     Public ichID As Integer
     Public duID As Integer
     Private WithEvents bottomForm As FeldDialog10
@@ -15,7 +16,7 @@ Public Class SpielController
     Private schiffe5ueberigPlatzieren As Integer = 1
     Private meineSchiffeListe As New List(Of Schiff)
     Private meineSchiffeFeld(9, 9) As Integer
-    Private Zeitwächter As New Threading.Thread(AddressOf owenTimer)
+    Private Zeitwächter As New Threading.Thread(AddressOf OwenTimer)
     Private startZeit As DateTime
     Private endZeit As DateTime
     Private lastX, lastY As Integer
@@ -242,6 +243,8 @@ Public Class SpielController
                     RaiseEvent NetzwerkSend("TryConnect:" & duID & ";" & ichID)
                     Me.status = SpielControllerStatus.Aus
                     Me.statusAnderer = SpielControllerStatus.Aus
+                Else
+                    RaiseEvent Online()
                 End If
                 beenden(True)
             End If
@@ -301,6 +304,8 @@ Public Class SpielController
                         RaiseEvent NetzwerkSend("TryConnect:" & duID & ";" & ichID)
                         Me.status = SpielControllerStatus.Aus
                         Me.statusAnderer = SpielControllerStatus.Aus
+                    Else
+                        RaiseEvent Online()
                     End If
                     beenden(True)
                 End If
@@ -319,6 +324,7 @@ Public Class SpielController
         ElseIf msg.StartsWith("AbortGame:") Then
             If CInt(msg.Substring(msg.IndexOf(":") + 1, (msg.IndexOf(";") - msg.IndexOf(":")) - 1)) = ichID Then
                 MessageBox.Show(Sprachpakete.GetUbersetzung("msg_abortGame"), Sprachpakete.GetUbersetzung("msg_abortGameL"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                RaiseEvent Online()
                 beenden(True)
             End If
         End If
@@ -326,6 +332,7 @@ Public Class SpielController
 
     Public Sub NetzwerkLost()
         MsgBox(Now.ToString("[dd.MM.YYYY-HH.mm:ss.fff] ") & "Connection Lost")
+        RaiseEvent Online()
         beenden(True)
     End Sub
 
@@ -408,7 +415,7 @@ Public Class SpielController
         Return ret
     End Function
 
-    Private Sub owenTimer()
+    Private Sub OwenTimer()
         Do
             Try
                 Threading.Thread.Sleep(100)
@@ -429,6 +436,7 @@ Public Class SpielController
 
     Private Sub Form_Beenden() Handles bottomForm.Beenden, topForm.Beenden
         If MessageBox.Show(Sprachpakete.GetUbersetzung("msg_abortQ"), Sprachpakete.GetUbersetzung("msg_abortGameL"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            RaiseEvent Online()
             beenden(Me.status = SpielControllerStatus.Verloren Or Me.status = SpielControllerStatus.Gewonnen)
         End If
     End Sub
