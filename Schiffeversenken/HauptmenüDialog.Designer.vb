@@ -42,9 +42,10 @@ Partial Class HauptmenüDialog
         Me.StatistikBT.BackgroundImage = CType(resources.GetObject("StatistikBT.BackgroundImage"), System.Drawing.Image)
         Me.StatistikBT.Dock = System.Windows.Forms.DockStyle.Fill
         Me.StatistikBT.Enabled = False
-        Me.StatistikBT.Location = New System.Drawing.Point(3, 155)
+        Me.StatistikBT.Location = New System.Drawing.Point(10, 162)
+        Me.StatistikBT.Margin = New System.Windows.Forms.Padding(10)
         Me.StatistikBT.Name = "StatistikBT"
-        Me.StatistikBT.Size = New System.Drawing.Size(380, 70)
+        Me.StatistikBT.Size = New System.Drawing.Size(366, 56)
         Me.StatistikBT.TabIndex = 1
         Me.StatistikBT.Text = "Statistik"
         Me.StatistikBT.UseVisualStyleBackColor = True
@@ -54,9 +55,10 @@ Partial Class HauptmenüDialog
         Me.CloseBT.BackgroundImage = CType(resources.GetObject("CloseBT.BackgroundImage"), System.Drawing.Image)
         Me.CloseBT.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.CloseBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CloseBT.Location = New System.Drawing.Point(3, 307)
+        Me.CloseBT.Location = New System.Drawing.Point(10, 314)
+        Me.CloseBT.Margin = New System.Windows.Forms.Padding(10)
         Me.CloseBT.Name = "CloseBT"
-        Me.CloseBT.Size = New System.Drawing.Size(380, 70)
+        Me.CloseBT.Size = New System.Drawing.Size(366, 56)
         Me.CloseBT.TabIndex = 3
         Me.CloseBT.Text = "Ende"
         Me.CloseBT.UseVisualStyleBackColor = True
@@ -105,9 +107,10 @@ Partial Class HauptmenüDialog
         Me.ConfigBT.BackColor = System.Drawing.Color.White
         Me.ConfigBT.BackgroundImage = Global.Schiffeversenken.My.Resources.Resources.Metallplatte
         Me.ConfigBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ConfigBT.Location = New System.Drawing.Point(3, 231)
+        Me.ConfigBT.Location = New System.Drawing.Point(10, 238)
+        Me.ConfigBT.Margin = New System.Windows.Forms.Padding(10)
         Me.ConfigBT.Name = "ConfigBT"
-        Me.ConfigBT.Size = New System.Drawing.Size(380, 70)
+        Me.ConfigBT.Size = New System.Drawing.Size(366, 56)
         Me.ConfigBT.TabIndex = 2
         Me.ConfigBT.Text = "Einstellungen"
         Me.ConfigBT.UseVisualStyleBackColor = False
@@ -117,9 +120,10 @@ Partial Class HauptmenüDialog
         Me.PlayBT.BackColor = System.Drawing.Color.White
         Me.PlayBT.BackgroundImage = CType(resources.GetObject("PlayBT.BackgroundImage"), System.Drawing.Image)
         Me.PlayBT.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PlayBT.Location = New System.Drawing.Point(3, 79)
+        Me.PlayBT.Location = New System.Drawing.Point(10, 86)
+        Me.PlayBT.Margin = New System.Windows.Forms.Padding(10)
         Me.PlayBT.Name = "PlayBT"
-        Me.PlayBT.Size = New System.Drawing.Size(380, 70)
+        Me.PlayBT.Size = New System.Drawing.Size(366, 56)
         Me.PlayBT.TabIndex = 0
         Me.PlayBT.Text = "Spielen"
         Me.PlayBT.UseVisualStyleBackColor = False
@@ -140,9 +144,11 @@ Partial Class HauptmenüDialog
         '
         Me.LogoPB.BackColor = System.Drawing.Color.Transparent
         Me.LogoPB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LogoPB.Image = Global.Schiffeversenken.My.Resources.Resources.wasser_gif
         Me.LogoPB.Location = New System.Drawing.Point(395, 3)
         Me.LogoPB.Name = "LogoPB"
         Me.LogoPB.Size = New System.Drawing.Size(386, 380)
+        Me.LogoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.LogoPB.TabIndex = 1
         Me.LogoPB.TabStop = False
         '
