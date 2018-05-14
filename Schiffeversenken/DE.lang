@@ -57,13 +57,13 @@
   <msg_PlayWith>Möchten sie sich mit</msg_PlayWith>
   <msg_PlayWith2>verbinden?</msg_PlayWith2>
   <msg_ChoosPlayer>Wählen sie einen Spieler aus!</msg_ChoosPlayer>
-  <msg_WouldPlay>möchte mit dir spielen?</msg_WouldPlay>
+  <msg_WouldPlay>möchte mit dir spielen!</msg_WouldPlay>
   <msg_WouldNotPlay>möchte nicht mit dir spielen!</msg_WouldNotPlay>
   <msg_NoShipThere>Keine Möglichkeit hier Schiff zu platzieren!</msg_NoShipThere>
   <msg_NoShipThere2>Versuche es an einer anderen Stelle.</msg_NoShipThere2>
   <msg_StartGame>Möchtest du das Spiel starten?</msg_StartGame>
   <msg_placeShip>Klicke auf ein Feld und platziere dann ein Schiff.</msg_placeShip>
-  <msg_startPress>Klicke jetzt auf Start, um zu Starten.</msg_startPress>
+  <msg_startPress>Klicke jetzt auf Start, um zu beginnen.</msg_startPress>
   <msg_NotReady>Dein Gegenspieler ist noch nicht bereit.</msg_NotReady>
   <msg_Ready>Dein Gegenspieler ist startklar.</msg_Ready>
   <msg_gameQuestion>Eine Spielanfrage läuft bereits!</msg_gameQuestion>

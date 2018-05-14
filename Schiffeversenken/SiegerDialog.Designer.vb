@@ -22,6 +22,7 @@ Partial Class SiegerDialog
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SiegerDialog))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.GewonnenL = New System.Windows.Forms.Label()
         Me.SpielStatistikL = New System.Windows.Forms.Label()
@@ -50,7 +51,7 @@ Partial Class SiegerDialog
         'GewonnenL
         '
         Me.GewonnenL.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GewonnenL.Font = New System.Drawing.Font("Modern No. 20", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GewonnenL.Font = New System.Drawing.Font("Stencil", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GewonnenL.Location = New System.Drawing.Point(0, 0)
         Me.GewonnenL.Margin = New System.Windows.Forms.Padding(0)
         Me.GewonnenL.Name = "GewonnenL"
@@ -62,6 +63,7 @@ Partial Class SiegerDialog
         'SpielStatistikL
         '
         Me.SpielStatistikL.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SpielStatistikL.Font = New System.Drawing.Font("Stencil", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SpielStatistikL.Location = New System.Drawing.Point(326, 0)
         Me.SpielStatistikL.Margin = New System.Windows.Forms.Padding(0)
         Me.SpielStatistikL.Name = "SpielStatistikL"
@@ -73,6 +75,7 @@ Partial Class SiegerDialog
         'CloseBT
         '
         Me.CloseBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.CloseBT.BackgroundImage = CType(resources.GetObject("CloseBT.BackgroundImage"), System.Drawing.Image)
         Me.CloseBT.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.CloseBT.Location = New System.Drawing.Point(12, 157)
         Me.CloseBT.Name = "CloseBT"
@@ -84,6 +87,7 @@ Partial Class SiegerDialog
         'NeuesSpielBT
         '
         Me.NeuesSpielBT.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.NeuesSpielBT.BackgroundImage = CType(resources.GetObject("NeuesSpielBT.BackgroundImage"), System.Drawing.Image)
         Me.NeuesSpielBT.Location = New System.Drawing.Point(195, 157)
         Me.NeuesSpielBT.Name = "NeuesSpielBT"
         Me.NeuesSpielBT.Size = New System.Drawing.Size(92, 23)
