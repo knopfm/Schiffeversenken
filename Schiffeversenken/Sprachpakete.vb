@@ -12,7 +12,7 @@ Module Sprachpakete
         Set(value As String)
             _datei = value
             If Not IO.File.Exists(_datei) Then
-                _datei = "..\..\DE.lang"
+                _datei = ".\EN.lang"
             End If
             _xmlDoc.Load(_datei)
 

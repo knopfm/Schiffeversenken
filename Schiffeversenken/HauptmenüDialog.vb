@@ -1,5 +1,5 @@
 ﻿Public Class HauptmenüDialog
-    Private EinstellunForm As New EinstellungenDialog
+    Private WithEvents EinstellunForm As New EinstellungenDialog
     Private StatistikForm As New StatistikDialog
     Private WithEvents SpielerSucheForm As SpielerSucheDialog
     Private t As New Threading.Thread(AddressOf Bilder)
@@ -35,13 +35,17 @@
             config = CType(reader.Deserialize(file), SettingsObject)
             file.Close()
         End If
+        EinstellungenForm_TransUpdate()
+        t.Start()
+    End Sub
+
+    Private Sub EinstellungenForm_TransUpdate() Handles EinstellunForm.TransUpdate
         Sprachpakete.Datei = config.Lang
         PlayBT.Text = Sprachpakete.GetUbersetzung("playBT")
         StatistikBT.Text = Sprachpakete.GetUbersetzung("statisticsBT")
         ConfigBT.Text = Sprachpakete.GetUbersetzung("configBT")
         CloseBT.Text = Sprachpakete.GetUbersetzung("endBT")
         Me.Text = Sprachpakete.GetUbersetzung("mainmenu")
-        t.Start()
     End Sub
 
     Private Sub Bilder()
@@ -77,7 +81,7 @@ End Class
 
 Public Class SettingsObject
     Public Ip As String = "127.0.0.1"
-    Public Lang As String = ".\DE.lang"
+    Public Lang As String = ".\EN.lang"
     Public C As String = (-14634326).ToString
     Public Points As Double = 1
     Public GrafikIndex As Integer = 5

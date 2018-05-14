@@ -171,7 +171,7 @@ Partial Class EinstellungenDialog
         'LowL
         '
         Me.LowL.AutoSize = True
-        Me.LowL.Location = New System.Drawing.Point(50, 111)
+        Me.LowL.Location = New System.Drawing.Point(57, 111)
         Me.LowL.Name = "LowL"
         Me.LowL.Size = New System.Drawing.Size(40, 13)
         Me.LowL.TabIndex = 5

@@ -1,4 +1,6 @@
 ﻿Public Class EinstellungenDialog
+    Public Event TransUpdate()
+
     Private Sub CloseBT_Click(sender As Object, e As EventArgs) Handles CloseBT.Click
         Me.Close()
     End Sub
@@ -72,10 +74,12 @@
 
         SpracheGB.Text = Sprachpakete.GetUbersetzung("langGB")
         SpracheL.Text = HauptmenüDialog.config.Lang.Substring(HauptmenüDialog.config.Lang.LastIndexOf("\") + 1)
+        SpracheBT.Text = Sprachpakete.GetUbersetzung("langGB")
 
         ServerBT.Text = Sprachpakete.GetUbersetzung("serverBT")
         ServerGB.Text = Sprachpakete.GetUbersetzung("serverBT")
         ServerL.Text = HauptmenüDialog.config.Ip
+        RaiseEvent TransUpdate()
     End Sub
 
     Private Sub ServerBT_Click(sender As Object, e As EventArgs) Handles ServerBT.Click

@@ -194,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DE.lang" />
+    <None Include="EN.lang" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

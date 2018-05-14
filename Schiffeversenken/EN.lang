@@ -42,8 +42,8 @@
   <myState>Status</myState>
   <yourState>Status</yourState>
   <langGB>Language</langGB>
-  <fileLang>Language Data</fileLang>
-  <fileAll>All Data</fileAll>
+  <fileLang>Languagefile</fileLang>
+  <fileAll>All Files</fileAll>
   <newGameBT>New Game</newGameBT>
   <closeBT>Close</closeBT>
   
