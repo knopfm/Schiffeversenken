@@ -249,6 +249,10 @@
     <None Include="Resources\schiff_3_4.png" />
     <None Include="Resources\schiff_3_4_v.png" />
     <None Include="Resources\wasser_gif.gif" />
+    <None Include="Resources\menu1.png" />
+    <None Include="Resources\menu2.png" />
+    <None Include="Resources\menu3.png" />
+    <None Include="Resources\menu4.png" />
     <Content Include="ToDo.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -53,12 +53,19 @@
             Try
                 Select Case innerBilderIndex
                     Case 0
-                        'LogoPB.Image = 
-                        'TODO: Bilder
+                        LogoPB.Image = My.Resources.wasser_gif
+                    Case 1
+                        LogoPB.Image = My.Resources.menu1
+                    Case 2
+                        LogoPB.Image = My.Resources.menu2
+                    Case 3
+                        LogoPB.Image = My.Resources.menu3
+                    Case 4
+                        LogoPB.Image = My.Resources.menu4
                 End Select
 
                 innerBilderIndex += 1
-                If innerBilderIndex = 1 Then
+                If innerBilderIndex = 6 Then
                     innerBilderIndex = 0
                 End If
                 Threading.Thread.Sleep(4000)

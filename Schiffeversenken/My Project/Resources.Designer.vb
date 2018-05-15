@@ -103,6 +103,46 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property menu1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menu1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menu2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menu2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menu3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menu3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menu4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menu4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Metallplatte() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Metallplatte", resourceCulture)
