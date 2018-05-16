@@ -352,8 +352,8 @@ Public Class SpielController
         startZeit = Now
         bottomForm.Show()
         topForm.diasableStop()
-        topForm.Location = New Point(CInt(topForm.Location.X), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 - topForm.Size.Height + 2))
-        bottomForm.Location = New Point(CInt(topForm.Location.X), CInt(My.Computer.Screen.WorkingArea.Size.Height / 2 + 2))
+        topForm.Location = New Point(CInt(My.Computer.Screen.WorkingArea.Size.Width / 2 - topForm.Size.Width + 2), CInt(topForm.Location.Y))
+        bottomForm.Location = New Point(CInt(My.Computer.Screen.WorkingArea.Size.Width / 2 + 2), CInt(topForm.Location.Y))
     End Sub
 
     Private Sub topForm_Start() Handles topForm.Start
@@ -410,11 +410,11 @@ Public Class SpielController
         Dim ret As String = Sprachpakete.GetUbersetzung("gameTime") & ": "
         ret &= span.ToString("mm\:ss")
         ret &= vbCrLf & vbCrLf
-        ret &= Sprachpakete.GetUbersetzung("points") & ":"
+        ret &= Sprachpakete.GetUbersetzung("points") & ": "
         If (meineTreffer + meineDaneben) = 0 Then
             ret &= ""
         Else
-            ret &= Format((meineTreffer / (meineTreffer + meineDaneben)) * 100, "0.00")
+            ret &= Format(meineTreffer / (meineTreffer + meineDaneben), "0.0%")
         End If
         ret &= vbCrLf & vbCrLf
         ret &= Sprachpakete.GetUbersetzung("shipsLeft") & ": " & vbCrLf

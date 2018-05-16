@@ -35,8 +35,8 @@ Partial Class SiegerDialog
         '
         Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.72282!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.27719!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.20755!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.79245!))
         Me.TableLayoutPanel1.Controls.Add(Me.GewonnenL, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.SpielStatistikL, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -45,7 +45,7 @@ Partial Class SiegerDialog
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(469, 192)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(530, 192)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'GewonnenL
@@ -55,7 +55,7 @@ Partial Class SiegerDialog
         Me.GewonnenL.Location = New System.Drawing.Point(0, 0)
         Me.GewonnenL.Margin = New System.Windows.Forms.Padding(0)
         Me.GewonnenL.Name = "GewonnenL"
-        Me.GewonnenL.Size = New System.Drawing.Size(326, 192)
+        Me.GewonnenL.Size = New System.Drawing.Size(334, 192)
         Me.GewonnenL.TabIndex = 0
         Me.GewonnenL.Text = "Gewonnen"
         Me.GewonnenL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -64,10 +64,10 @@ Partial Class SiegerDialog
         '
         Me.SpielStatistikL.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SpielStatistikL.Font = New System.Drawing.Font("Stencil", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SpielStatistikL.Location = New System.Drawing.Point(326, 0)
+        Me.SpielStatistikL.Location = New System.Drawing.Point(334, 0)
         Me.SpielStatistikL.Margin = New System.Windows.Forms.Padding(0)
         Me.SpielStatistikL.Name = "SpielStatistikL"
-        Me.SpielStatistikL.Size = New System.Drawing.Size(143, 192)
+        Me.SpielStatistikL.Size = New System.Drawing.Size(196, 192)
         Me.SpielStatistikL.TabIndex = 1
         Me.SpielStatistikL.Text = "Spiel Statistik"
         Me.SpielStatistikL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -102,7 +102,7 @@ Partial Class SiegerDialog
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSeaGreen
         Me.CancelButton = Me.CloseBT
-        Me.ClientSize = New System.Drawing.Size(469, 192)
+        Me.ClientSize = New System.Drawing.Size(530, 192)
         Me.Controls.Add(Me.NeuesSpielBT)
         Me.Controls.Add(Me.CloseBT)
         Me.Controls.Add(Me.TableLayoutPanel1)
