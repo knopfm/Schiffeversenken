@@ -393,7 +393,7 @@ Public Class SpielController
         If (deineTreffer + deineDaneben) = 0 Then
             ret &= ""
         Else
-            ret &= Format((deineTreffer / (deineTreffer + deineDaneben)) * 100, "0.00")
+            ret &= Format((deineTreffer / (deineTreffer + deineDaneben)), "0.0%")
         End If
         ret &= vbCrLf & vbCrLf
         ret &= Sprachpakete.GetUbersetzung("shipsLeft") & ": " & vbCrLf

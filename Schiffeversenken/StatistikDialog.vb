@@ -9,6 +9,7 @@
     End Sub
 
     Private Sub StatistikDialog_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.Text = Sprachpakete.GetUbersetzung("statisticsBT")
         CloseBT.Text = Sprachpakete.GetUbersetzung("closeBT")
         ResetBT.Text = Sprachpakete.GetUbersetzung("stat_resetBT")
         StatistikL.Text = berechneInfoBox()
