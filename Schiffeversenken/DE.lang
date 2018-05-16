@@ -36,7 +36,7 @@
   <_3erShips>3-er Schiffe</_3erShips>
   <_4erShips>4-er Schiffe</_4erShips>
   <_5erShips>5-er Schiffe</_5erShips>
-  <points>Trefferquote</points>
+  <points>Präzision</points>
   <gameTime>Spielzeit</gameTime>
   <shipsLeft>Übrige Schiffe</shipsLeft>
   <myState>Status</myState>

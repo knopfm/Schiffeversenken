@@ -389,7 +389,7 @@ Public Class SpielController
     End Sub
 
     Private Function berechneInfoBoxOben() As String
-        Dim ret As String = Sprachpakete.GetUbersetzung("points") & ":"
+        Dim ret As String = Sprachpakete.GetUbersetzung("points") & ": "
         If (deineTreffer + deineDaneben) = 0 Then
             ret &= ""
         Else
